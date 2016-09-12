@@ -1,0 +1,11 @@
+              
+neZ n!=0 xeZ, | x = n*2
+                 n
+
+              
+neZ n!=0 xeZ, | x = n*3
+                 n
+
+              
+neZ n!=0 xeZ, | x = n*6
+                 n

@@ -1,0 +1,17 @@
+1.
+Jos otetaan kaikki ne alkiot, jotka eivat ole määrätyssä joukossa ja sitten otetaan uudelleen kaikki alkiot, jotka eivät ole tässä uudessa joukossa, saadaan taas ne alkiot, jotka olivat alkuperäisessä joukossa.
+
+2.
+	|!(P^Q)|(!Pv!Q)|
+P|T|Q|F	|T     |T      |
+P|F|Q|F	|T     |T      |
+P|F|Q|T	|T     |T      |
+P|T|Q|T	|F     |F      |
+Tästä nähdään että molemmilla aina samat totuusarvot.
+
+3.
+koska ekvivalenssin kumatkin puolet tarkoittavat samaa asiaa, sitä vain katsotaan erisuunnasta.
+jos kaikille x ei päde P, siitä seuraa välittömasti, että on ainakin yksi x jolle pätee !P ja toisinpäin.
+Muuten lause ei voi olla totta.
+
+//nämä vastaukset tuntuu ihan hirveältä, mutta en taida pystyä parempaankaan tällä hetkellä.
