@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
             TextBox textBox = (TextBox)sender;
             Size size = TextRenderer.MeasureText(textBox.Text, textBox.Font);
             ScaalaaBoxiTeksti(textBox);
-        }
+        }//
 
         private void ScaalaaBoxiTeksti(TextBox kuka)
         {
