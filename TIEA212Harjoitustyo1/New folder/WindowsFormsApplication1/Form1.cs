@@ -12,8 +12,6 @@ namespace WindowsFormsApplication1
 {
     public partial class Ohjelma : Form
     {
-        List<String> historia = new List<String>();
-        List<String> redo = new List<String>();
         List<String> jarjestys = new List<String>();
         public Ohjelma()
         {
@@ -27,36 +25,12 @@ namespace WindowsFormsApplication1
             teksti.Trim();
             TextBox uusiLaatikko = new TextBox();
             uusiLaatikko.Text = teksti;
-            uusiLaatikko.BackColor = Color.Cyan;
+            uusiLaatikko.BackColor = Color.FromArgb(20, 250, 5);
             uusiLaatikko.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            uusiLaatikko.AutoSize = false;
-
-            ScaalaaBoxiTeksti(uusiLaatikko);
-
             flowLayoutPanel1.Controls.Add(uusiLaatikko);
             jarjestys.Add(teksti);
-            uusiLaatikko.ReadOnly = false;
-            uusiLaatikko.TextChanged += new System.EventHandler(textBox_TextChanged);
-            
-                
-        }
-                private void textBox_TextChanged(Object sender, EventArgs e)
-        {
-            TextBox textBox = (TextBox)sender;
-            Size size = TextRenderer.MeasureText(textBox.Text, textBox.Font);
-            ScaalaaBoxiTeksti(textBox);
-        }
 
-        private void ScaalaaBoxiTeksti(TextBox kuka)
-        {
-            Size size = TextRenderer.MeasureText(kuka.Text, kuka.Font);
-            kuka.Width = size.Width;
-            kuka.Height = size.Height;
-        }
 
-        private void Undo()
-        {
-            //TODO
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -120,11 +94,5 @@ namespace WindowsFormsApplication1
         {
             Application.Exit();
         }
-
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Undo();
-        }
     }
-    //textrenderer.mesureText();
 }
