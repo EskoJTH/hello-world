@@ -8,22 +8,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// @author Esko Hanell
+/// @version 14.9.2016
+/// </summary>
 namespace WindowsFormsApplication1
 {
+    /// <summary>
+    /// winForms:in generoima koodi ja omat lisäykset.
+    /// </summary>
     public partial class Ohjelma : Form
     {
-        List<String> historia = new List<String>();
-        List<String> redo = new List<String>();
+        List<Historia> historia = new List<Historia>();
+        List<Historia> redo = new List<Historia>();
         List<String> jarjestys = new List<String>();
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Ohjelma()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {         
+            LisaaTietoLaatikko();
+        }
+
+        private void LisaaTietoLaatikko()
         {
-            string teksti = textBox1.Text;
-            if (teksti.Equals("")) return;
+            LisaaTietoLaatikko(textBox1.Text);
+        }
+
+        public TextBox LisaaTietoLaatikko(string teksti)
+        {
+            if (teksti.Equals("")) return null;
             teksti.Trim();
             TextBox uusiLaatikko = new TextBox();
             uusiLaatikko.Text = teksti;
@@ -31,37 +51,54 @@ namespace WindowsFormsApplication1
             uusiLaatikko.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             uusiLaatikko.AutoSize = false;
 
-            ScaalaaBoxiTeksti(uusiLaatikko);
-
             flowLayoutPanel1.Controls.Add(uusiLaatikko);
             jarjestys.Add(teksti);
             uusiLaatikko.ReadOnly = false;
             uusiLaatikko.TextChanged += new System.EventHandler(textBox_TextChanged);
-            
-                
+
+            ScaalaaBoxiTeksti(uusiLaatikko);
+
+            historia.Add(new Historia(uusiLaatikko));
+            return uusiLaatikko;
         }
-                private void textBox_TextChanged(Object sender, EventArgs e)
+
+        private void Undo()
+        {
+            if (historia.Count > 0)
+            {
+                redo.Add(historia.Last());
+                historia.Last().Undo();
+                historia.Remove(historia.Last());
+            }
+        }
+
+        private void Redo()
+        {
+            if (redo.Count > 0) {
+                Historia muutettava = redo.Last();
+                TextBox uusiLaatikko = LisaaTietoLaatikko(muutettava.ToString());
+                muutettava.Redo(uusiLaatikko);
+                redo.Remove(muutettava);
+                }
+        }
+
+        private void textBox_TextChanged(Object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             Size size = TextRenderer.MeasureText(textBox.Text, textBox.Font);
             ScaalaaBoxiTeksti(textBox);
-        }//
+        }
 
         private void ScaalaaBoxiTeksti(TextBox kuka)
         {
             Size size = TextRenderer.MeasureText(kuka.Text, kuka.Font);
             kuka.Width = size.Width;
-            kuka.Height = size.Height;
-        }
-
-        private void Undo()
-        {
-            //TODO
+            kuka.Height = size.Height+5;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            return;
         }
     
 
@@ -122,6 +159,16 @@ namespace WindowsFormsApplication1
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Undo();
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Redo();
+        }
+
+        private void FlowPanelDoubleClickListener(object sender, EventArgs e)
         {
             Undo();
         }
