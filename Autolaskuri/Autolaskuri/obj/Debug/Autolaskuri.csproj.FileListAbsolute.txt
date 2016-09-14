@@ -1,0 +1,10 @@
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\bin\Debug\Autolaskuri.exe.config
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\bin\Debug\Autolaskuri.exe
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\bin\Debug\Autolaskuri.pdb
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.csprojResolveAssemblyReference.cache
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.Autolaskuri.resources
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.Properties.Resources.resources
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.csproj.GenerateResource.Cache
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.exe
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.pdb
+c:\users\eskoj\documents\visual studio 2015\Projects\Autolaskuri\Autolaskuri\obj\Debug\Autolaskuri.AboutBox1.resources
