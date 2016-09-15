@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1
 {
     partial class AboutBox1 : Form
     {
+
         public AboutBox1()
         {
             InitializeComponent();
