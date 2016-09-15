@@ -1,0 +1,6 @@
+Q={ xeZ | x=6n, neZ}
+P={ xeZ | x=2n, neZ}
+
+väite: P⊃Q
+
+Olkoon xeQ tällöin x=6n=2*3n=2m joka on samaa muotoa kuin P joten P⊃Q, kun meZ, neZ.
