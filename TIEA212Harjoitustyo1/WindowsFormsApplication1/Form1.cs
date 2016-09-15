@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace WindowsFormsApplication1
 {
     /// <summary>
-    /// winForms:in generoima koodi ja omat lisäykset.
+    /// Ohjelma classin osa jossa suurin osa itse tehdystä koodista on
     /// </summary>
     public partial class Ohjelma : Form
     {
