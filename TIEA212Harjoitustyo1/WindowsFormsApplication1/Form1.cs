@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         List<String> jarjestys = new List<String>();
 
         /// <summary>
-        /// 
+        /// Luo
         /// </summary>
         public Ohjelma()
         {
@@ -172,6 +172,11 @@ namespace WindowsFormsApplication1
         {
             Undo();
         }
+
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AboutBox1 poksi = new AboutBox1();
+                poksi.ShowDialog();
+        }
     }
-    //textrenderer.mesureText();
 }

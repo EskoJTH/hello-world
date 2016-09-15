@@ -7,3 +7,4 @@ C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsForms
 C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AboutBox1.resources
