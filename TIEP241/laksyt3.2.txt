@@ -1,19 +1,37 @@
 a) Osoitetaan väite todeksi kun n=0.
-∑i=0,n n² = (n(n+1)(2n+1))/6
+
+∑_{i=0}^n n² = (n(n+1)(2n+1))/6
 	0² = (0(0+1)(2n+1))/6
 	0 = 0
 
 b)
-	1²+2²+3²...+n² = (n(n+1)(2n+1))/6	Oletetaan että lauseke pätee jollain neN.
-	
-c)	1²+2²+3²...+n²+(n+1)² = ((n+1)(n+2)(2(n+1)+1))/6
-	(n(n+1)(2n+1))/6+(n+1)² = ((n+1)(n+2)(2(n+1)+1))/6
-	(n(n+1)(2n+1)+6(n+1))/6	= ((n+1)(n+2)(2(n+1)+1))/6
-	(n²+n)(2n+1)+6n+6)/6	= ((n²+2n+2)(2n+2)+1))/6
-	(2n³+2n²+2n²+n+6n+6)/6	= (2n³+6n²+4n+5)/6
-	(2n³+4n²+7n+6)/6
-	
+	1²+2²+3²+...+n² = (n(n+1)(2n+1))/6	Oletetaan että lauseke pätee jollain neN.
 
-//
-	(n+1)² = ((n+1)(n+2)(2(n+1)+1))/6 |/(n+1)
-c)	n+1 = ((n+2)(2(n+1)+1))/6 |
+c)	∑_{i=0}^(n+1) (n+1)²
+
+	∑_{i=0}^(n+1) (n+1)² = (n(n+1)(2n+1))/6+(n+1)² 
+	= (n(n+1)(2n+1))/6+(n+1)² 
+	= (n(n+1)(2n+1)+6(n+1)²)/6	
+	= ((n²+n)(2n+1)+6n²+12n+6)/6	
+	= (2n³+n²+2n²+n+6n²+12n+6)/6	
+	= (2n³+9n²+13n+6)/6
+
+	Avataan toisesta suunnasta
+
+	∑_{i=0}^(n+1) (n+1)² = ((n+1)((n+1)+1)(2(n+1)+1))/6
+	= ((n+1)((n+1)+1)(2(n+1)+1))/6
+	= ((n+1)(n+2)(2(n+1)+1))/6
+	= ((n²+3n+2)(2n+2+1))/6
+	= ((n²+3n+2)(2n+3))/6
+	= (2n³+3n²+6n²+9n+4n+6)/6
+	= (2n³+9n²+13n+6)/6
+
+	eli
+	(n(n+1)(2n+1))/6+(n+1)² = ((n+1)((n+1)+1)(2(n+1)+1))/6
+
+d)	Jos kaavaan lisätään n+1 termi, saadaan siitä muokattua lauseke arvolla (n+1).
+	Tästä seuraa että jos lauseke pätee yhdessä kohtaa (n=0), lauseke pätee
+	kaikilla.■
+
+
+		

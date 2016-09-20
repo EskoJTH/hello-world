@@ -1,0 +1,13 @@
+Q on äärellinen joukkko
+S⊆Q   		Σ
+{h_1, h_2, h_3} € S
+|S| = k+1
+
+S_1 = S - h_1
+|S_1| = k
+
+h_2 != h_1
+S_2 = S - h_2
+|S_2| = k
+
+h_3 !€ {S_1, S_2}
