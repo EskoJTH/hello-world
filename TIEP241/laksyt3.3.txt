@@ -1,13 +1,24 @@
-Q on äärellinen joukkko
-S⊆Q   		Σ
-{h_1, h_2, h_3} € S
-|S| = k+1
 
-S_1 = S - h_1
-|S_1| = k
+a)
+S on mielivalaisesti valittu äärellinen hevosten joukko.
+Väite: ∀x,y ∊ S : V(x,y)
 
-h_2 != h_1
-S_2 = S - h_2
-|S_2| = k
+b)
+jos S={∅}
+perustapaus 1:
+ ∀x,y ∊ S : V(∅,∅)
+pätee.
 
-h_3 !€ {S_1, S_2}
+Perustapaus 2.
+h on mikätahansa mielivaltaisesti valittu hevonen.
+jos S={h}
+∀x,y ∊ S : V(x,y)
+pätee.
+
+c)
+
+
+ k, k∊N | S={h1,h2,h3,h4,...,hk} kukin hi, 0 < i =< k, on jokin hevonen. 
+io: ∀x,y ∊ S : V(x,y)
+
+d) Perustapauksessa olisi pitänyt käsitellä myös kahden hevosen joukko, muuten ei voida olettaa että, niistä löytyy hevosen h1 tai h2 lisäksi eri hevonen h3. Jolloin perustapauksista ei seuraa induktion seuraava vaihe.

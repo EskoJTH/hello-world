@@ -1,7 +1,0 @@
-∀r,s,t∈R: s=r/t ⇔ ts=r
-
-∀r∈R\{0}: ¬∃s∈R: r/0 =s
-
-a) määritelmän mukaan:
-r/​0 =s ⇔ 0s = r
-0s=0 r!=0 ei märitelty

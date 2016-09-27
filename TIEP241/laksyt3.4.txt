@@ -1,0 +1,24 @@
+∀r,s,t∈R: s=r/t ⇔ ts=r
+
+a) ∀r∈R\{0}: ¬∃s∈R: r/0 =s
+
+tehdään vastaväite:
+ ∀r∊R\{0}: ∃s∊R: r/0 = s
+
+määritelmän mukaan:
+r/​0 = s ⇔ 0s = r
+koska r:n möörittelyjoukon mukaan r != 0
+aiheuttaa tämä ristiriidan.∎
+
+b) ∃s1,s​2∈R: s​1≠s​2​​ ∧​ 0/​0=s​1​​ ∧ ​0/​0=s​2
+
+osoitetaan molemmat tapaukset todeksi joillakin s kun s1 != s2.
+ s1 = 1
+ s2 = 2
+​​ 0/0=1 <=> 0*1=0 <=> 0=0 pätee.
+ 0/0=2 <=> 0*2=0 <=> 0=0 pätee.
+ Eli väite on tosi.∎
+
+c) a. kohta osoittaa että jakolaskusääntö pätee kun jakaja != 0. ja b. kohdasta nähdään että jos nollalla päätetään kuitenkin jakaa, voidaan näyttää mikävaan luku yhtäsuureksi toisen luvun kanssa.
+
+d)∀r,s,t∈R, t!=0: s=​r/t ⇔ ts=r.
