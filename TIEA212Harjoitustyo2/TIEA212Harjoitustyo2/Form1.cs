@@ -16,5 +16,10 @@ namespace TIEA212Harjoitustyo2
         {
             InitializeComponent();
         }
+
+        private void Nappula1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
