@@ -9,16 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
-
+/// <summary>
+/// @author Esko Hanell
+/// @Version 3.10.2016
+/// </summary>
 namespace TimeTextBox
 {
+
+    /// <summary>
+    /// textBox joka tallentaa tietoa aikana.
+    /// </summary>
     public partial class TimeTextBox : TextBox
     {
         private ErrorProvider errorProvider1 = new ErrorProvider();
-        private TimeSpan aika = TimeSpan.Zero;
+        public TimeSpan aika { get; private set; } = TimeSpan.Zero;
         private TimeSpan aikaMax = new TimeSpan(23,59,59);
 
-
+        /// <summary>
+        /// Initialisoi komponentin ja luo eventhandlereita
+        /// </summary>
         public TimeTextBox()
         {
             InitializeComponent();
@@ -27,6 +36,11 @@ namespace TimeTextBox
             this.Text = aika.ToString();
         }
 
+        /// <summary>
+        /// Tarkistaa onko syötetty tieto validi.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimeValidating(object sender, CancelEventArgs e)
         {
 
@@ -37,7 +51,6 @@ namespace TimeTextBox
                 if (syote.Trim().Equals(""))
                 {
                     this.aika = TimeSpan.FromSeconds(0);
-                    errorProvider1.SetError(this, string.Empty);
                     e.Cancel = false;
                     this.Text = aika.ToString();
 
@@ -51,8 +64,8 @@ namespace TimeTextBox
                     {
                         TimeSpan x = TimeSpan.Parse(syote);
                         this.aika = x;
-                        errorProvider1.SetError(this, string.Empty);
                         e.Cancel = false;
+
                     }
                     else
                     {
@@ -64,12 +77,19 @@ namespace TimeTextBox
             {
                 errorProvider1.SetError(this, "Syötä oikean muotoinen aika.");
                 e.Cancel = true;
+                this.BackColor=Color.Red;
             }
         }
 
+        /// <summary>
+        /// asettaa arvot oikeiksi validia tilannetta varten.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Validi(object sender, EventArgs e)
         {
             errorProvider1.SetError(this, string.Empty);
+            this.BackColor = Color.White;
         }
     }
 }

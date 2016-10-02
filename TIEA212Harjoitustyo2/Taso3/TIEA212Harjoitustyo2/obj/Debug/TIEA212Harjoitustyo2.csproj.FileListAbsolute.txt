@@ -48,3 +48,5 @@ C:\Projects\TIEA212Harjoitustyo2\Taso3\TIEA212Harjoitustyo2\obj\Debug\TIEA212Har
 C:\Projects\TIEA212Harjoitustyo2\Taso3\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.Form1.resources
 C:\Projects\TIEA212Harjoitustyo2\Taso3\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.Properties.Resources.resources
 C:\Projects\TIEA212Harjoitustyo2\Taso3\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.csproj.GenerateResource.Cache
+C:\Projects\TIEA212Harjoitustyo2\Taso3\TIEA212Harjoitustyo2\bin\Debug\OmaLabeli.dll
+C:\Projects\TIEA212Harjoitustyo2\Taso3\TIEA212Harjoitustyo2\bin\Debug\OmaLabeli.pdb

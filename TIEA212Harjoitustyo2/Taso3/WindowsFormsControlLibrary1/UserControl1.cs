@@ -62,25 +62,23 @@ namespace OmaWindowsFormsComponenttiTaiJotainSemmosta
                 if (syote.Trim().Equals(""))
                 {
                     this.value = 0;
-                    errorProvider1.SetError(this, string.Empty);
                     e.Cancel = false;
                     this.Text = "0";
-
                 }
                 else
                 {
 
-                    double x = Double.Parse(syote); //TODO TESTAAAAAAA!!!!!!!!!!!!!!!
+                    double x = Double.Parse(syote); 
                     this.value = x;
                     if (!(Min <= x && Max >= x))
                     {
                         errorProvider1.SetError(this, "Anneun arvon pitää olla väliltä: " + min + " < X < " + max);
                         e.Cancel = true;
+                        this.BackColor = Color.Red;
                     }
                     else
                     {
-                        errorProvider1.SetError(this, string.Empty);
-                        e.Cancel = false;
+                        e.Cancel = false;         
                     }
                 }
             }
@@ -88,6 +86,7 @@ namespace OmaWindowsFormsComponenttiTaiJotainSemmosta
             {
                 errorProvider1.SetError(this, "Not a decimal value.");
                 e.Cancel = true;
+                this.BackColor = Color.Red;
             }
         }
 
@@ -99,6 +98,7 @@ namespace OmaWindowsFormsComponenttiTaiJotainSemmosta
         private void Validi(object sender, EventArgs e)
         {
             errorProvider1.SetError(this, string.Empty);
+            this.BackColor = Color.White;
         }
     }
 }
