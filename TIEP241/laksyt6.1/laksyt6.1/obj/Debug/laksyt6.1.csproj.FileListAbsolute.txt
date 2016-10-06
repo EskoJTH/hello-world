@@ -1,0 +1,6 @@
+C:\Projects\TIEP241\laksyt6.1\laksyt6.1\bin\Debug\laksyt6.1.exe.config
+C:\Projects\TIEP241\laksyt6.1\laksyt6.1\bin\Debug\laksyt6.1.exe
+C:\Projects\TIEP241\laksyt6.1\laksyt6.1\bin\Debug\laksyt6.1.pdb
+C:\Projects\TIEP241\laksyt6.1\laksyt6.1\obj\Debug\laksyt6.1.csprojResolveAssemblyReference.cache
+C:\Projects\TIEP241\laksyt6.1\laksyt6.1\obj\Debug\laksyt6.1.exe
+C:\Projects\TIEP241\laksyt6.1\laksyt6.1\obj\Debug\laksyt6.1.pdb
