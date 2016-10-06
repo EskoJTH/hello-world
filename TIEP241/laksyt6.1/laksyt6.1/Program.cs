@@ -67,7 +67,9 @@ namespace laksyt6._1
             automaatti = q5;
         }
     }
+
     //--------------------------------------------------------------------------------------------------------------------------------------------
+
     /// <summary>
     /// Olio joka tallentaa kaiken yksittäiseen tilaan liittyvän datan.
     /// </summary>
@@ -75,8 +77,7 @@ namespace laksyt6._1
     {
 
         // jos lisäät tiloja muista päivittää switch case osa.
-        private Tila a;
-        private Tila b;
+        private new Siirtymat<char, Tila> siirtymat;
         // jos lisäät tiloja muista päivittää switch case osa.
 
         public string name { get; }
@@ -84,25 +85,31 @@ namespace laksyt6._1
 
 
         /// <summary>
-        /// yksittäinen tila joka tietää mihin siirrytään syötteella a tai b
+        /// Luodaan tila ja annetaan sille valmiiksi siirtymiä.
         /// </summary>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
-        public Tila(string name,Tila a, Tila b)
+        /// <param name="name">Tilan nimi</param>
+        /// <param name="siirtymayt">Siirtymät</param>
+        public Tila(string name, Dictionary<char, Tila> siirtymat)
         {
+            this.siirtymat.AddDic(siirtymat);
             this.name = name;
-            this.a = a;
-            this.b = b;
         }
 
         /// <summary>
-        /// Constructoi tila olion jolla molemmat viitteet osoittaa itseensä.
+        /// Luodaan tila ja annetaan sille valmiiksi siirtymiä.
         /// </summary>
+        /// <param name="name">Tilan nimi</param>
+        /// <param name="siirtymayt">Siirtymät</param>
         public Tila(string name)
         {
             this.name = name;
-            a = this;
-            b = this;
+        }
+
+        /// <summary>
+        /// tekee hyvin tyhjän tilan.
+        /// </summary>
+        public Tila()
+        {
         }
 
         /// <summary>
@@ -114,25 +121,18 @@ namespace laksyt6._1
         }
 
         /// <summary>
-        /// Asettaa alapuolella olevan Tilan "A"
+        /// luodaan uusi siirtymä, jollakin syotteellä a tilaan A
         /// </summary>
-        /// <param name="a"></param>
-        public void SetA(Tila a)
+        /// <param name="a">a</param>
+        /// <param name="A">A</param>
+        public void newSiiryma(char a, Tila A)
         {
-            this.a = a;
-        }
-
-        /// <summary>
-        /// Asettaa alapuolella olevan tilan "B"
-        /// </summary>
-        /// <param name="b"></param>
-        public void SetB(Tila b)
-        {
-            this.b = b;
+            this.siirtymat.Add(a, A);
         }
 
         /// <summary>
         /// käsitellää annettu syöte rekursiivisesti ja haetaan viesti viimeiseltä tilalta johon päädytään.
+        /// hyppää kelpaamattoman syötteen yli.
         /// </summary>
         /// <param name="parameters">syöte</param>
         /// <returns>hyväksyttiinkö syöte</returns>
@@ -142,29 +142,124 @@ namespace laksyt6._1
             {
                 char parameter = parameters.First();
                 parameters.Remove(parameters.First());
-
-                switch (parameter)
+                if (!siirtymat.ContainsKey(parameter))
                 {
-                    case 'a':
-                        {
-                            return a.GiveParameters(parameters);
-                        }
-                    case 'b':
-                        {
-                            return b.GiveParameters(parameters);
-                        }
+                    Console.Error.WriteLine("Annettiin siirtymä jota ei olle määritelty.");
+                    this.GiveParameters(parameters);
+                }
+                else
+                {
+                    List<Tila> kohteet = siirtymat[parameter];
+                    foreach (Tila kohde in kohteet)
+                    {
+                        string palaute = kohde.GiveParameters(parameters);
+                        if (null == palaute) return null;
+                        Console.WriteLine(palaute);
+                    }
+
                 }
             }
             else
             {
                 if (loppu)
                 {
-                    return "Hyväksytty";
+                    Console.WriteLine("Hyväksytty");
+                    return null;
+                    
                 }
-                return "Kelvoton";
+                return "Katsotaan taakeseppäin";
             }
-            return "Virhe: merkkisyötteessä merkkejä jotka rikkovat automaatin";
+                return "Virhe: merkkisyötteessä merkkejä jotka rikkovat automaatin";
+            
+
+        }
+
+        /// <summary>
+        /// Hauska luokka joka tallentaa yhden key olion ja monta Value oliota toivottavasti. Ja tekee kaiken ehkä vaikeimman kautta.
+        /// </summary>
+        /// <typeparam name="Tkey">avain Olion tyyppi</typeparam>
+        /// <typeparam name="Ttarget">Arvo Olioiden tyyppi</typeparam>
+        class Siirtymat<Tkey, Ttarget> : Dictionary<Tkey, List<Ttarget>> where Tkey : new() where Ttarget : new()
+        {
+
+            /// <summary>
+            /// Luodaan suhteellisen tyhjä Siirtymäläjän.
+            /// </summary>
+            public Siirtymat()
+            {
+
+            }
+
+            /// <summary>
+            /// Lisää avaimelle a Arvon A
+            /// </summary>
+            /// <param name="a">avain</param>
+            /// <param name="A">arvo joka lisätään</param>
+            public void Lisaa(Tkey a, Ttarget A)
+            {
+                List<Ttarget> lista = new List<Ttarget>();
+                bool tuliko = this.TryGetValue(a, out lista);
+                if (tuliko)
+                {
+                    lista.Add(A);
+                    this[a] = lista;
+                }
+                else this.Add(a, lista);
+            }
+
+            /// <summary>
+            /// Lisää avaimelle a Listan arvoja A
+            /// </summary>
+            /// <param name="a">avain</param>
+            /// <param name="A">arvo joka lisätään</param>
+            public void Lisaa(Tkey a, List<Ttarget> A)
+            {
+                List<Ttarget> lista = new List<Ttarget>();
+                bool tuliko = this.TryGetValue(a, out lista);
+                if (tuliko)
+                {
+                    lista.AddRange(A);
+                    this[a] = lista;
+                }
+                else this.Add(a, lista);
+            }
+
+            /// <summary>
+            /// Palauttaa listan jossa kaikki arvot tietylle avaimelle.
+            /// </summary>
+            /// <param name="a">avain jolla etsitään</param>
+            /// <returns>lista jossa haetut arvot</returns>
+            public List<Ttarget> Lue(Tkey a)
+            {
+                List<Ttarget> lista = new List<Ttarget>();
+                bool tuliko = this.TryGetValue(a, out lista);
+                if (!tuliko) lista = new List<Ttarget>();
+                return lista;
+            }
+
+            /// <summary>
+            /// lisää Siirtymät tietueeseen dictionaryn.
+            /// </summary>
+            /// <param name="dic">dictionary joka lisätään</param>
+            public void AddDic(Dictionary<Tkey, Ttarget> dic)
+            {
+                foreach (KeyValuePair<Tkey, Ttarget> a in dic)
+                {
+                    this.Lisaa(a.Key, a.Value);
+                }
+            }
+
+            /// <summary>
+            /// Lisää kokonaisen siirtymä tietueen tähän.
+            /// </summary>
+            /// <param name="siir">Siirtymät joka lisätään.</param>
+            public void AddSiirtymat(Siirtymat<Tkey, Ttarget> siir)
+            {
+                foreach (KeyValuePair<Tkey, List<Ttarget>> a in siir)
+                {
+                    this.Lisaa(a.Key, a.Value);
+                }
+            }
         }
     }
-}
 
