@@ -1,0 +1,32 @@
+e)
+∀q∈Q:∀w,v∈Σ∗:δ∗(q,wv)=δ∗(δ∗(q,w),v)
+a)
+w=k
+v=ε
+
+b)
+∀q∈Q:∀w,v∈Σ∗:δ∗(q,wv)
+
+ δ∗(δ∗(q,w),v)
+=δ∗(δ∗(q,w),ε)
+=δ*(q,w) | koska δ*(q,ε)=q
+=δ∗(q,wε)
+=δ∗(q,wv)
+
+c)
+io:
+oletetaan että pätee kun |w|=k, |v|=k
+∀q∈Q:∀w,v∈Σ∗:δ∗(q,wv)=δ∗(δ∗(q,w),v)
+
+d)
+ia:
+osoitetaan että pätee kun |w|=k, |v|=k+1 ,v=uc, |u|=k, |c|=1
+∀q∈Q:∀w,v∈Σ∗:δ∗(q,wv)=δ∗(δ∗(q,w),v)
+
+δ*(q,wv)
+=δ*(q,wuc)
+=δ(δ*(q,wu)c) 
+=δ(δ*(δ*(q,w)u)c) |io
+=δ*(δ*(q,w)v)
+
+pätee.∎

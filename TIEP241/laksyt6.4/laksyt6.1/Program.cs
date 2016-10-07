@@ -90,15 +90,22 @@ namespace laksyt6._1
             a4.newSiiryma('b', a4);
             a4.newSiiryma('a', a4);
 
-            a1.newSiiryma('a', a2);
-            a0.newSiiryma('b', a1);
-            a0.newSiiryma('b', a0);
-            a0.newSiiryma('a', a0);
-            a4.newSiiryma('a', a5);
-            a2.newSiiryma('b', a3);
-            a3.newSiiryma('a', a4);
-            a5.newSiiryma('b', a5);
-            a5.newSiiryma('a', a5); //aabaa
+            Tila b0 = new Tila("a0");
+            Tila b1 = new Tila("a1");
+            Tila b2 = new Tila("a2");
+            Tila b3 = new Tila("a3");
+            Tila b4 = new Tila("a4");
+            Tila b5 = new Tila("a5");
+
+            b1.newSiiryma('a', a2);
+            b0.newSiiryma('b', a1);
+            b0.newSiiryma('b', a0);
+            b0.newSiiryma('a', a0);
+            b4.newSiiryma('a', a5);
+            b2.newSiiryma('b', a3);
+            b3.newSiiryma('a', a4);
+            b5.newSiiryma('b', a5);
+            b5.newSiiryma('a', a5); //aabaa
 
             a5.Loppu();
             automaatti = a0;

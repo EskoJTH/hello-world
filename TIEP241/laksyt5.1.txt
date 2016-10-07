@@ -1,0 +1,28 @@
+a)b)
+kun |w|=0
+    w={ε}
+
+∀q∈Q:w=Σ:δ(q,Σ)=q pätee.
+
+kun |w|=1
+eli w=k
+silloin:
+∀q∈Q:w∈Σ:δ(q,w)=q joka määritelmän mukaan pätee.
+
+c)
+io: kun |w|=k | k∊N
+ ∀q∈Q:δ∗(q,w)=q pätee.
+
+d)
+toditetaan kun |w|=k+1 että 
+ ∀q∈Q:δ∗(q,w)=q pätee.
+
+w=vc, |v|=k, |c|=1, vc∊Σ*
+
+=δ*(q,w)
+=δ*(q,vc)
+=δ(δ*(q,v),c) 
+=δ(q,c) | io.
+määritelmän mukaan:
+δ(q,c)=q
+jolloin alkuperäinen väite on tosi.∎

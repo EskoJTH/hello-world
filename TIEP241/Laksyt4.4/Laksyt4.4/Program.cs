@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Laksyt4._4
 {
+    /// <summary>
+    /// anna ohjelmalle argumentteina a ja b kirjaimista koostuvia sanoja ja ohjelma kertoo,
+    /// onko kussakin yhtenäisessä välilyönnillä erottamattomassa merkkijonossa merkkijono "babaa"
+    /// </summary>
     class Program
     {
         private static Tila alku;
@@ -13,11 +17,10 @@ namespace Laksyt4._4
 
         public static void Main(string[] args)
         {
-            #if DEBUG
-            args = new[] { "abba" };
-#endif
 
-            Console.WriteLine(args[0]);
+#if DEBUG
+            args = new[] { "ababaa" };
+#endif
 
             LuoAutomaatti();
             for (int i = 0; i < args.Length; i++)
@@ -32,19 +35,22 @@ namespace Laksyt4._4
             }
         }
 
+        /// <summary>
+        /// luodaan halutunmallinen automaatti.
+        /// </summary>
         private static void LuoAutomaatti()
         {
-            Tila q4 = new Tila("q4");
-            Tila q3 = new Tila("q3");
+            Tila q4 = new Tila();
+            Tila q3 = new Tila();
             q3.SetA(q4);
-            Tila q2 = new Tila("q2");
+            Tila q2 = new Tila();
             q2.SetA(q3);
             q3.SetB(q2);
-            Tila q1 = new Tila("q1");
+            Tila q1 = new Tila();
             q1.SetB(q2);
-            Tila q0 = new Tila("q0");
+            Tila q0 = new Tila();
             q0.SetA(q1);
-            Tila q5 = new Tila("q5");
+            Tila q5 = new Tila();
             q5.SetB(q0);
             q1.SetA(q5);
             q2.SetB(q0);
@@ -58,19 +64,20 @@ namespace Laksyt4._4
         private Tila a;
         private Tila b;
         // jos lisäät tiloja muista päivittää switch case osa.
-        //private char siirtymaA = 'a';
-        //private char siirtymaB = 'b';
         private bool loppu = false;
-        private string nimi;
 
+        /// <summary>
+        /// yksittäinen tila joka tietää mihin siirrytään syötteella a tai b
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
         public Tila(Tila a, Tila b)
         {
             this.a = a;
             this.b = b;
         }
-        public Tila(String nimi)
+        public Tila()
         {
-            this.nimi = nimi;
             a = this;
             b = this;
         }
@@ -90,6 +97,11 @@ namespace Laksyt4._4
             this.b = b;
         }
 
+        /// <summary>
+        /// käsitellää annettu syöte rekursiivisesti ja haetaan viesti viimeiseltä tilalta johon päädytään.
+        /// </summary>
+        /// <param name="parameters">syöte</param>
+        /// <returns>hyväksyttiinkö syöte</returns>
         public string GiveParameters(List<char> parameters)
         {
             if (parameters.Count > 0)
@@ -106,7 +118,7 @@ namespace Laksyt4._4
                         }
                     case 'b':
                         {
-                            return a.GiveParameters(parameters);
+                            return b.GiveParameters(parameters);
                         }
                 }
             }

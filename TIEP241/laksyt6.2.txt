@@ -1,0 +1,17 @@
+
+A,M = (Q,Σ,δ,q0,F) on NFA:ita
+
+A=M+
+kun 
+A = M : δ:∀F✕Σ -> q0
+
+eli siis  M:stä voidaan tehdä M+ lisäämällä sen toimintaan että
+
+M+ = M : δ:∀F✕Σ -> q0
+
+L(M)+ = L(M) kun M : δ:∀F✕Σ -> q0
+eli
+L(M)+ = L(M+)
+
+
+
