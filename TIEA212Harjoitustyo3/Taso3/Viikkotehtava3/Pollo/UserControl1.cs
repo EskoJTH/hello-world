@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Drawing.Drawing2D;
 
 namespace Pollo
 {
@@ -55,6 +56,13 @@ namespace Pollo
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            LinearGradientBrush br = new LinearGradientBrush(this.ClientRectangle, Color.Black, Color.Black, 90, false);
+            ColorBlend cb = new ColorBlend();
+            cb.Positions = new[] { 0, 1/2f, 1f };
+            cb.Colors = new[] { Color.DarkBlue, Color.LightBlue, Color.DarkBlue};
+            br.InterpolationColors = cb;
+           // br.RotateTransform(90);
+            e.Graphics.FillRectangle(br, this.ClientRectangle);
             Graphics canvas = e.Graphics;
             canvas.DrawImage(pollo, pollonPaikka, 0);
         }
