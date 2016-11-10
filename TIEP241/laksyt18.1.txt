@@ -1,0 +1,5 @@
+Ongelma "Päteekö L(M) = L(M)^RL(M)=L(M)Rannetulla Turingin koneella MM?"
+
+Voidaan triviaalisti huomata että on olemassa tuuringin koneita, jolla sääntö pätee ja on myös tuuringin koneita, joilla sääntö ei päde.
+
+Koska kysymys sopii tuuringin koneen ominaisuudeksi, voidaan käyttää Ricen lausetta. Eli "Kaikki laskettavasti lueteltavien kielten epätriviaalit ominaisuudet ovat ratkeamattomia.". Ei siis ole löydettövissä mitään yleispätevää sääntöä, jolla tilanne voitaisiin ratkaista kaikille tuuringin koneille.

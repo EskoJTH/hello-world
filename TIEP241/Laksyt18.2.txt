@@ -1,0 +1,3 @@
+Todista, että ongelma "Soittaako annettu multimedia-TM koskaan pilliä?" ei ole ratkeava.
+
+Ongelma muuttuu pysöhtymisongelmaksi, jos käsitellään jokaista tilaa missä pilli viheltää lopetustilana. Ongelmana tämä siis on puoliratkeava. On olemassa mmultimedia-TM:iä, joilla vastaus on kyllä ja on olemassa joitain, joilla vastaus on ei, mutta vastausta ei ole mahdollista tietää kaikille tuuringin koneille. joten ongelma ei myöskään ole ratkeava.

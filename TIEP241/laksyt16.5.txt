@@ -1,0 +1,9 @@
+Oletetaan ett‰ annettu ohjelma on rajallisen mittainen.
+
+while c=c{S}
+koska ehtolause on aina tosi, toistaa t‰m‰ ohjelma toimintoa S loputtomiin.
+
+For E {S}
+lause tiet‰‰ etuk‰teen montako kertaa sit‰ toistetaan, koska E:st‰ voi seurata vain ‰‰rellisi‰ vakioita ja kutsuketju joka S:st‰ voidaan avata on ‰‰rellinen.
+
+T‰llˆin lausetta while c=c{S} ei voi n‰ytt‰‰ lauseella for E {S} jos ohjelmassa on vain ‰‰reellinen m‰‰r‰ siirtymi‰.

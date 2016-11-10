@@ -1,0 +1,3 @@
+No huhhuh olipa tämän kurssin työkehitys huimaa.
+
+Kerron toimitusjohtajalle, että voidaan yrittää optimoida koodia, mutta kääntäjäkirjoittajien täystyöllisyyslauseesta seuraa, että ei ole mitään menetelmää, jolle voitaisiin syöttää koodia ja kysyä siltä onko se varmasti optimaalista. Käytännössä optimointi olisi siis todennäköisesti tilanteesta riippuen suhteellisen vaikeaa ja hidasta, eikä lopputuloksesta ikinä voisi sanoa, onko se on täysin optimaalinen.
