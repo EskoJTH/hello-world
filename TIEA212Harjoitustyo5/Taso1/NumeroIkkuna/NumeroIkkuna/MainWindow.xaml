@@ -13,8 +13,6 @@
             <Setter Property="FontSize" Value="14" />
             <Setter Property="BorderThickness" Value="5" />
             <Setter Property="FontStretch" Value="Expanded"/>
-
-
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type CheckBox}">
@@ -23,30 +21,34 @@
                             <Ellipse x:Name="pallo1" Fill="Yellow" Margin="5"/>
                             <Ellipse x:Name="pallo2" Fill="Black" Margin="9"/>
                             <Ellipse x:Name="pallo3" Fill="LightBlue" Margin="10"/>
-                            
                             <Viewbox x:Name="luku" Stretch="Uniform" Margin="5">
                                 <ContentPresenter ContentSource="Content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Viewbox>
                         </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Visibility"  Value="Hidden" TargetName="pallo1"/>
+                                <Setter Property="Visibility"  Value="Hidden" TargetName="pallo2"/>
+                                <Setter Property="Margin"  Value="5" TargetName="pallo3"/>
+                                <Setter Property="FontWeight" Value="ExtraBold"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                
+                                <Setter Property="Margin"  Value="4" TargetName="pallo0"/>
+                                <Setter Property="Fill"  Value="Gray" TargetName="pallo0"/>
+                                <Setter Property="Visibility"  Value="Visible" TargetName="pallo0"/>
+                                <Setter Property="Visibility"  Value="Hidden" TargetName="pallo1"/>
+                                <Setter Property="Margin"  Value="24" TargetName="pallo2"/>
+                                <Setter Property="Margin"  Value="25" TargetName="pallo3"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <pallo0 Fill="Black" Margin="4"/>
-                    <Ellipse x:Name="pallo1" Fill="Yellow" Margin="5"/>
-                    <Ellipse x:Name="pallo2" Fill="Black" Margin="9"/>
-                    <Ellipse x:Name="pallo3" Fill="LightBlue" Margin="10"/>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Foreground" Value="Green"/>
-                </Trigger>
-                <Trigger Property="IsChecked" Value="True">
-                    <Setter Property="Foreground" Value="blue"/>
-                </Trigger>
-
-            </Style.Triggers>
         </Style>
 
 
