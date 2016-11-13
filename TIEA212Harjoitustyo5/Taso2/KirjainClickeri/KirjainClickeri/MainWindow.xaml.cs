@@ -90,18 +90,20 @@ namespace KirjainClickeri
         {
             string arvo = (string)value;
             Color keltainen = Color.FromRgb(255, 255, 0);
-            Color VSininen = Color.FromRgb(100,100, 255);
+            Color VSininen = Color.FromRgb(100, 100, 255);
             Color TSininen = Color.FromRgb(0, 0, 255);
             Color Oranssi = Color.FromRgb(255, 100, 100);
+            Color Musta = Color.FromRgb(0, 0, 0);
             SolidColorBrush pikachu = new SolidColorBrush(keltainen);
             SolidColorBrush squirtle = new SolidColorBrush(VSininen);
             SolidColorBrush blastoise = new SolidColorBrush(TSininen);
             SolidColorBrush charizard = new SolidColorBrush(Oranssi);
+            SolidColorBrush mewtoo = new SolidColorBrush(Oranssi);
             if (arvo.Equals("USA")) return pikachu;
             if (arvo.Equals("Kanada")) return squirtle;
             if (arvo.Equals("Englanti")) return blastoise;
             if (arvo.Equals("Australia")) return charizard;
-            return Color.FromRgb(0, 255, 0);
+            return mewtoo;
         }
 
         public object ConvertBack(object value, Type targetType,
