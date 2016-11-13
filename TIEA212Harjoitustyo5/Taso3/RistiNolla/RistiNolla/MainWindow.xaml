@@ -71,57 +71,64 @@
 
     </Window.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150*"/>
-            <ColumnDefinition Width="400*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="2" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <CheckBox Grid.Column="0" Grid.Row="0" Content="A"/>
-            <CheckBox Grid.Column="1" Grid.Row="0" Content="B"/>
-            <CheckBox Grid.Column="2" Grid.Row="0" Content="c"/>
-            <CheckBox Grid.Column="3" Grid.Row="0" Content="D"/>
-            <CheckBox Grid.Column="4" Grid.Row="0" Content="E"/>
-            <CheckBox Grid.Column="0" Grid.Row="1" Content="F"/>
-            <CheckBox Grid.Column="1" Grid.Row="1" Content="G"/>
-            <CheckBox Grid.Column="2" Grid.Row="1" Content="H"/>
-            <CheckBox Grid.Column="3" Grid.Row="1" Content="I"/>
-            <CheckBox Grid.Column="4" Grid.Row="1" Content="J"/>
-            <CheckBox Grid.Column="0" Grid.Row="2" Content="K"/>
-            <CheckBox Grid.Column="1" Grid.Row="2" Content="L"/>
-            <CheckBox Grid.Column="2" Grid.Row="2" Content="M"/>
-            <CheckBox Grid.Column="3" Grid.Row="2" Content="N"/>
-            <CheckBox Grid.Column="4" Grid.Row="2" Content="O"/>
-            <CheckBox Grid.Column="0" Grid.Row="3" Content="P"/>
-            <CheckBox Grid.Column="1" Grid.Row="3" Content="Q"/>
-            <CheckBox Grid.Column="2" Grid.Row="3" Content="R"/>
-            <CheckBox Grid.Column="3" Grid.Row="3" Content="S"/>
-            <CheckBox Grid.Column="4" Grid.Row="3" Content="T"/>
-            <CheckBox Grid.Column="0" Grid.Row="4" Content="U"/>
-            <CheckBox Grid.Column="1" Grid.Row="4" Content="W"/>
-            <CheckBox Grid.Column="2" Grid.Row="4" Content="V"/>
-            <CheckBox Grid.Column="3" Grid.Row="4" Content="X"/>
-            <CheckBox Grid.Column="4" Grid.Row="4" Content="Y"/>
-            <CheckBox Grid.Column="0" Grid.Row="5" Content="Z"/>
-            <CheckBox Grid.Column="1" Grid.Row="5" Content="Å"/>
-            <CheckBox Grid.Column="2" Grid.Row="5" Content="Ä"/>
-            <CheckBox Grid.Column="3" Grid.Row="5" Content="Ö"/>
-            <CheckBox Grid.Column="4" Grid.Row="5" Content="!"/>
-        </Grid>
-        <ListBox x:Name="listBoxHenkilot" ItemsSource="{Binding ElementName=TamanNimi, Path=Henkilot}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Grid.Column="0" Grid.Row="0" Content="A"/>
+                <CheckBox Grid.Column="1" Grid.Row="0" Content="B"/>
+                <CheckBox Grid.Column="2" Grid.Row="0" Content="c"/>
+                <CheckBox Grid.Column="3" Grid.Row="0" Content="D"/>
+                <CheckBox Grid.Column="4" Grid.Row="0" Content="E"/>
+                <CheckBox Grid.Column="0" Grid.Row="1" Content="F"/>
+                <CheckBox Grid.Column="1" Grid.Row="1" Content="G"/>
+                <CheckBox Grid.Column="2" Grid.Row="1" Content="H"/>
+                <CheckBox Grid.Column="3" Grid.Row="1" Content="I"/>
+                <CheckBox Grid.Column="4" Grid.Row="1" Content="J"/>
+                <CheckBox Grid.Column="0" Grid.Row="2" Content="K"/>
+                <CheckBox Grid.Column="1" Grid.Row="2" Content="L"/>
+                <CheckBox Grid.Column="2" Grid.Row="2" Content="M"/>
+                <CheckBox Grid.Column="3" Grid.Row="2" Content="N"/>
+                <CheckBox Grid.Column="4" Grid.Row="2" Content="O"/>
+                <CheckBox Grid.Column="0" Grid.Row="3" Content="P"/>
+                <CheckBox Grid.Column="1" Grid.Row="3" Content="Q"/>
+                <CheckBox Grid.Column="2" Grid.Row="3" Content="R"/>
+                <CheckBox Grid.Column="3" Grid.Row="3" Content="S"/>
+                <CheckBox Grid.Column="4" Grid.Row="3" Content="T"/>
+                <CheckBox Grid.Column="0" Grid.Row="4" Content="U"/>
+                <CheckBox Grid.Column="1" Grid.Row="4" Content="W"/>
+                <CheckBox Grid.Column="2" Grid.Row="4" Content="V"/>
+                <CheckBox Grid.Column="3" Grid.Row="4" Content="X"/>
+                <CheckBox Grid.Column="4" Grid.Row="4" Content="Y"/>
+                <CheckBox Grid.Column="0" Grid.Row="5" Content="Z"/>
+                <CheckBox Grid.Column="1" Grid.Row="5" Content="Å"/>
+                <CheckBox Grid.Column="2" Grid.Row="5" Content="Ä"/>
+                <CheckBox Grid.Column="3" Grid.Row="5" Content="Ö"/>
+                <CheckBox Grid.Column="4" Grid.Row="5" Content="!"/>
+            </Grid>
+            
+        </Grid >
+        <ListBox Grid.Row="1" x:Name="listBoxHenkilot" ItemsSource="{Binding ElementName=TamanNimi, Path=Henkilot}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </Window>
