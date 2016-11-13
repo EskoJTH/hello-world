@@ -82,24 +82,28 @@ namespace KirjainClickeri
         }
     }
 
-    [ValueConversion(typeof(string), typeof(Color))]
+    [ValueConversion(typeof(string), typeof(SolidColorBrush))]
     public class CountryColorConverter : IValueConverter
     {
 
-        // muunnos bool-tyypistä visibility-tyyppiin
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string arvo = (string)value;
             Color keltainen = Color.FromRgb(255, 255, 0);
             Color VSininen = Color.FromRgb(100,100, 255);
             Color TSininen = Color.FromRgb(0, 0, 255);
-            if (arvo.Equals("USA")) return keltainen;
-            if (arvo.Equals("Kanada")) return VSininen;
-            if (arvo.Equals("Englanti")) return TSininen;
-            return Color.FromRgb(0, 0, 0);
+            Color Oranssi = Color.FromRgb(255, 100, 100);
+            SolidColorBrush pikachu = new SolidColorBrush(keltainen);
+            SolidColorBrush squirtle = new SolidColorBrush(VSininen);
+            SolidColorBrush blastoise = new SolidColorBrush(TSininen);
+            SolidColorBrush charizard = new SolidColorBrush(Oranssi);
+            if (arvo.Equals("USA")) return pikachu;
+            if (arvo.Equals("Kanada")) return squirtle;
+            if (arvo.Equals("Englanti")) return blastoise;
+            if (arvo.Equals("Australia")) return charizard;
+            return Color.FromRgb(0, 255, 0);
         }
 
-        // muunnos visibility-tyypistä bool-tyyppiin
         public object ConvertBack(object value, Type targetType,
             object parameter, CultureInfo culture)
         {
@@ -107,6 +111,7 @@ namespace KirjainClickeri
             if (arvo.Equals(Color.FromRgb(255, 255, 0))) return "USA";
             if (arvo.Equals(Color.FromRgb(100, 100, 255))) return "Kanada";
             if (arvo.Equals(Color.FromRgb(0, 0, 255))) return "Englanti";
+            if (arvo.Equals(Color.FromRgb(255, 100, 100))) return "Australia";
             return "Yarr Harr Pirates";
         }
     }
