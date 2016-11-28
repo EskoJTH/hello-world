@@ -20,6 +20,9 @@ namespace NumeroidenSiirtely
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private int summa=0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,10 +30,17 @@ namespace NumeroidenSiirtely
 
         private void Label_MouseMove(object sender, MouseEventArgs e)
         {
-            DataObject data = new DataObject();
-            data.SetData("Label", 10);
-            System.Windows.DragDrop.DoDragDrop(this, data, DragDropEffects.Copy | DragDropEffects.Move);
-
+            base.OnMouseMove(e);
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DataObject data = new DataObject();
+                Label label = (Label)sender;
+                StackPanel panel = (StackPanel)label.Parent;
+                data.SetData("Label", sender);
+                panel.Children.Remove(label);
+                DragDrop.DoDragDrop(label, data, DragDropEffects.Copy | DragDropEffects.Move);
+                
+            }
         }
 
         private void Label_Drop(object sender, DragEventArgs e)
@@ -38,18 +48,29 @@ namespace NumeroidenSiirtely
             base.OnDrop(e);
 
             // Löytyykö oma data
-            if (e.Data.GetDataPresent("OmaData"))
-            {
-                int luku = (int)e.Data.GetData("OmaData");
-                MessageBox.Show(luku.ToString());
-                
-
-            }
             if (e.Data.GetDataPresent("Label"))
             {
                 Label apu = (Label)e.Data.GetData("Label");
                 MessageBox.Show(apu.Content.ToString());
 
+            }
+            e.Handled = true;
+        }
+
+        private void listCalcutable_Drop(object sender, DragEventArgs e)
+        {
+            base.OnDrop(e);
+
+            // Löytyykö oma data
+            if (e.Data.GetDataPresent("Label"))
+            {
+                Label apu = (Label)e.Data.GetData("Label");
+                ListBox panel = (ListBox)sender;
+                panel.Items.Add(apu);
+                int summattava=0;
+                Int32.TryParse(apu.Content.ToString(), out summattava);
+                summa += summattava;
+                Tulos.Content = "" + summa;
             }
             e.Handled = true;
         }
