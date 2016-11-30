@@ -1,0 +1,28 @@
+Perehdyin tieteelliseen artikkeliin 
+"Toward an Understanding of Flow in Video Games
+BEN COWLEY, DARRYL CHARLES, MICHAELA BLACK,
+AND RAY HICKEY
+University of Ulster, Coleraine, Northern Ireland, U.K." 
+http://delivery.acm.org/10.1145/1380000/1371223/a20-cowley.html?ip=130.234.156.59&id=1371223&acc=ACTIVE%20SERVICE&key=74A0E95D84AAE420%2E06A1DC718DC957B2%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=698772743&CFTOKEN=65263542&__acm__=1480513251_65797882c7113f93bd4a354c9c2ea2e1#FN2
+
+artikkeli on tyypiltään tieteellinen katsausartikkeli. Siinä tehdään yhteenveto useista aikaisemmin tehdyistä tutkimuksista ja tiivistetään millaisiin lopputuloksiin ollaan päästy.
+Artikkelin tavoite on antaa yleiskäsitys siitä mitä flow tarkoittaa videopelejen kontekstissa ja millaisista lähtökohdista flow:hun liitttyvää tutkimusta voidaan lähteä tekemään.
+Tärkeitä käsitteitä:
+-person-artefact-task (PAT)
+-computer-mediated experience (CME)
+-user centred design (UCD) 
+-user-system-experience (USE)
+-human-computer interaction (HCI)
+-flow
+-Game mechanics("mechanics"): pelin toiminnot ja järjestelmät
+-Game dynamics("dynamics"): pelaajan ja mekaaniikkojen välinen toiminta
+-Constituative rules: säännöt joista peli koostu
+-Operative rules: kuvaa miten peli tapahtuu. Ottaa huomioon esimerkiksi ympäristön.
+-Implicit rules: sosiaaliset säännöt.
+-pelaajatyypit: Conqueror, Manager, Wanderer, participant. En tykkää näistä, en tunne sopivani yhteenkään, mutta minulla on piirteitä kaikista. Toimivia
+-agon: kilpailu pelit
+-ludus: sääntöjen syvälliseen hallitsemiseen perustuvat pelit kuten shakki
+-alea: tuuri pelit
+-mimicry: roolipelit
+-ilinx: immersio pelit
+-paidia: leikki kuten nuorilla eläimillä ilman varsinaisia sääntöjä
