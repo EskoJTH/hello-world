@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "canvas_background", "canvas_background\canvas_background.csproj", "{776FC88B-0318-449E-BA93-422E4595CA39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{776FC88B-0318-449E-BA93-422E4595CA39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776FC88B-0318-449E-BA93-422E4595CA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776FC88B-0318-449E-BA93-422E4595CA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776FC88B-0318-449E-BA93-422E4595CA39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
