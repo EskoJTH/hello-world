@@ -1,0 +1,11 @@
+Kent‰n tarkoitus on havainnollistaa pelin lainalaisuudet tai niiden puute. Pelaaja p‰‰see n‰kem‰‰n ett‰ mik‰‰n visuaalinen mekki ei v‰ltt‰m‰tt‰ ole totta.
+
+
+Toteutin suunnitelman Maximum frustration 2 editorilla http://armorgames.com/play/14256/maximum-frustration-2 Kent‰n p‰‰see pelaamaan menem‰ll‰ osoitteeseen ja valitsemalla "Play" ja sitten "Load Custom". Anna kustomin kent‰‰n syˆtteeksi t‰m‰ merkkijono:
+
+MaximumFrustration2Map+02221+01135012+01635014+02135011+02635013+03135016+03635012+04025018+04525017+05025011+05525012+06025014+06525016+07025013+07525015+08025015+09025017+09525016+10025012+00635012+03630012+03625012+05020111+05520113+05015116+05515117+05010117+05510112+07110121
++07115122+08520021+08525022+10525012+11525014+11025242+10020212+10015212+12025243+11525246+11025017+12525212+14025214+14525216+15025216+15525215+16025215+16520036+13014112+13514116+14014117+14514116+15014116
+
+Olisin halunnut tehd‰ jotain monimutkaisempaa ja syv‰llisemp‰‰, mutta t‰ll‰ kertaa ei aika mill‰‰n riit‰ enemp‰‰n. Kent‰n suunnnittelussa harhauttaa ehk‰ se ett‰ en tapa pelaajaa yht‰ usein kuin varsinainen peli itse. Tutoriaali anataisi paremman kuvan pelist‰ jos pist‰isin pelaajan kuolemaan koko ajan ep‰m‰‰r‰isist‰ syist‰.
+
+

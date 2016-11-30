@@ -1,0 +1,53 @@
+
+5.2 Theory of Fun
+
+Tiivistelmä:
+Kirjassaan "Theory of Fun for Game design" Ralph Koster kertoo siitä mikä on pelisuunnittelussa keskeisintä
+ja mitkä tekee pelistä oikeasti hyvän pelinä. Hän kertoo myös kohtalaisen paljon henkilökohtaisista 
+kokemuksistaan. Kirjan tarkoitus on opettaa tulevia pelisuunnittelioita tekemään hyviä pelejä.
+Erityisesti Ralph paneutuu siihen miten peli tuottaa mielihyvää oppimisien kautta.
+Oppimista käsitellään eniten kykynä kehittää usein alitajuntaisia malleja maailmasta, joiden avulla voidaan ennustaa tulevia tapahtumia.
+Pelaaja pelatessaan muodostaa uusia malleja ja tekee korjauksia vanhoihin tai vahventaa niitä. 
+Pelaaja tarvitsee jo etukäteen jonkinlaisen mallin pelistä, jotta voi yleensäkkään pelata sitä.
+Kun mallit ovat pelaajalle tarpeeksi tuttuja käyvät ne nopeasti tylsiksi.
+Tästä siis seuraa, että pelin elinikä seuraa suoraan sen ymärtämiseen tarvittavien mallien syvyydestä.
+Toisaalta jos mallit ovat liian haasteellisia. Saattaa pelaaja nähdä ne pelkkänä meluna, jolloin pelaaja ei välttämättä edes tajua minkäänlaisen mallin olemassaoloa, vaan turhautuu peliin. 
+Pelin suunnittelussa tärkein asia on sen ydinmekaniikat joista seuraa mallit, joita pelaaja yrittää oppia.
+Jos näistä ydinmekaniikoista syntyvä peli ei itsessään ole mielenkiintoinen, ei peli kokonaisuudessaan tule olemaan sen parempi.
+Kaiken muun pelisisällön tulisi tukea sen ydinpelimekaaniikkaa. Jos näin ei ole, 
+joko pelin narratiivi, tai mekaniikka jää pimentoon ja pelaaja keskittyy helposti vain näistä toiseen.
+Tällöin helposti puolet pelin sisällöstä on jotain mitä pelaaja ei halua tehdä.
+Merkittävää on kuitenkin että pelistä on mahdollista tehdä paljon parempi lisäämällä
+siihen ydinmekaniikkoja tukeva tarina, musiikkia ja estetiikkaa.
+
+Kommennti:
+Ehkä tämän kurssin paras aineisto. Olen samaa mieltä lähes kaikesta tekstin kirjoittajan kanssa. Muutamia pikku yksityiskohtia lukuunottamatta. Pelaajana pelaan eniten fps pelejä. Pelaan kyllä muutakin mutta olen aina pitänyt hyvästä fps pelistä. En yleisesti pidä puzzle peleistä yhtään. Pelaajana olen siis melko erilainen kuin kirjoittaja. Ajatukseni ovat kuitenkin hyvin samankaltaisia, kuin tekstin kirjoittajalla. Olen aina miettinyt miten väärin suuri osa ihmisistä ymmärtää fps pelit. Esimerkiski eräs luennoitsia peleistä kertovalla luennolla sanoi suurinpiirtein näin "Minä itse en näe mitään mielenkiintoista toisten ihmisten ampumisessa karunnäköisessä ympäristössä". Luennoitsia näytti kuvaa jostain CounterStrike sarjan pelistä. Tämä lausahdus kuvastaa mielestäni hyvin niitä ihmisiä, jotka eivät ymmärrä fps pelejä. Lausahdushan on sinänsä totta. Ympäristö on karu ja tavallaan siinä on tarina miksi ampua ihmisiä, mutta ei se sinänsä ole syy miksi kukaan sitä haluaisi pelata. Mahdollisesti tässä on käynyt niin että luennoitisalle ei ole päässyt syntymään kunnollista sisäistä mallia, ja siten ymmärrystä pelistä. Siksi luennoitsia näkee pelkästään pelin ulkokuoren. Kirjassa puhuttiin jonkunverran luolamiehistä ja liskoaivoista, joiden seurauksenva voisi pitää suurelta osin, miksi nuoria miehiä kiinnostaa näyttää olevansa päteviä sotutreita. Ehkä tästä syntyy alkukipinä peliin joillekkin, mutta itse nautin aivan yhtäpaljon esimerkiski paintball nettipeleistä. Syy miksi fps pelejä pelaa hyvin suuri määrä ihmisiä ympäri maapalloa on niiden antama hyvin monimutkainen ja monella eri vaikeusasteella varustettu vihollisäly. Toinen ihminen. Yksi yleinen väärinkäsitys on se, mitä minä yleensä teen kun pelaan fps pelejä? Näen vihollisen ja huitaisen sinneppäin sarjan niin nopeasti kuin voin? Refleksit ovat tärkeässä osassa fps peleissä, mutta koen itse olevani suhteellisen hidas ampuja. Ampuminen on oma lukunsa sinänsä. Siinä täytyy muodostaa oma malli jokaiselle eri aseelle niiden optimaaliseen hallintaan aina kun ne vähänkin eroaa, mutta tämä on suhteellisen helppoa. Se mikä tekee fps peleistä mielenkiintoisia ja miksi minä niin pidän niiden pelaamisesta on vihollisen liikkeiden mallintaminen. On todella vaikeaa mallintaa mihin viholliset aikovat liikkua, miten he reagoivat kun heitäkohti ampuu, mitä he näkevät ja tuntevat. Pistän tavallaan itseni aina vihollisen kenkiin. Erilaisia mahdollisuuksia koukata, kiertää, iskeä, ja tomia kun vihollinen havaitaan on todella paljon. Niistä yksi on alkaa päättömästi ampua vihollista kohti, mutta se ei ole kovin hyvä monessa tilanteessa. Harrastin ennen paljon airsoftia. Huomasin että pystyin periaattessa eliminoimaan kenet tahansa pois pelikentältä, jos saisin riittävän hetkittäisen havainnon heidän sijainistaan. Olen pelannut fps pelejä yli kymmenen vuotta nyt, Enkä vieläkään ole kyllästynyt niihin. Huomasin että osa fps:istä mitä pelasin oli huonoja. Tämä osittain tarkoitti juuri että olin hallinnut pelin täysin. Toisaalta väittäisin, että esimerkiski call of duty sarjan peleissä kenttien suunnittelu ja pelin eteneminen toimii sillä tavalla että kaikki mahdollisuudet tehdä mitään älyllistä katoaa. Kävelet vain satunnaisesti jonnekkin ja kohtaat ehkä vihollisia matkalla ja joko ammut ensin tai häviät. Mitään mahdollisuutta tehdä mitään älyllistä ei juuri ole, koska satunnaisia muutujia on niin paljon ja asioita jotka tiedät liian vähän. Olen vähän ajatellut oman pelin tekemistä. Peli-idea:ssa tärkein asia minulle on juurikin ollut pelaajan sisäisten mallien luominen. Ideani ei kyllä olisi fps peli.
+
+
+
+
+Tiivistelmä:
+Kirjassaan "Theory of Fun for Game design" Ralph Koster kertoo siitä mikä on pelisuunnittelussa keskeisintä
+ja mitkä tekee pelistä oikeasti hyvän pelinä. Hän kertoo myös kohtalaisen paljon henkilökohtaisista
+kokemuksistaan. Kirjan tarkoitus on opettaa tulevia pelisuunnittelioita tekemään hyviä pelejä.
+Erityisesti Ralph paneutuu siihen miten peli tuottaa mielihyvää oppimisien kautta.
+Oppimista käsitellään eniten kykynä kehittää usein alitajuntaisia malleja maailmasta, joiden avulla voidaan ennustaa tulevia tapahtumia.
+Pelaaja pelatessaan muodostaa uusia malleja ja tekee korjauksia vanhoihin tai vahventaa niitä.
+Pelaaja tarvitsee jo etukäteen jonkinlaisen mallin pelistä, jotta voi yleensäkkään pelata sitä.
+Kun mallit ovat pelaajalle tarpeeksi tuttuja käyvät ne nopeasti tylsiksi.
+Tästä siis seuraa, että pelin elinikä seuraa suoraan sen ymärtämiseen tarvittavien mallien syvyydestä.
+Toisaalta jos mallit ovat liian haasteellisia. Saattaa pelaaja nähdä ne pelkkänä meluna, jolloin pelaaja ei välttämä
+ttä edes tajua minkäänlaisen mallin olemassaoloa, vaan turhautuu peliin.
+Pelin suunnittelussa tärkein asia on sen ydinmekaniikat joista seuraa mallit, joita pelaaja yrittää oppia.
+Jos näistä ydinmekaniikoista syntyvä peli ei itsessään ole mielenkiintoinen, ei peli kokonaisuudessaan tule olemaan sen parempi.
+Kaiken muun pelisisällön tulisi tukea sen ydinpelimekaaniikkaa. Jos näin ei ole,
+joko pelin narratiivi, tai mekaniikka jää pimentoon ja pelaaja keskittyy helposti vain näistä toiseen.
+Tällöin helposti puolet pelin sisällöstä on jotain mitä pelaaja ei halua tehdä.
+Merkittävää on kuitenkin että pelistä on mahdollista tehdä paljon parempi lisäämällä
+siihen ydinmekaniikkoja tukeva tarina, musiikkia ja estetiikkaa.
+Kommenti:
+Ehkä tämän kurssin paras aineisto. Olen samaa mieltä lähes kaikesta tekstin kirjoittajan kanssa. Muutamia pikku yksityiskohtia lukuunottamatta. Pelaajana pelaan eniten fps pelejä. Pelaan kyllä muutakin mutta olen aina pitänyt hyvästä fps pelistä. En yleisesti pidä puzzle peleistä yhtään. Pelaajana olen siis melko erilainen kuin kirjoittaja. Ajatukseni ovat kuitenkin hyvin samankaltaisia, kuin tekstin kirjoittajalla. Olen aina miettinyt miten väärin suuri osa ihmisistä ymmärtää fps pelit.
+Esimerkiski eräs luennoitsia peleistä kertovalla luennolla sanoi suurinpiirtein näin "Minä itse en näe mitään mielenkiintoista toisten ihmisten ampumisessa karunnäköisessä ympäristössä". Luennoitsia näytti kuvaa CounterStrike sarjan pelistä. Tämä lausahdus kuvastaa mielestäni hyvin niitä ihmisiä, jotka eivät ymmärrä fps pelejä. Lausahdushan on sinänsä totta. Ympäristö on karu ja tavallaan siinä on tarina miksi ampua ihmisiä, mutta ei se sinänsä ole syy miksi kukaan sitä haluaisi pelata. Mahdollisesti tässä on käynyt niin että luennoitisalle ei ole päässyt syntymään kunnollista sisäistä mallia, ja siten ymmärrystä pelistä. Siksi luennoitsia näkee pelkästään pelin ulkokuoren.
+Kirjassa puhuttiin jonkunverran luolamiehistä ja liskoaivoista, joiden seurauksenva voisi pitää suurelta osin, miksi nuoria miehiä kiinnostaa näyttää olevansa päteviä sotutreita. Ehkä tästä syntyy alkukipinä peliin joillekkin, mutta itse nautin aivan yhtäpaljon esimerkiski paintball nettipeleistä. Syy miksi fps pelejä pelaa hyvin suuri määrä ihmisiä ympäri maapalloa on niiden antama hyvin monimutkainen ja monella eri vaikeusasteella varustettu vihollisäly. Toinen ihminen. Yksi yleinen väärinkäsitys on se, mitä minä yleensä teen kun pelaan fps pelejä? Näen vihollisen ja huitaisen sinneppäin sarjan niin nopeasti kuin voin? Refleksit ovat tärkeässä osassa fps peleissä, mutta koen itse olevani suhteellisen hidas ampuja. Ampuminen on oma lukunsa sinänsä. Siinä täytyy muodostaa oma malli jokaiselle eri aseelle niiden optimaaliseen hallintaan aina kun ne vähänkin eroaa, mutta tämä on suhteellisen helppoa. Se mikä tekee fps peleistä mielenkiintoisia ja miksi minä niin pidän niiden pelaamisesta on vihollisen liikkeiden mallintaminen. On todella mielenkiintoista mallintaa mihin viholliset aikovat liikkua, miten he reagoivat kun heitäkohti ampuu, mitä he näkevät ja tuntevat. Pistän tavallaan itseni aina vihollisen kenkiin. Erilaisia mahdollisuuksia koukata, kiertää, iskeä, ja tomia kun vihollinen havaitaan on todella paljon. Niistä yksi on alkaa päättömästi ampua vihollista kohti, mutta se ei ole kovin hyvä monessa tilanteessa. Harrastin ennen paljon airsoftia. Huomasin että pystyin periaattessa eliminoimaan kenet tahansa pois pelikentältä, jos saisin riittävän hetkittäisen havainnon heidän sijainistaan. Olen pelannut fps pelejä yli kymmenen vuotta nyt, Enkä vieläkään ole kyllästynyt niihin.
+Osa fps:istä mitä pelasin oli huonoja. Tämä osittain tarkoitti juuri, että olin hallinnut pelin täysin. Toisaalta väittäisin, että esimerkiski call of duty sarjan peleissä kenttien suunnittelu ja pelin eteneminen toimii sillä tavalla että kaikki mahdollisuudet tehdä mitään älyllistä katoaa. Kävelet vain satunnaisesti jonnekkin ja kohtaat ehkä vihollisia matkalla ja joko ammut ensin tai häviät. Mitään mahdollisuutta tehdä mitään älyllistä ei juuri ole, koska satunnaisia muutujia on niin paljon ja asioita jotka tiedät liian vähän. Olen vähän ajatellut oman pelin tekemistä. Peli-idea:ssa tärkein asia minulle on juurikin ollut pelaajan sisäisten mallien luominen. Ideani ei kyllä olisi fps peli.
+ 

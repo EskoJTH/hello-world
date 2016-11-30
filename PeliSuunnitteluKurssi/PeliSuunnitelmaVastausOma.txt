@@ -1,0 +1,32 @@
+-Peliin voidaan liitt‰‰ termi "Metroidvania", mutta emme l‰hde pelin suunnittelussa liikkeelle metroidvania pelist‰, vaan pyrimme rakentamaan eroavan combat-j‰rjestelm‰n, el‰v‰n ja mielenkiintoisen maailman sek‰ tarpeeksi haastavan ja vauhdikkaan toiminnan jota yll‰pidet‰‰n vihollisten avulla.
+
+-Peli on suoraan uniikki sen taistelu ja politiikka j‰rjestelmien osalta.
+
+-Peliss‰ ei ole metroidvania tyyppisle peleille tyypillisi‰ avaimia. Periaattessa l‰hes kaikkialle on mahdollista aina p‰‰st‰. Liikkumista hidastaa viholliset ja pelaajan taito p‰rj‰t‰ n‰it‰ vastaan.
+
+-Peliss‰ Peliss‰ etenemisess‰ t‰rkeint‰ on taisteluj‰rjestelm‰n hallitseminen ja Tilannetietoisuus. Peliss‰ ei edet‰ lienaarisesti ja jokainen pelikerta etenee pelaajasta riippuen eritavalla. Tavoitteena on p‰rj‰t‰ aikarajaa vastaan, saada tarpeeksi asioita aikaiseksi ennen kuin alienit tulee taivaalata ja alkavat valloittaa maailmaa.
+
+-Pelin Taisteluj‰rjestelm‰ perustuu eri moodien taitojen ketjuttamiseen. Vertaa Risk of rain. https://www.youtube.com/watch?v=UxsNhBNvldI
+
+-Pelaaja ker‰ilee moodeja samaan tapaan kuin esimerkiski Diablossa. Inventory tilaa on vain 3 k‰ytˆss‰ olevaa paikkaa. Pelaaja siis joutuu valitsemaan mit‰ moodeja kantaaa ja opettelemaan itse niiden v‰liset synnergiat.
+
+-Kaikkia moodeja ei eriksen opeteta, vaan moodeista synnergioiden etsimisen ja k‰ytt‰misen ajatus. Vertaa kombot kamppailupeleiss‰.
+
+-Moodit itsess‰‰n eiv‰t pyri olemaan yleisesti mit‰‰n liian ihmeellist‰ vaan ennemminkin geneerisi‰ ja tuttuja.
+
+-kontrollit Pelikonsolille esim xbox one. 
+Liike vasen tikku
+T‰ht‰ys oikea tikku
+Moodit XAB
+Hyppy LT
+skill1 RT
+skill2 RB
+Skill3 LB
+
+;;Sama p‰tee ps4 ps3 xbox 360 tai melkein mik‰vaan peliohjain
+
+-Progressio............
+-P‰‰Hahmo *shell*
+-Tarina................
+-Muut Hahmot...........
+-Valtiot...............
