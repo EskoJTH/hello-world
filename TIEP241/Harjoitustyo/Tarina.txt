@@ -1,0 +1,100 @@
+Your name is Gilles de Rais./n
+A knight and a lord. Leader in the French army. /n
+You are also know as the knight blue beard. /n
+You were doing great in the war against the English. /n
+Now you just woke up in this maze and /n
+you don't have a clue what is going on.
+
+*ENTRANCE*
+You see entrances around you at north, west and south.
+
+Look/See/Watch/Inspect
+
+You see a weird Glass pod behind you, from which you seem to have crawled out before you were really concious.
+
+Go/Move/Walk/Run/Proceed/ + North West East South
+
+
+*WEAPON ROOM*
+There is a poleweapon on the room wall. \n
+It has a lot of spikes and hooks to all directions in its blade end. \n
+That is one of the most usual weapons you know. \n
+Very effective when used together in a group and not too bad when alone either. \n
+Extremely good if you want to hook enemys weapon.\n
+There also is an old light crossbow. \n
+It would be useless against platemail the one you used to have. \n
+They have broad heads designed for hunting.
+
+
+Take/Grab/Get
+
+-On one corner you find a bunch of crossbow bolts in a quiver. \n
+-You don't have a way to carry more equipment in your hands.
+-you take the *
+-you put the * to your belt.
+
+*LIBRARY*
+There is a room with a paintings and books. \n
+They are all religious with deep meaning and a lot of symbolism.
+
+Look...Book(s)
+-you look at the book(s).
+Read..
+-You take one of the book and read a bit. It tells stories of times far long past. Tt tells of how world was when the great old ones ruled. You think the book has a lot of meaning and good teachings.
+Look... Necronomicon
+You find necronomicon just where it always has been. It pulses the same might and power it always has.
+Read... Necronomicon
+You take the necronomicon, open it and read it. you feel all the terror that has ever been in the time of man. All the death that has happened in written historty. It shootens yor mind. You hear infinite amounts of screams and all the ones that are dead because of you. You enjoy the moment. You hear the call of the great old ones. Hastur Ithaqua Nyarlathotep Zhar Cyäegha Nyogtha Shub-Niggurath Tsathoggua Aphoom-Zhah Cthugha Cthulhu Dagon Ghatanothoa Zoth-Ommog. You must to make the connection more strong by any means possible.
+
+*SWORD ROOM*
+In this room there is a complex hilted sword withouth its scabbard on a table. \n
+You usually carry one of those with you. \n
+It is a very easy weapon to carry around with its scabbard. \n
+It is very effective agains unarmored enemies. \n
+Its complex hilt keeps your hand safe so therer is no need for a shield with it. \n
+It Is almost useless against platemail unless using specialised techniques like half swording or murder stroke. \n
+it is easy to carry so you usually had it as a back up when on the battlefield.
+
+Take...
+
+*KEYROOM*
+In this room there is a giant weirdly shaped metal tetrahedron -ish thing in the middle of the room.
+
+Look...metal thing/tetrahedron/thing
+You take a closer inspection on the object. You are absolutely sure it is a tetrahedron but it defenitely has more verticies and edges than a tetrahedron is alloved to. You can't get it to fit into your perception of euclidean physics. You get a headache and give up trying to make sense out of it. You think you could carry that thing but it would take a lot of time and both of your hands.
+
+*KITCHEN*
+There is a scabbard of a sword here. \n
+You quickly notice this room has been used for handling of meat. \n
+You find some very smoothly shredded meat laying around. \n
+There are a lot of weird devices with writing in languages foreign to you. \n
+Shapes so complex but at the same time simple that they could have never been created by any human. \n
+Things bend out of glass and metal like nothing you have ever seen before with self illumination. \n
+There is a cursed black plate to the corner that is smoking and appears hot as flames.
+
+*NEST*
+There is a nest of some form here. \n
+It is made of hairs and some pieces of wood and other common things you have seen in this maze. \n
+There is some sort of evil presence all around it and the stench is burning your noce.
+
+*PORTAL*
+There is a giant stone square on the wall with stairs leading through it. \n
+The circle is surrounded by symbols in unkown languages.
+
+Go.. Circle
+-There's a wall behind the circle.
+
+*KEY HOLE*
+There is a hole on the ground with a tetrahedron shape. \n
+The hole is surrounded by disks filled with symbols of unknown origin.
+
++++Item descriptions+++
++"spear", "polearm with multipurpose spear head", "It has a head with lots of varying spikes and hooks. for the most part its edges are sharpened.
++"bow", "light hunting crossbow and a quiver full of crossbow bolts with hunting broadheads", "This bow really is a device to hunt. \nIt has bolts with wide broadheads that would be ideal to cause a deer bleed a lot so tracking would be easy and the animal dies fast. \nIt doesn't have enough power to really be useful in battlefield with any armored targets though"
++"sword", "complex hilted sword", "Personal defence weapon preferred by many in your time."
++"scabbard", "scabbard", "A leather covered wooden artpiece. There are metal reignforced parts that are full of nice looking texturing. The leather is filled with pictures of a forgotten battle."
++"tetrahedron", "tetrahedron", "You think it is a key of some sort. This thing give you a headache. You let it just be"
+
+
+
+

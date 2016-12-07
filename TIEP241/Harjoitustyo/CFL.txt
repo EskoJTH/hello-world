@@ -1,0 +1,74 @@
+S -> Attack  Target  "with"  Item
+S -> "use"  Item  " /on/at/to"  Target
+S -> Interaction
+S -> Interaction  Target  
+S -> "use"
+
+S -> Look  " /on/at/to"  Target
+S -> Move  " /on/at/to"  Direction
+S -> Look
+S -> Move 
+
+Attack      -> "attack"
+Target      -> Direction
+Target      -> Item
+Target      -> "thisRoom"
+Target      -> "target"
+Item        -> "item"
+Move        -> "move"
+Look        -> "look"
+
+"direction"
+-north
+-east
+-south
+-west
+
+"move"
+-moce
+-go
+-proceed
+-walk
+-run
+
+"attack"
+-cut
+-hit
+-thrust
+-attack
+-charge
+
+"use"
+-swing
+-throw
+
+"targets"
+-Alien
+-Creature
+-hole on ground
+-teleporter
+-stone circle
+-circle
+-moster
+-book
+-necronomicon
+-bookshelf
+-painting
+-book
+-Everysinglefuckingthingeverywhereever
+
+"look"
+-see
+-watch
+-look
+-inspect
+-investicate
+
+"item"
+-sword
+-scabard
+-spear
+-bow
+-keystone
+-
+
