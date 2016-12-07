@@ -25,6 +25,74 @@ namespace Mylly
             InitializeComponent();
         }
 
+        private void ReSize(object sender, SizeChangedEventArgs e)
+        {
+            DrawingBrush Viivat = new DrawingBrush();
+
+           // Luodaan taustalle neliöt
+            //uloin neliö
+            GeometryDrawing backgroundSquareStrokes0 = UusiNelio(7,7,6.0/7.0,6.0/7.0);
+
+            //toiseksi uloin neliö
+            GeometryDrawing backgroundSquareStrokes1 = UusiNelio(7, 7, 6.0 / 7.0, 6.0 / 7.0);
+
+            //sisin uloin neliö
+            GeometryDrawing backgroundSquareStrokes2 = UusiNelio(7, 7, 6.0 / 7.0, 6.0 / 7.0);
+
+            //Ensimmäinen sisäviiva
+            GeometryDrawing backgroundStroke0 = UusiNelio(7, 7, 6.0 / 7.0, 6.0 / 7.0);
+
+            //Toinen sisäviiva
+            GeometryDrawing backgroundStroke1 = UusiNelio(7, 7, 6.0 / 7.0, 6.0 / 7.0);
+
+            // Kolmas sisäviiva
+            GeometryDrawing backgroundStroke2 = UusiNelio(7, 7, 6.0 / 7.0, 6.0 / 7.0);
+
+            //neljäs sisäviiva
+            GeometryDrawing backgroundStroke3 = UusiNelio(7, 7, 6.0 / 7.0, 6.0 / 7.0);
+
+            GeometryDrawing tausta = new GeometryDrawing(
+
+Brushes.Brown,
+null,
+new RectangleGeometry(new Rect(grid.Width, grid.Height, grid.Width, grid.Height)));
+            DrawingGroup yhdessa = new DrawingGroup();
+            yhdessa.Children.Add(tausta);
+            yhdessa.Children.Add(backgroundSquareStrokes0);
+            yhdessa.Children.Add(backgroundSquareStrokes1);
+            yhdessa.Children.Add(backgroundSquareStrokes2);
+            yhdessa.Children.Add(backgroundStroke0);
+            yhdessa.Children.Add(backgroundStroke1);
+            yhdessa.Children.Add(backgroundStroke2);
+            yhdessa.Children.Add(backgroundStroke3);
+            Viivat.Drawing = yhdessa;
+            grid.Background = Viivat;
+        }
+
+/// <summary>
+/// Piirtää neliön ruudun suhteiden perusteella
+/// </summary>
+/// <param name="x0">neliön alkupisteen suhde koko sivun pituuteen</param>
+/// <param name="y0"></param>
+/// <param name="x1"></param>
+/// <param name="y1"></param>
+/// <returns></returns>
+        private GeometryDrawing UusiNelio(double x0, double y0, double x1, double y1)
+        {
+
+            return new GeometryDrawing(
+null,
+new Pen(Brushes.Black, 10),
+new RectangleGeometry(new Rect(grid.ActualWidth/x0, grid.ActualHeight/y0, grid.ActualWidth / x1, grid.ActualHeight / y1)));
+
+        }
+
+
+
+
+
+
+
         /*
 I have an idea you could try: Within a Grid, items will overlap each other.
 So you could create an outer Grid which contains your grid and also a Canvas with a transparent background.
@@ -32,11 +100,17 @@ On the Canvas, you could draw lines which would look like they are connecting yo
 https://msdn.microsoft.com/en-us/magazine/ff646962.aspx
          */
         //TODO
+        /*
         private void onLayoutUpdated(object sender, EventArgs e)
         {
             //Size size = RenderSize;
             //Point ofs = new Point(size.Width / 2, isInput ? 0 : size.Height);
             //AnchorPoint = TransformToVisual(node.canvas).Transform(ofs);
+        }
+
+        private void Resize(object sender, SizeChangedEventArgs e)
+        {
+
         }
     }
 
@@ -66,6 +140,7 @@ https://msdn.microsoft.com/en-us/magazine/ff646962.aspx
                 MinHeight = 1
             };
         }
+        */
     }
 }
 
