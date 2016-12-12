@@ -1,0 +1,330 @@
+﻿<Window x:Class="Mylly.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mylly"
+        xmlns:oma="clr-namespace:Mylly"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        MinWidth="300"
+        MinHeight="300">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Close" CanExecute="GenericCommand_CanExecute" Executed="ExitCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.Insert" CanExecute="InsertCommand_CanExecute" Executed="InsertCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.About" CanExecute="GenericCommand_CanExecute" Executed="AboutCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.Manual" CanExecute="GenericCommand_CanExecute" Executed="ManualCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.Remove" CanExecute="RemoveCommand_CanExecute" Executed="RemoveCommand_Executed" />
+        <CommandBinding Command="local:CustomCommands.Move" CanExecute="MoveCommand_CanExecute" Executed="MoveCommand_Executed" />
+    </Window.CommandBindings>
+    <Window.Resources>
+        <Style x:Key="FullHorizontalLine" TargetType="{x:Type Line}">
+            <Setter Property="Y1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="X1" Value="0" />
+            <Setter Property="X2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=ActualWidth}" />
+            <Setter Property="Y2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="4" />
+        </Style>
+        <Style x:Key="FullVerticalLine" TargetType="{x:Type Line}">
+            <Setter Property="X1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Y1" Value="0" />
+            <Setter Property="Y2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=ActualHeight}" />
+            <Setter Property="X2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="4" />
+        </Style>
+        <Style x:Key="HalfVerticalLineTop" TargetType="{x:Type Line}">
+            <Setter Property="X1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Y1" Value="0" />
+            <Setter Property="Y2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="X2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="4" />
+        </Style>
+        <Style x:Key="HalfVerticalLineDown" TargetType="{x:Type Line}">
+            <Setter Property="X1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Y1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=ActualHeight}" />
+            <Setter Property="Y2" Value= "{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="X2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="4" />
+        </Style>
+        <Style x:Key="HalfHorizontalLineLeft" TargetType="{x:Type Line}">
+            <Setter Property="X1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Y1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="Y2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="X2" Value="0" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="4" />
+        </Style>
+        <Style x:Key="HalfHorizontalLineRight" TargetType="{x:Type Line}">
+            <Setter Property="X1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="Y1" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="Y2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="X2" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=ActualWidth}" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeThickness" Value="4" />
+        </Style>
+        <Style x:Key="CenterBall" TargetType="{x:Type Ellipse}">
+            <Setter Property="Fill" Value="Black" />
+            <Setter Property="Height" Value="30" />
+            <Setter Property="Width" Value="30" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="Canvas.Top" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfHeight}" />
+            <Setter Property="Canvas.Left" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}, Path=HalfWidth}" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <!--laitetaan ympyrä keskelle sen keskipiseteestä eikä nurkasta -->
+                    <TranslateTransform X="-15" Y="-15"/>
+                </Setter.Value>
+            </Setter>
+            <EventSetter Event="MouseDown" Handler="MousePressOverGamePosition"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" Command="ApplicationCommands.Close" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Command="local:CustomCommands.About" />
+                <MenuItem Header="_Manual" Command="local:CustomCommands.Manual"/>
+            </MenuItem>
+            <MenuItem Header="_Game">
+                <MenuItem Header="_Insert piece" Command="local:CustomCommands.Insert"/>
+                <MenuItem Header="_Remove piece" Command="local:CustomCommands.Remove"/>
+                <MenuItem Header="_Move piece" Command="local:CustomCommands.Move"/>
+            </MenuItem>
+        </Menu >
+        <ListBox Grid.Row="2" FlowDirection="RightToLeft">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <Button Content="Insert piece" Command="local:CustomCommands.Insert"/>
+            <Button Content="Remove piece" Command="local:CustomCommands.Remove"/>
+            <Button Content="Move piece" Command="local:CustomCommands.Move"/>
+        </ListBox>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <local:OmaCanvas Grid.Column="0" Grid.Row="0">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball00" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="1" Grid.Row="0">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="2" Grid.Row="0">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="4" Grid.Row="0">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="5" Grid.Row="0">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="0" Grid.Row="1">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="2" Grid.Row="1">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="4" Grid.Row="1">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="6" Grid.Row="1">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="0" Grid.Row="2">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="1" Grid.Row="2">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="5" Grid.Row="2">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="6" Grid.Row="2">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="0" Grid.Row="4">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="1" Grid.Row="4">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="5" Grid.Row="4">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="6" Grid.Row="4">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="0" Grid.Row="5">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="2" Grid.Row="5">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="4" Grid.Row="5">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="6" Grid.Row="5">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="1" Grid.Row="6">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="2" Grid.Row="6">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="4" Grid.Row="6">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+            <local:OmaCanvas Grid.Column="5" Grid.Row="6">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+            </local:OmaCanvas >
+
+            <local:OmaCanvas Grid.Column="0" Grid.Row="3">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Ellipse Name="ball01" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="0" Grid.Row="6">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball02" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="6" Grid.Row="0">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball03" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="6" Grid.Row="3">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Ellipse Name="ball04" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="6" Grid.Row="6">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball05" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="1" Grid.Row="1">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball06" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="1" Grid.Row="3">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Ellipse Name="ball07" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="1" Grid.Row="5">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball08" Style="{StaticResource CenterBall}" />
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="5" Grid.Row="1">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball09" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="5" Grid.Row="3">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Ellipse Name="ball10" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="5" Grid.Row="5">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball11" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="2" Grid.Row="2">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball12" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="2" Grid.Row="3">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Ellipse Name="ball13" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="2" Grid.Row="4">
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball14" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="4" Grid.Row="2">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball15" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="4" Grid.Row="3">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Line Style="{StaticResource HalfHorizontalLineRight}"/>
+                <Ellipse Name="ball16" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas  Grid.Column="4" Grid.Row="4">
+                <Line Style="{StaticResource HalfHorizontalLineLeft}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball17" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="3" Grid.Row="0">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball18" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="3" Grid.Row="1">
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Ellipse Name="ball19" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="3" Grid.Row="2">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse Name="ball20" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="3" Grid.Row="4">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource HalfVerticalLineDown}"/>
+                <Ellipse Name="ball21" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="3" Grid.Row="5">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource FullVerticalLine}"/>
+                <Ellipse Name="ball22" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+            <local:OmaCanvas Grid.Column="3" Grid.Row="6">
+                <Line Style="{StaticResource FullHorizontalLine}"/>
+                <Line Style="{StaticResource HalfVerticalLineTop}"/>
+                <Ellipse  Name="ball23" Style="{StaticResource CenterBall}"/>
+            </local:OmaCanvas>
+
+        </Grid>
+    </Grid>
+</Window>
