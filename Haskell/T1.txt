@@ -1,0 +1,55 @@
+esko [2:21 PM] 
+Terve! Kysymys: Miten saan for lauseen tai vastaavan aikaiseksi Haskelissa?
+
+stimraug [2:22 PM] 
+joined #general
+
+mikrkilk [2:22 PM] 
+Tilanteesta riippuen voit korvata toistorakenteen esimerkiksi rekursiolla
+
+stimraug [2:23 PM] 
+"hello to everyone"
+
+[2:24]  
+Miksi Haskellissa k‰ytet‰‰n + -merkin sijasta lauseissa ++ -tuplaa?
+
+tajuvike [2:26 PM] 
++ tarkoittaa lukujen yhteenlaskua ja ++ esimerkiksi merkkijonojen yhteen liimaamista.
+
+stimraug [2:26 PM] 
+esko, lyhyt vastaus: Haskellissa on muita kieli‰ vastaava for -merkint‰ (forM), mutta pidempi vastaus selitt‰‰ v‰h‰n paremmin miksi sit‰ ei aina v‰ltt‰m‰ti tarvita. Lue lis‰‰: https://www.fpcomplete.com/blog/2013/06/haskell-from-c
+
+[2:27]  
+kiitos. Onko joku tietty syy mksei merkkijonoja olisi voinut yhdell‰ plussalla liimata?
+
+vivakank [2:27 PM] 
+joined #general. Also, @miemkoiv  joined, @jani  joined, @jonik  joined, @airzero  joined, @sapetani  joined.
+
+esko [2:32 PM] 
+kiitoksia
+
+sapetani [2:34 PM] 
+Tervehdys, mill‰ kirjaimella Haskell alkaa
+
+miemkoiv [2:35 PM] 
+Good morning people
+vastaus: h-kirjaimella
+
+sapetani [2:35 PM] 
+Kiitos:100::100::ok_hand::ok_hand:
+
+tvirolai [2:36 PM] 
+joined #general. Also, @essi  joined.
+
+tuomasparviainen [2:37 PM] 
+Terve! Kysymys kurssiteht‰v‰‰ varten:  Mik‰ on omapainoisen p‰‰skysen ilmalentonopeus?
+
+sapetani [2:38 PM] 
+Tarkentava kysymys: afrikkalaisen vai eurooppalaisen p‰‰skysen?
+
+stimraug [2:48 PM] 
+11m/s
+
+esko [2:50 PM] 
+jonkinsortin vastaus stimraug:ille
+++ ja + v‰linen ero johtuu siit‰ ett‰ + olettaa saavansa numeron ja ++ listan. Varmaan liittyy siihen tarkkaan tyypitykseen. T‰m‰n tarkemmin en tied‰.
