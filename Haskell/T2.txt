@@ -1,32 +1,70 @@
 a.areaOfBigCircle(You can round numbers)
 
 areaOfBigCircle
+=={- Replace areaOfBigCirclewith its definition -}
 pi*10**2
+=={- Calculate lightest infix first -}
 pi*100
+=={- funktions value has to be calculated -}
 3.14*100
+=={- Calculate lightest infix first -}
 314
 
 b.enthusiasticGreeting
 
 enthusiasticGreeting
+=={- Replace enthusiasticGreeting with its definition -}
 greeting ++ "!"
-"Hello " ++ "Jill" ++ "!"
-"Hello " ++ "Jil" ++ "l!"
-"Hello " ++ "Ji" ++ "ll!"
-"Hello " ++ "J" ++ "ill!"
-"Hello " ++ "" ++ "Jill!"
-"Hello " ++ "Jill!"
+=={- funktions value has to be calculated -}
+("Hello " ++ "Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+("Hello" ++ " Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+("Hell" ++ "o Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+("Hel" ++ "lo Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+("He" ++ "llo Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+("H" ++ "ello Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+("" ++ "Hello Jill") ++ "!"
+=={-Move the last letter of the previous string-}
+"Hello Jil" ++ "l!"
+=={-Move the last letter of the previous string-}
+"Hello Ji" ++ "ll!"
+=={-Move the last letter of the previous string-}
+"Hello J" ++ "ill!"
+=={-Move the last letter of the previous string-}
 "Hello" ++ " Jill!"
+=={-Move the last letter of the previous string-}
 "Hell" ++ "o Jill!"
+=={-Move the last letter of the previous string-}
 "Hel" ++ "lo Jill!"
+=={-Move the last letter of the previous string-}
 "He" ++ "llo Jill!"
+=={-Move the last letter of the previous string-}
 "H" ++ "ello Jill!"
+=={-Move the last letter of the previous string-}
 "" ++ "Hello Jill!"
+=={-Move the last letter of the previous string-}
 "Hello Jill!"
 
+
 allTrue [True,True,False]
+=={- Replace alltrue with its definition -}
 foldr bothTrue True [True,True,False]
-foldr bothTrue True [True,False]
-foldr bothTrue True [False]
-foldr bothTrue False []
+=={- Replace foldr f z (x:xs) with its definition -}
+bothTrue True (foldr bothtrue True [True,False])
+=={- Replace foldr f z (x:xs) with its definition -}
+bothTrue True (bothTrue True (foldr bothtrue True [False]))
+=={- Replace foldr f z (x:xs) with its definition -}
+bothTrue True (bothTrue True (bothTrue False (foldr bothtrue True [] )))
+=={- Replace foldr bothtrue True [] with its definition -}
+bothTrue True (bothTrue True (bothTrue False True))
+=={- Replace bothTrue _    _  with its definition -}
+bothTrue True (bothTrue True False)
+=={- Replace bothTrue _    _  with its definition -}
+bothTrue True False
+=={- Replace bothTrue _    _  with its definition -}
 False

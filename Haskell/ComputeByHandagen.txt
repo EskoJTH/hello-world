@@ -1,0 +1,15 @@
+
+
+aFunc x y z = (x/y+z)/3
+--{-voidaan merkata x=blurt y=ook z=monkey jolloin-}--
+aFunc blurt ook monkey = (blurt/ook+monkey)/3
+
+aFunc x y z = (x/y+z)/3
+--{-viimeisenä lasketaan yhteenalsku joten-}--
+aFunc x y = \z -> (x/y+z)/3
+--{- seuraavaksi lasku järjestyksessä viimeisenä oleva parametri on y-}-- 
+aFunc x = \y -> \z -> (x/y+z)/3
+--{- jäljellä on enää x -}--
+aFunc = \x -> \y -> \z -> (x/y+z)/3
+--{-kaikkien sulkeiden kassa laskujärjestyksesn korostamiseksi-}--
+aFunc = (\x->(\y->(\z(x/y+z)/3)))
