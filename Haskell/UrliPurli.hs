@@ -1,3 +1,5 @@
+
+
 module Exercise where
 import Prelude hiding (product)
 import Data.List

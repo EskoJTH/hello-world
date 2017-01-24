@@ -1,3 +1,5 @@
+
+
 module Main where
 import Graphics.Gloss
 import Graphics.Gloss.Interface.Pure.Game
@@ -35,7 +37,7 @@ initialWorld = Play
 
 simulateWorld :: Float -> (AsteroidWorld -> AsteroidWorld)
 
-simulateWorld _        GameOver          = GameOver  
+simulateWorld _ GameOver = GameOver  
 
 simulateWorld timeStep (Play rocks (Ship shipPos shipV) bullets) 
   | any (collidesWith shipPos) rocks = GameOver
@@ -106,6 +108,10 @@ drawWorld (Play rocks (Ship (x,y) (vx,vy)) bullets)
 
 handleEvents :: Event -> AsteroidWorld -> AsteroidWorld
 
+handleEvents (EventKey (MouseButton LeftButton) Down _ clickPos)
+             GameOver
+             = initialWorld
+
 handleEvents _ GameOver = GameOver
 
 handleEvents (EventKey (MouseButton LeftButton) Down _ clickPos)
@@ -117,6 +123,12 @@ handleEvents (EventKey (MouseButton LeftButton) Down _ clickPos)
                         (-150 .* norm (shipPos .- clickPos)) 
                         0
      newVel    = shipVel .+ (50 .* norm (shipPos .- clickPos))
+
+
+
+
+                          
+
 
 handleEvents _ w = w
 

@@ -1,3 +1,4 @@
+
 esko [2:21 PM] 
 Terve! Kysymys: Miten saan for lauseen tai vastaavan aikaiseksi Haskelissa?
 
