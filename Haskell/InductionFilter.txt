@@ -1,0 +1,32 @@
+filter p []    = []
+filter p (x:xs) 
+  | p x        = x : filter p xs
+  | otherwise  = filter p xs
+
+null [] = True; null _ = False 
+
+no p [] = True
+no p (x:xs)
+  | p x = False
+  | otherwise = no p xs
+
+no f xs ==> null (filter f xs)
+
+in order fotr this to be true:
+True ==> False = False
+_    ==> _     = True
+
+in order fotr this to be true:
+
+no f xs
+xs=[]                               --True
+xs := ∃x : x ∊ xs  AND f x == True  --False
+xs := !(∃x : x ∊ xs  AND f x == True)  --True
+
+
+null (filter f xs)
+xs=[]                               --True   Pitää paikkansa
+xs := ∃x : x ∊ xs  AND f x == True  --False   
+xs := !(∃x : x ∊ xs  AND f x == True)  --True jos ei löydy yhtään alkiota jonka funktio hyväksyisi tulee takaisin taas True
+
+Tällöin funktio pitää paikkansa kaikissa mahdollisissa tiloissa.

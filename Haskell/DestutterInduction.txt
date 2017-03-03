@@ -1,0 +1,27 @@
+module Exercise where
+
+destutter :: Eq a => [a] -> [a]
+destutter [] = []
+destutter (x:xs) = x:recursion xs x
+    where
+    recursion :: Eq a => [a]-> a -> [a]
+    recursion [] lastChar = []
+    recursion (x:xs) lastChar
+        | lastChar == x = recursion xs lastChar
+        | otherwise = x:recursion xs x
+
+Assumption: destutter (destutter xs) == destutter xs
+=={- destutter (x:xs) = x:recursion xs x -}
+destutter (x:recursion xs x) ==x:recursion xs x 
+
+Claim: destutter (destutter (x:xs)) == destutter (x:xs)
+
+destutter (destutter (x:xs))
+=={- destutter (x:xs) = x:recursion (xs) x -}
+destutter  (x : (recursion xs x))
+=={- destutter (x:xs) = x:recursion (xs) x -}
+x : recursion (recursion xs x) x
+=={- Mitä ihmettä minun oikein tässä pitäisi tehdä?-}
+x:(recursion xs x)
+=={- destutter (x:xs) = x:recursion (xs) x -}
+destutter (x:xs)

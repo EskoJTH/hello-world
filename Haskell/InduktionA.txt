@@ -1,0 +1,21 @@
+concat (map (map f) (x:xs))
+== {- Map.2,  map g (y:ys) = g y : map g ys -}
+concat (map f x:map (map f) xs)
+== {- Concat.2 concat (x:xs) = x ++ concat xs-}
+map f x ++ concat (map (map f) xs)
+== {- Assumption -}
+map f x ++ map f (concat xs)
+== {- funktiota f k‰ytet‰‰n jokaiseen alkioon listassa kuitenkin joten sen paikan siirt‰minen ei vaikuta-}
+map f (x++concat xs)
+== {- Concat 2. concat (y:ys) = y++concat ys, in reverse -}
+map f (concat (x:xs)
+
+concat (map (map f) [])
+== {- Map 1, map f [] = [] -}
+concat []
+== {- Concat.1, concat [] = [] -}
+[]
+== {- Map.1, map f [] = [], in reverse-}
+map f []
+== {- Concat.1, concat [] = [], in reverse -}
+map f (concat [])

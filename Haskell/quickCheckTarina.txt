@@ -1,0 +1,222 @@
+module Main where
+import Test.QuickCheck
+
+main :: IO()
+main =
+  do
+    number <- getLine
+    putStrLn (show (fib (read number)))
+
+fib :: Int -> Int
+fib 1 = 1
+fib 2 = 1
+fib n =  fib (n-2) + fib (n-1)
+
+
+λ> quickCheck (\x -> fib x <= fib (x+1))
+*** Failed! Exception: 'stack overflow' (after 1 test): 
+0
+
+Testi epäonnistui syötteellä 0 niinkuin kaiketi kuuluukin. Pienennän testijoukkoa positiivisiin kokonaislukuihin >0
+
+λ> quickCheck (\(Positive x) -> fib x <= fib (x+1))
+
+Ei tunnu antavan vastausta. Ilmeisesti suurien fibonacin lukujen laskenminen rekursiivisesti interpreted koodilla on raskasta.
+
+*** Failed! Exception: 'user interrupt' (after 55 tests):
+
+Laski 55 testiä jotka ilmeisesti menivät läpi kunnes löääysin noin 10 min päästä emaksin komennon "Haskell-process-interrupt"
+
+λ> quickCheckWith stdArgs{maxSize=45} (\(Positive x) -> fib x <= fib (x+1))
++++ OK, passed 100 tests.
+
+ Saimpa kirjoitettua toimivan komennon siihen miten saan rajattua kohdealueen positiivisiin <45 lukuihin ja 100 testiä menee läpi.
+
+
+
+
+module Exercise where
+import Data.List
+import Data.Word                    -- .. different lengths of integers
+import Data.Char (ord,chr)          -- .. conversion between char and int
+
+encode :: String -> [(Char,Word8)]  -- You can convert an Int to Word8 with 
+                                    -- function fromIntegral. 
+encode []=[]
+encode (x:xs) =
+    encodeLoop x 0 (x:xs)
+
+encodeLoop :: Char -> Int -> String -> [(Char,Word8)]
+encodeLoop letter count [] =[(letter, fromIntegral count)] 
+encodeLoop letter count (x:xs) 
+    |(count==255)=(letter, fromIntegral count):(encodeLoop x 1 xs)
+    |letter==x = encodeLoop letter (count+1) xs
+    |otherwise = (letter, fromIntegral count):(encodeLoop x 1 xs)
+    
+
+decode :: [(Char,Word8)] -> String
+decode [] = []
+decode ((letter,count):xs) = (replicate (fromIntegral count) letter ) ++ decode xs 
+
+
+Kokeilin antaako dekoodattu koodi takaisin saman kuin mitä se oli lähtiessä.
+
+λ> quickCheck (\x -> x == decode (encode x))
++++ OK, passed 100 tests.
+
+Näyttäisi toimivan nopeasti ja hyvin.
+
+λ> quickCheckWith stdArgs{maxSuccess=100000}  (\x -> x == decode (encode x))
++++ OK, passed 10000 tests.
+λ> quickCheckWith stdArgs{maxSuccess=100000}  (\x -> x == decode (encode x))
++++ OK, passed 100000 tests.
+
+En kyllä ole ihan varma millaisia stringejä tämä tuonne antaa? tuo 100000 testi vei aikaa ehkä 3 sekunttia.
+
+λ>  quickCheckWith stdArgs{maxSuccess=100000, maxSize=10000}  (\x -> x == decode (encode x))
+
+Vie ainakin aikaa enemmän.
+
+λ>  quickCheckWith stdArgs{maxSuccess=100000, maxSize=10000}  (\x -> x == decode (encode x))
+*** Failed! Exception: 'user interrupt' (after 53874 tests):"\234K4s\161-\252f\162\176\SYN\167&W\DLE\DC2\169z\v%noL\DC1Sw-\156%\n&F \ACK\n(\214\US\235#S\230'q\DC2\253\&0 T\141\SOHcD\220L\243\247\141\131*\245O(\DC1m5\169\&3\USR\ETX$a\185D^\v\RS~\222nE\ACK4\243\"\DC3\176KmG\221W\168C\142/t\US'\ENQ\DC3\163YI\r8\FS6t\195GZ\ETXg\f\130 \136V{P%5\254\ESC!1\DC2zx1\215\143\171\FS{c\DC1\SYN\208\197\a\182\&4-1\a\NAKc:\218f;u`)`>V4(`$U?g\NAK\167~\252#;]t\DC3\USp\DC4kYi7\DC............
+
+
+λ>  quickCheckWith stdArgs{maxSuccess=10000, maxSize=10000}  (\x -> x == decode (encode x))
++++ OK, passed 1000 tests.
+λ>  quickCheckWith stdArgs{maxSuccess=10000, maxSize=10000}  (\x -> x == decode (encode x))
++++ OK, passed 10000 tests.
+
+Vähemmät yritykset menevät läpi oikein kivasti. Hyvä de/enkooderi kai.
+
+kokeilen vielä että enkoodatut jutut eivät ainakaan ole suurempia kuin koodaamaton teksti:
+
+λ>quickCheckWith stdArgs{maxSuccess=10000, maxSize=10000}  (\(x:xs) -> length (x:(x:xs)) > length (encode (x:(x:xs))))
+*** Failed! (after 1 test): 
+Exception:
+  <interactive>:231:59-115: Non-exhaustive patterns in lambda
+""
+
+Hups.
+.....
+Mitenkä ihmeessä minä saan märittettyä listat suuremmiksi kuin nolla tässä...
+
+λ> quickCheckWith stdArgs{maxSuccess=10000, maxSize=10000}  (\(NonEmpty(x:xs)) -> length (x:(x:xs)) > length (encode (x:(x:xs))))
++++ OK, passed 10000 tests.
+
+Osasimpas!
+
+quickCheckWith stdArgs{maxSuccess=1000, maxSize=10000}  (\x -> length x >= length (encode x))
++++ OK, passed 1000 tests.
+
+Näyttäisi että listan pituus ei ainakaan kasva. Käytännöäässähän tämä taitaa aiheuttaa ainakin puhutulle kielelle varastoidun tiedon märän kasvua, eikä lyhenemistä koska aakkoset esiintyvät valmiiksi yleensä enintän kahden ryhmissä.
+
+
+
+
+
+module Exercise where
+import Prelude hiding (product)
+
+product :: [Integer] -> Integer
+product [] = 1
+product (x:xs) = x*product(xs)
+
+Katsotaan keksisinkö mitään mielekästä kokeilla tällä.
+
+λ> quickCheckWith stdArgs{maxSuccess=100000}  (\x y -> Exercise.product [x..y] < Exercise.product [x..y] + 1)
++++ OK, passed 100000 tests.
+
+En kyllä keksi mitään järkevää testattavaa.
+
+
+
+
+module Exercise where
+import Data.List hiding (sort)
+
+deal :: [a] -> ([a],[a])
+deal list = splitAt ((length list)`quot`2) list
+
+merge :: Ord a => [a] -> [a] -> [a]
+merge [] [] = []
+merge (x:xs) (y:ys) 
+    |x<=y = x:merge xs (y:ys)
+    |otherwise = y:merge (x:xs) ys
+merge [] list = list
+merge list [] = list
+
+mergeSort :: Ord a => [a] -> [a]
+mergeSort []=[]
+mergeSort [x]=[x]
+mergeSort (x:xs)
+ |null (drop 2 (x:xs)) = merge [x] xs
+ |otherwise =
+    let
+        (a,b)=deal (x:xs)
+    in
+        merge(mergeSort a)(mergeSort b)
+
+
+
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\(x,y) ->length (mergeSort [x..y]) == length [x..y])
+
+-- Hit `q' to close this window.
+
+<interactive>:265:61-69: error:
+    Variable not in scope: mergeSort :: [()] -> [a0]
+
+-- To disable popups, customize `haskell-interactive-popup-errors'.
+
+Mitenkäs ihmeessä minä nyt konstruktoin tänne järkeviä asioita vai mikä tässä nyt on ongelmana...
+
+λ>  quickCheckWith stdArgs{maxSuccess=1000}  (\x -> length (mergeSort x) == length x)
+<interactive>:289:58-66: error:
+    Variable not in scope: mergeSort :: t0 a1 -> [a0]
+
+Eikä mikän toimi taaskaan...
+Ei Toimi ei..................
+Pitä varmaan huomenna kysyä slakissa apua.
+ 
+Seuraava päivä ja kaikki jostain syystä toimii samoilla komennoilla ongelmitta...
+
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\(x,y) ->length (mergeSort [x..y]) == length [x..y])
++++ OK, passed 1000 tests.
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\(x,y) ->length (mergeSort [x..y]) == length [x..y])
++++ OK, passed 1000 tests.
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\x -> length (mergeSort x) == length x)
++++ OK, passed 1000 tests.
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\x -> length (mergeSort x) == length x)
++++ OK, passed 1000 tests.
+
+Ei mitään hajua missä vika oli.
+
+Kokeillaan saako Mergesort aina saman vastauksen kuin haskelin oma sort
+
+λ>  quickCheckWith stdArgs{maxSuccess=1000}  (\x ->  mergeSort x == sort x)
++++ OK, passed 1000 tests.
+
+Näyttäisi toimivan.
+
+λ>  quickCheckWith stdArgs{maxSuccess=1000, maxSize=10000}  (\x ->  mergeSort x == sort x)
++++ OK, passed 1000 tests.
+
+Hyvin taitaa toimia. Testataanpa vielä funktiota deal.
+Kokeilen että deal funktion palauttamien alkioiden pituus pysyy samana kuin lähde taulukon.
+
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\x -> sum (map length (deal x)) == length x)
+
+<interactive>:44:66-71: error:
+    * Couldn't match expected type `[[a0]]'
+                  with actual type `([()], [()])'
+    * In the second argument of `map', namely `(deal x)'
+      In the first argument of `sum', namely `(map length (deal x))'
+      In the first argument of `(==)', namely `sum (map length (deal x))'
+
+Nämä virheilmoitukset on täyttä hepreaa.
+
+λ> quickCheckWith stdArgs{maxSuccess=1000}  (\x -> let (a,b)=(deal x) in (length a + length b)  == length x)
++++ OK, passed 1000 tests.
+
+Näyttäisi toimivan.
+
+Riittäisiköhän nämä?

@@ -1,0 +1,81 @@
+A.
+concat []     = []             -- Concat.1 
+concat (x:xs) = x ++ concat xs -- Concat.2
+
+We are going to proof the following:
+concat (map f x:map (map f) xs) == map f x ++ concat (map (map f) xs)
+
+Proof:
+concat (map f x : map (map f) xs)
+=={-concat (x:xs) = x ++ concat xs -- Concat.2-}
+map f x ++ concat (map (map f) xs)
+
+
+B.
+
+[]     ++ ys = ys               -- (++).1
+(x:xs) ++ ys = x:(xs++ys)       -- (++).2
+
+map f []     = []             -- Map.1
+map f (x:xs) = f x : map f xs -- Map.2
+
+We are going to proof the following:
+map f (x) ++ map f y == map f ((x) ++ y)
+
+Induction Assumption:
+map f (x) ++ map f y == map f ((x) ++ y)
+
+Induction claim:
+map f (x:xs) ++ map f y == map f ((x:xs) ++ y)
+
+proof by induction:
+map f (x:xs) ++ map f y
+== {- map f (x:xs) = f x : map f xs -- Map.2 -}
+(f x : map f xs) ++ map f y
+== {- (x:xs) ++ ys = x:(xs++ys) -}
+f x : (map f xs ++ map f y)
+== {- Assumption: map f x ++ map f y == map f (x++y) -}
+f x : (map f (xs++y))
+== {- map f (x:xs) = f x : map f xs -- Map.2 -}
+map f (x:(xs ++ y)
+== {- x:xs) ++ ys = x:(xs++ys)   -- (++).2 -} 
+map f ((x:xs) ++ y)
+
+map f ([]) ++ map f ([])
+=={- map f [] = [] -}
+[]++[]
+=={- [] ++ ys = ys -}
+[]
+=={- map f [] = [] -}
+map f ([])
+=={- [] ++ ys = ys -}
+map f ([]++[])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
