@@ -1,0 +1,16 @@
+
+
+{[Str]->Str}  {(a->b)->[a]->[b]}  {[c]->[c]}     {Str->[Str]} 
+⊢ unwords    .   map                reverse    .   words
+= We can combine map and reverse a:=b:=[c]
+{[Str]->Str}   {([c]->[c])->[[c]]->[[c]]}  {[c]->[c]}  {Str->[Str]} 
+⊢ unwords    .  map                        reverse    .   words
+= Lets take reverse in as the first argument of map
+{[Str]->Str}   {[[c]]->[[c]]}  {Str->[Str]} 
+⊢ unwords    .  map reverse  .   words
+= Lets combine map reverse and words [[c]]:=[Str] lets apply {Str->[Str]} 
+{[Str]->Str} {Str->[Str]}
+⊢ unwords   . map reverse.words
+= Let apply {Str->[Str]}
+      {Str->Str}
+⊢ unwords.map reverse.words

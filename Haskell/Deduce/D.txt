@@ -1,0 +1,14 @@
+        {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
+⊢f xs = map                        map                      xs
+= So that everything will work a := (c -> d) -> [c], b := [d] 
+
+        {((c -> d) -> [d] -> [d]) -> [(c -> d) -> [c]] -> [[d]]}  {(c -> d) -> [c] -> [d]}
+⊢f xs = map                                                         map                      xs
+= Lets apply 2nd map
+
+        {[(c -> d) -> [c]] -> [[d]]}
+⊢f xs = map map                      xs
+= xs must be type [(c -> d) -> [c]] so we get a result
+
+                          {[(c -> d) -> [c]] -> [[d]]}
+xs :: [(c -> d) -> [c]] ⊢f xs = map map xs

@@ -1,0 +1,34 @@
+        {Ord a, Foldable t =>t a->a} {(a -> b) -> [a] -> [b]}  {[a] -> Int} {Str->[Str]}
+⊢f str = maximum                     (map                      length       (words str))
+= str must be a string
+
+                 {Ord c, Foldable t =>t c->c} {(a -> b) -> [a] -> [b]}  {[x] -> Int} {Str->[Str]}
+str::Str ⊢f str = maximum                     (map                      length       (words str))
+= Lets apply b:=Int a:=[a]
+
+                 {Ord c, Foldable t =>t c->c} {([a] -> Int) -> [[a]] -> [Int]}  {[x] -> Int} {Str->[Str]}
+str::Str ⊢f str = maximum                     (map                              length       (words str))
+= Lets apply lenght {[x] -> Int} to map {([a] -> Int) -> [[a]] -> [Int]}
+
+                 {Ord c, Foldable t =>t c->c} {[[a]] -> [Int]} {Str->[Str]}
+str::Str ⊢f str = maximum                     (map length      (words str))
+= Lets apply [[a]]:=[Str]
+
+                 {Ord c, Foldable t =>t c->c} {[Str] -> [Int]} {Str->[Str]}
+str::Str ⊢f str = maximum                     (map length      (words str))
+= Lets apply Str->[Str] to map length
+
+                 {Ord c, Foldable t =>t c->c} {Str -> [Int]}
+str::Str ⊢f str = maximum                     (map length(words str))
+= Maximum gets [Int] as input which is Ord
+
+                                    {t c->c}  {Str -> [Int]}
+Foldable t, Ord c, str::Str ⊢f str = maximum  (map length(words str))
+= Lets apply c := [Int]
+
+                                    {[Int]->[Int]}  {Str -> [Int]}
+Foldable t, Ord c, str::Str ⊢f str = maximum        (map length(words str))
+= Lets combine the rest
+
+                                    {Str->[Int]}
+Foldable t, Ord c, str::Str ⊢f str = maximum(map length(words str))

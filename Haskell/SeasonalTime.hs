@@ -1,4 +1,8 @@
+
+
+
 module SeasonalTime where
+import Data.Time.Clock
 
 
 data Season = Winter | Spring | Summer | Autumn deriving Show
@@ -21,5 +25,16 @@ instance Seasonal Month where
     season Sep = Autumn
     season Oct = Autumn
     season Nov = Autumn
-
     
+data Event = MayDay | IndependenceDay | MothersDay
+
+instance Seasonal Event where
+     season IndependenceDay = Winter
+     season MothersDay = Spring
+     season MayDay = Spring
+  
+instance Seasonal UTCTime where
+  season x = Spring
+
+  --Olen yritt‰nyt saada t‰m‰n vekottimen toimimaan varmaan 3 tuntia ja patterna matchata eri UTCTimet eri  vuodenaikoihin, mutta ei toimi ei sitten mill‰‰n ei mit‰‰n hajua miten t‰t‰ utc time‰ voi k‰ytt‰‰.
+  

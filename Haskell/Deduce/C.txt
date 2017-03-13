@@ -1,0 +1,31 @@
+
+        {Ord x=>x->x->x}  {Ord y=>y->y->y}
+⊢f a b = max 0            (min a b)
+= Lets move the type restritions to right place
+
+                                   {x->x->x} {y->y->y}
+Ord x, Ord y, Ord a, Ord b ⊢f a b = max 0    (min a b)
+= 0 is a Num so all other x must be Num too
+
+                                   {x->x->x} {y->y->y}
+Num x, Ord y, Ord a, Ord b ⊢f a b = max 0    (min a b)
+= now min must output a Num too so y is num too
+
+                                   {x->x->x} {y->y->y}
+Num x, Num y, Ord a, Ord b ⊢f a b = max 0    (min a b)
+= because all parameters are given to min must they be Num's also
+
+                                   {x->x->x} {y->y->y}
+Num x, Num y, Num a, Num b ⊢f a b = max 0    (min a b)
+= because x and y are the the same type we can refer to them as x:=y
+
+                                   {y->y->y} {y->y->y}
+Num y, Num a, Num b ⊢f a b = max 0    (min a b)
+= now If we combine min to max
+
+                                   {y->y->y->y}
+Num y, Num a, Num b ⊢f a b = max 0 (min a b)
+= 0 is always zero
+
+                                   {y->y->y}
+Num y, Num a, Num b ⊢f a b = max 0 (min a b)
