@@ -1,6 +1,8 @@
 
 
 
+
+
 module SeasonalTime where
 import Data.Time.Clock
 
@@ -34,7 +36,19 @@ instance Seasonal Event where
      season MayDay = Spring
   
 instance Seasonal UTCTime where
-  season x = Spring
+    season t = toGregorian
+    season t = case urgh of
+        ... -> Winter
+    season Mar = 
+    season Apr = 
+    season May = 
+    season Jun = 
+    season Jul = 
+    season Aug = 
+    season Sep = 
+    season Oct = 
+    season Nov = 
+    season Dec = 
 
   --Olen yritt‰nyt saada t‰m‰n vekottimen toimimaan varmaan 3 tuntia ja patterna matchata eri UTCTimet eri  vuodenaikoihin, mutta ei toimi ei sitten mill‰‰n ei mit‰‰n hajua miten t‰t‰ utc time‰ voi k‰ytt‰‰.
   
