@@ -20,7 +20,7 @@ take' n = g . foldr f e
       g h = h n
       f :: a -> (Int -> [a]) -> Int -> [a]
       f x acc k --Mist listasta x saadaan? Listan p‰‰limm‰inen 
-        | k==0 = acc 0
+        | k<=0 = acc 0
         | otherwise = x:(acc (k-1))
       e = (const [])
 
@@ -33,7 +33,7 @@ drop' n = g . foldr f e
     where
       g h = h n
       f x acc k
-        | k==0 = x:(acc 0)
+        | k<=0 = x:(acc 0)
         | otherwise = acc (k-1)
       e = (const [])
 -- Hint: Write types for g, f and e first!
@@ -49,3 +49,57 @@ removeFirst' y xs = let
 --foldr :: (a -> (c -> d) -> (c -> d)) -> (c -> d) -> [a] -> (c -> b)
 --foldr :: (a -> b -> b) -> b -> [a] -> a
 -- b ~ Bool->[a]
+
+
+
+
+-- Extract the first element from a list
+fhead :: [a] -> Maybe a 
+fhead = g . foldr f e
+    where
+      g :: (Int -> Maybe a) -> Maybe a
+      g h = h 1
+      f :: a -> (Int -> Maybe a) -> Int -> Maybe a
+      f x acc k
+        | k==0 = acc 0
+        | otherwise = Just x
+      e = (const Nothing)
+
+-- Extract the last element from a list
+flast :: [a] -> Maybe a 
+flast = g . foldr f e
+    where
+      g h = h
+      f :: a -> Maybe a -> Maybe a
+      f x xs = case xs of
+       Nothing -> Just x
+       _ -> xs
+      e = Nothing
+
+-- Extract all but the first element of a list
+ftail :: [a] -> Maybe [a]
+ftail = g . foldr f e
+    where
+      g :: (Int ->Maybe [a]) -> Maybe [a]
+      g f = f 0
+      f :: a -> (Int -> Maybe [a]) -> Int -> Maybe [a]
+      f x acc k
+        | k==0 = Just (case acc 1 of
+                Just value -> value
+                Nothing -> [])
+        | otherwise = Just (case acc 1 of
+                Just value -> x:value
+                Nothing -> [x])
+      e = (const Nothing)
+
+-- Extract all but the last element from the list
+finit :: [a] -> Maybe [a]
+finit = g . foldr f e
+    where
+      g :: Maybe [a] -> Maybe [a]
+      g f = f
+      f :: a -> Maybe [a] -> Maybe [a]
+      f x xs = Just (case xs of
+                Just value -> x:value
+                Nothing -> [])
+      e = Nothing
