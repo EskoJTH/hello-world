@@ -1,10 +1,6 @@
-
-
-
-
-
 module SeasonalTime where
 import Data.Time.Clock
+import Data.Time.Calendar
 
 
 data Season = Winter | Spring | Summer | Autumn deriving Show
@@ -36,19 +32,32 @@ instance Seasonal Event where
      season MayDay = Spring
   
 instance Seasonal UTCTime where
-    season t = toGregorian
-    season t = case urgh of
-        ... -> Winter
-    season Mar = 
-    season Apr = 
-    season May = 
-    season Jun = 
-    season Jul = 
-    season Aug = 
-    season Sep = 
-    season Oct = 
-    season Nov = 
-    season Dec = 
+    season t = let (_,x,_) = toGregorian (utctDay t) in
+      case x of
+     12 -> Winter
+     1 -> Winter
+     2 -> Winter
+     3 -> Spring
+     4 -> Spring
+     5 -> Spring
+     6 -> Summer
+     7 -> Summer
+     8 -> Summer
+     9 -> Autumn
+     10 -> Autumn
+     11 -> Autumn
 
-  --Olen yrittänyt saada tämän vekottimen toimimaan varmaan 3 tuntia ja patterna matchata eri UTCTimet eri  vuodenaikoihin, mutta ei toimi ei sitten millään ei mitään hajua miten tätä utc timeä voi käyttää.
+--Osasimpas, mutta olipa vaikeaa kesiä.
+
+main :: IO()
+main = getCurrentTime >>= putSeasonalTime
+
+putSeasonalTime :: Seasonal a => a -> IO ()
+putSeasonalTime time = case season time of
+  Winter -> putStrLn "Talvi"
+  Spring -> putStrLn "Kevat"
+  Summer -> putStrLn "Kesa"
+  Autumn -> putStrLn "Syksy"
+
+
   

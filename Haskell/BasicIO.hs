@@ -5,13 +5,12 @@ main = do
     putStr   "Pick a natural number less than 10,"
     --IO operation
     putStrLn "and I'll try to guess what it is!"
-    
-    --The let portion is inside the do block but IO actions don't calculate iside it
 
-    --Portion that defines something inside a let block type of loop is told uder this line
+    --a let block that defines a funktion called "loop" starts here
+    --The let portion is inside the do block but IO actions aren't executed iside it
     let loop :: Int -> Int -> IO ()
         loop a b 
-         | a==b      = putStrLn ("The number is "++show a) -- not an IO operation yet. Happens only once it is called in a lazy manner from an IO block
+         | a==b      = putStrLn ("The number is "++show a) -- this is an IO operation that gets executed later once it is called from a do block.
          | otherwise = do
                         -- Another do block
              

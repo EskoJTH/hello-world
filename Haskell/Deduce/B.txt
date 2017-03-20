@@ -24,7 +24,7 @@ str::Str ⊢f str = maximum                     (map length(words str))
 
                                     {t c->c}  {Str -> [Int]}
 Foldable t, Ord c, str::Str ⊢f str = maximum  (map length(words str))
-= Lets apply c := [Int]
+= Lets apply Str := [Int]
 
                                     {[Int]->[Int]}  {Str -> [Int]}
 Foldable t, Ord c, str::Str ⊢f str = maximum        (map length(words str))
