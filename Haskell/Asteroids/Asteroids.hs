@@ -89,27 +89,25 @@ cycleCoordinates x
     | x > 400    = x-800
     | otherwise  = x
 
-rocket = do loadBMP "Rocket.bmp"
-bullet = do loadBMP "Bullet.bmp"
-rock = do loadBMP "Rock.bmp"
+drawWorld :: Picture->Picture->Picture->AsteroidWorld ->  Picture
 
-drawWorld :: AsteroidWorld -> Picture
-
-drawWorld GameOver 
+drawWorld _ _ _ GameOver 
    = scale 0.3 0.3 
      . translate (-400) 0 
      . color red 
      . text 
      $ "Game Over!"
 
-drawWorld (Play rocks (Ship (x,y) (vx,vy)) bullets)
+drawWorld rocket rock bullet (Play rocks (Ship (x,y) (vx,vy)) bullets) 
   = pictures [ship, asteroids,shots]
    where 
-    ship      = color red (pictures [translate x y (circle 10)])
-    asteroids = pictures [translate x y (color orange (circle s)) 
+    ship      = pictures [translate x y (rocket)]
+    asteroids = pictures [translate x y (asteroids)
                          | Rock   (x,y) s _ <- rocks]
-    shots     = pictures [translate x y (color red (circle 2)) 
+    shots     = pictures [translate x y ((bullet)) 
                          | Bullet (x,y) _ _ <- bullets]
+
+
 
 handleEvents :: Event -> AsteroidWorld -> AsteroidWorld
 
@@ -128,12 +126,6 @@ handleEvents (EventKey (MouseButton LeftButton) Down _ clickPos)
                         (-150 .* norm (shipPos .- clickPos)) 
                         0
      newVel    = shipVel .+ (50 .* norm (shipPos .- clickPos))
-
-
-
-
-                          
-
 
 handleEvents _ w = w
 
@@ -163,12 +155,16 @@ rotateV :: Float -> PointInSpace -> PointInSpace
 rotateV r (x,y) = (x * cos r - y * sin r
                   ,x * sin r + y * cos r)
 
-
-main = play 
+main :: IO ()
+main =
+  loadBMP "Rocket1.bmp" >>= \rocket -> 
+  loadBMP "Bullet1.bmp" >>= \bullet ->
+  loadBMP "Rock1.bmp" >>= \rock ->
+  play 
          (InWindow "Asteroids!" (550,550) (20,20)) 
          black 
          24 
          initialWorld 
-         drawWorld 
+         (drawWorld rocket rock bullet)
          handleEvents
          simulateWorld
