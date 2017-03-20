@@ -8,8 +8,5 @@ myScanl :: (a -> b -> b) -> b -> [a] -> [b]
 myScanl fun empty = g . foldr f e
   where
     g h = empty : h empty
-    f x acc k = (fun k x): acc (fun k x)
+    f x acc k = (fun x k): acc (fun x k)
     e = (const [])
-    
---Saan tuosta f:st‰ jostain syyst‰ virheilmoituksen. En yht‰‰n keksi ett‰ miksi.
---Virhe n‰ytt‰‰ t‰lt‰

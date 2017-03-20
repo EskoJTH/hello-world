@@ -1,0 +1,45 @@
+
+
+
+
+
+module SeasonalTime where
+import Data.Time.Clock
+
+
+data Season = Winter | Spring | Summer | Autumn deriving Show
+data Month  = Jan | Feb | Mar | Apr | May | Jun 
+            | Jul | Aug | Sep | Oct | Nov | Dec deriving (Show,Eq,Ord)
+
+class Seasonal a where
+    season :: a -> Season
+
+instance Seasonal Month where
+    season Dec = Winter
+    season Jan = Winter
+    season Feb = Winter
+    season Mar = Spring
+    season Apr = Spring
+    season May = Spring
+    season Jun = Summer
+    season Jul = Summer
+    season Aug = Summer
+    season Sep = Autumn
+    season Oct = Autumn
+    season Nov = Autumn
+    
+data Event = MayDay | IndependenceDay | MothersDay
+
+instance Seasonal Event where
+     season IndependenceDay = Winter
+     season MothersDay = Spring
+     season MayDay = Spring
+  
+instance Seasonal UTCTime where
+  season ... -> Winter
+season ... -> Spring
+season ... -> Summer
+season ... -> Autumn
+
+  --Olen yrittänyt saada tämän vekottimen toimimaan varmaan 3 tuntia ja patterna matchata eri UTCTimet eri  vuodenaikoihin, mutta ei toimi ei sitten millään ei mitään hajua miten tätä utc timeä voi käyttää.
+  

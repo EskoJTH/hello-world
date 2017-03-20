@@ -5,6 +5,7 @@ import Graphics.Gloss
 import Graphics.Gloss.Interface.Pure.Game
 import Graphics.Gloss.Interface.Pure.Simulate
 import Graphics.Gloss.Interface.Pure.Display
+import Graphics.Gloss.Data.Picture
 
 data AsteroidWorld = Play [Rock] Ship [Bullet]
                    | GameOver 
@@ -87,6 +88,10 @@ cycleCoordinates x
     | x < (-400) = 800+x
     | x > 400    = x-800
     | otherwise  = x
+
+rocket = do loadBMP "Rocket.bmp"
+bullet = do loadBMP "Bullet.bmp"
+rock = do loadBMP "Rock.bmp"
 
 drawWorld :: AsteroidWorld -> Picture
 
