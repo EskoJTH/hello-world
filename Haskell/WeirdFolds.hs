@@ -13,12 +13,12 @@ removeFirst x = g . foldr f e
 -- Take first n elements from a list
 -- >>> take 3 "I am groot"
 --     "I a"
-take' :: Int -> [a] -> [a] 
+take' :: Integer -> [a] -> [a] 
 take' n = g . foldr f e
     where 
-      g :: (Int -> [a]) -> [a]
+      g :: (Integer -> [a]) -> [a]
       g h = h n
-      f :: a -> (Int -> [a]) -> Int -> [a]
+      f :: a -> (Integer -> [a]) -> Integer -> [a]
       f x acc k --Mist listasta x saadaan? Listan päälimmäinen 
         | k<=0 = acc 0
         | otherwise = x:(acc (k-1))
