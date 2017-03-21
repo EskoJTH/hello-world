@@ -1,6 +1,9 @@
---Load the folder at the location specified so you get the pictures:
---
---Load the whole folder to the same folder this program is in
+--Load the 4 pictures with the names indicated ad the end of the URL
+--and place them to the folder this program is in
+--https://github.com/EskoJTH/hello-world/raw/master/Haskell/Asteroids/Bullet1.bmp
+--https://github.com/EskoJTH/hello-world/raw/master/Haskell/Asteroids/Rock1.bmp
+--https://github.com/EskoJTH/hello-world/raw/master/Haskell/Asteroids/Rocket1.bmp
+--https://github.com/EskoJTH/hello-world/raw/master/Haskell/Asteroids/UFO1.bmp
 
 module Main where
 import Control.Monad (join)
