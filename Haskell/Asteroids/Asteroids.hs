@@ -1,4 +1,5 @@
-
+--Load the folder at the location specified so you get the pictures:
+--
 
 module Main where
 import Control.Monad (join)
@@ -9,7 +10,7 @@ import Graphics.Gloss.Interface.Pure.Simulate
 import Graphics.Gloss.Interface.Pure.Display
 import Graphics.Gloss.Data.Picture
 
-data AsteroidWorld = Play [Rock] Ship UFO [Bullet]
+data AsteroidWorld = Play [Rock] Ship UFO [Bullet] --Kirjoitin ton ufo tonne.
                    | GameOver 
                    deriving (Eq,Show)
 
@@ -25,7 +26,7 @@ data Bullet = Bullet PointInSpace Velocity Age
     deriving (Eq,Show)
 data Rock   = Rock   PointInSpace Size Velocity
     deriving (Eq,Show)
-data UFO   = UFO PointInSpace Size  Velocity
+data UFO   = UFO PointInSpace Size  Velocity -- Tein itse
     deriving (Eq,Show)
 
 initialWorld :: AsteroidWorld
@@ -49,14 +50,14 @@ simulateWorld timeStep (Play rocks (Ship shipPos shipV) ufo  bullets)
   | any (collidesWith shipPos) rocks = GameOver
   | otherwise = Play (concatMap updateRock rocks)
                 (Ship newShipPos shipV)
-                (updateUFO ufo)
+                (updateUFO ufo) --Kirjoitin tämän rivin ihan itse
                 (concat (map updateBullet bullets))
   where
       collidesWith :: PointInSpace -> Rock -> Bool
       collidesWith p (Rock rp s _)
        = magV (rp .- p) < s
 
-      collidesWithU :: PointInSpace -> UFO -> Bool
+      collidesWithU :: PointInSpace -> UFO -> Bool --Kopioin itse ja lisäsin kaksi U kirjainta
       collidesWithU p (UFO rp s _)
        = magV (rp .- p) < s
 
@@ -64,7 +65,7 @@ simulateWorld timeStep (Play rocks (Ship shipPos shipV) ufo  bullets)
       collidesWithBullet r
        = any (\(Bullet bp _ _) -> collidesWith bp r) bullets
 
-      collidesWithUFO :: UFO -> Bool
+      collidesWithUFO :: UFO -> Bool --Kopioin yltä ite ja muutin kahta sanaa.
       collidesWithUFO r
        = any (\(Bullet bp _ _) -> collidesWithU bp r) bullets
          
@@ -77,12 +78,12 @@ simulateWorld timeStep (Play rocks (Ship shipPos shipV) ufo  bullets)
        | otherwise                     
             = [Rock (restoreToScreen (p .+ timeStep .* v)) s v]
 
-      updateUFO :: UFO -> UFO
-      updateUFO r@(UFO p s v)
+      updateUFO :: UFO -> UFO --Tein tän aika ite.
+      updateUFO r@(UFO p s v) --kopioin alemmasta ite. Mutta pyyhin tän kerran pois ja kirjotin uudelleen ite.
        | collidesWithUFO r
-            = UFO (restoreToScreen (p .+ timeStep .* join bimap (negate) v)) s (join bimap (negate) v) 
+            = UFO (restoreToScreen (p .+ timeStep .* join bimap (negate) v)) s (join bimap (negate) v)  --Sampsa kirjoitti joinin ja bimapin muuten tein itte.
        | otherwise                     
-            = UFO (restoreToScreen (p .+ timeStep .* v)) s v
+            = UFO (restoreToScreen (p .+ timeStep .* v)) s v -- Tein ite
  
       updateBullet :: Bullet -> [Bullet] 
       updateBullet (Bullet p v a) 
@@ -110,16 +111,16 @@ cycleCoordinates x
     | x > 400    = x-800
     | otherwise  = x
 
-drawWorld :: Picture->Picture->Picture->AsteroidWorld ->  Picture
+drawWorld :: Picture->Picture->Picture->Picture->AsteroidWorld ->  Picture
 
-drawWorld _ _ _ GameOver 
+drawWorld _ _ _ _ GameOver 
    = scale 0.3 0.3 
      . translate (-400) 0 
      . color red 
      . text 
      $ "Game Over!"
 
-drawWorld rocket rock bullet (Play rocks (Ship (x,y) (vx,vy)) (UFO (p1,p2) s v) bullets)
+drawWorld rocket rock bullet ufo1(Play rocks (Ship (x,y) (vx,vy)) (UFO (p1,p2) s v) bullets)
   = pictures [ship, asteroids,shots,ufo]
    where
     ship      = pictures [translate x y (rocket)]
@@ -127,7 +128,7 @@ drawWorld rocket rock bullet (Play rocks (Ship (x,y) (vx,vy)) (UFO (p1,p2) s v) 
                          | Rock   (x,y) s _ <- rocks]
     shots     = pictures [translate x y ((bullet))
                          | Bullet (x,y) _ _ <- bullets]
-    ufo       = pictures [translate p1 p2 (rocket)]
+    ufo       = pictures [translate p1 p2 (ufo1)]
 
 
 
@@ -135,7 +136,7 @@ handleEvents :: Event -> AsteroidWorld -> AsteroidWorld
 
 handleEvents (EventKey (MouseButton LeftButton) Down _ clickPos)
              GameOver
-             = initialWorld
+             = initialWorld --Kirjoitin tämän itse kurssin alussa että peli alkaa uudelleen.
 
 handleEvents _ GameOver = GameOver
 
@@ -179,19 +180,16 @@ rotateV r (x,y) = (x * cos r - y * sin r
 
 main :: IO ()
 main =
-  loadBMP "Rocket1.bmp" >>= \rocket -> 
-  loadBMP "Bullet1.bmp" >>= \bullet ->
-  loadBMP "Rock1.bmp" >>= \rock ->
+  loadBMP "Kuvat\\Rocket1.bmp" >>= \rocket -> --Tein Ite kuvat ja koodin itse
+  loadBMP "Kuvat\\Bullet1.bmp" >>= \bullet -> --Tein Ite kuvat ja koodin itse
+  loadBMP "Kuvat\\Rock1.bmp" >>= \rock -> --Tein Ite kuvat ja koodin itse
+  loadBMP "Kuvat\\UFO1.bmp" >>= \ufo1 -> --Tein Ite kuvat ja koodin itse
   play 
          (InWindow "Asteroids!" (550,550) (20,20)) 
          black
          24
          initialWorld 
-         (drawWorld rocket rock bullet)
+         (drawWorld rocket rock bullet ufo1) --Tein kuvien kuljetuksen itse
          handleEvents
          simulateWorld
-
-     -- do pictures [rocket, ...]
-     -- do rocket <- ask
-     --    pictures [rocket, ...]
 
