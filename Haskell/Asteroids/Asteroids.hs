@@ -1,5 +1,6 @@
 --Load the folder at the location specified so you get the pictures:
 --
+--Load the whole folder to the same folder this program is in
 
 module Main where
 import Control.Monad (join)
@@ -180,10 +181,10 @@ rotateV r (x,y) = (x * cos r - y * sin r
 
 main :: IO ()
 main =
-  loadBMP "Kuvat\\Rocket1.bmp" >>= \rocket -> --Tein Ite kuvat ja koodin itse
-  loadBMP "Kuvat\\Bullet1.bmp" >>= \bullet -> --Tein Ite kuvat ja koodin itse
-  loadBMP "Kuvat\\Rock1.bmp" >>= \rock -> --Tein Ite kuvat ja koodin itse
-  loadBMP "Kuvat\\UFO1.bmp" >>= \ufo1 -> --Tein Ite kuvat ja koodin itse
+  loadBMP "Rocket1.bmp" >>= \rocket -> --Tein Ite kuvat ja koodin itse
+  loadBMP "Bullet1.bmp" >>= \bullet -> --Tein Ite kuvat ja koodin itse
+  loadBMP "Rock1.bmp" >>= \rock -> --Tein Ite kuvat ja koodin itse
+  loadBMP "UFO1.bmp" >>= \ufo1 -> --Tein Ite kuvat ja koodin itse
   play 
          (InWindow "Asteroids!" (550,550) (20,20)) 
          black
