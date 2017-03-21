@@ -1,31 +1,31 @@
+kaikki {} alla kuuluu sen vaikutukseen esim {a->b}     tarkoittaa että f :: a->b ja 0 on yksin
+       	       	      	  	       	     f     0
 
-        {Ord x=>x->x->x}  {Ord y=>y->y->y}
-⊢f a b = max 0            (min a b)
+
+        {Ord x=>x->x->x}   {Ord y=>y->y->y}
+⊢f a b = max             0 (min              a b)
+
 = Lets move the type restritions to right place
 
-                                   {x->x->x} {y->y->y}
-Ord x, Ord y, Ord a, Ord b ⊢f a b = max 0    (min a b)
+	    	    {x->x->x}   {=>y->y->y}
+Ord x y a b ⊢f a b = max      0 (min         a b)
+
 = 0 is a Num so all other x must be Num too
 
-                                   {x->x->x} {y->y->y}
-Num x, Ord y, Ord a, Ord b ⊢f a b = max 0    (min a b)
-= now min must output a Num too so y is num too
+	    	         {x->x->x}   {y->y->y}
+Ord x,Num x, Ord y a b ⊢f a b = max      0 (min      a b)
 
-                                   {x->x->x} {y->y->y}
-Num x, Num y, Ord a, Ord b ⊢f a b = max 0    (min a b)
-= because all parameters are given to min must they be Num's also
+= max already has one parameter so we can remove one x
 
-                                   {x->x->x} {y->y->y}
-Num x, Num y, Num a, Num b ⊢f a b = max 0    (min a b)
-= because x and y are the the same type we can refer to them as x:=y
+                         {x->x} {y->y->y}
+Ord x,Num x, Ord y a b ⊢f a b = max 0 (min a b)
 
-                                   {y->y->y} {y->y->y}
-Num y, Num a, Num b ⊢f a b = max 0    (min a b)
-= now If we combine min to max
+= we see that y is the second parameter that max takes and that must be the same type the first one is so we can write x=y. a and b must also be the same type y is
 
-                                   {y->y->y->y}
-Num y, Num a, Num b ⊢f a b = max 0 (min a b)
-= 0 is always zero
+                    {x->x} {x->x->x}
+Ord x y a b, Num x y a b ⊢f a b = max 0 (min a b)
 
-                                   {y->y->y}
-Num y, Num a, Num b ⊢f a b = max 0 (min a b)
+= Now if we combine all values we get
+
+                             {x->x->x       }
+Ord x a b, Num x a b ⊢f a b = max 0 (min a b)

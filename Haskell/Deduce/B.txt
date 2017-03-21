@@ -13,7 +13,7 @@ str::Str ⊢f str = maximum                     (map                            
                  {Ord c, Foldable t =>t c->c} {[[a]] -> [Int]} {Str->[Str]}
 str::Str ⊢f str = maximum                     (map length      (words str))
 = Lets apply [[a]]:=[Str]
-
+x
                  {Ord c, Foldable t =>t c->c} {[Str] -> [Int]} {Str->[Str]}
 str::Str ⊢f str = maximum                     (map length      (words str))
 = Lets apply Str->[Str] to map length
@@ -24,11 +24,11 @@ str::Str ⊢f str = maximum                     (map length(words str))
 
                                     {t c->c}  {Str -> [Int]}
 Foldable t, Ord c, str::Str ⊢f str = maximum  (map length(words str))
-= Lets apply Str := [Int]
+= Lets apply c := Int
 
-                                    {[Int]->[Int]}  {Str -> [Int]}
+                                    {[Int]->Int}  {Str -> [Int]}
 Foldable t, Ord c, str::Str ⊢f str = maximum        (map length(words str))
 = Lets combine the rest
 
-                                    {Str->[Int]}
-Foldable t, Ord c, str::Str ⊢f str = maximum(map length(words str))
+                                    {Str->Int}
+str::Str ⊢f str = maximum(map length(words str))

@@ -1,3 +1,4 @@
+
 main = do
   --Do block starts here
   
@@ -21,19 +22,19 @@ main = do
                         putStrLn ("Is it more than "
                                  ++ show try
                                  ++ " ? (True/False)")
-                        --IO output gets assigned type IO ()
+                        --IO action output (String) gets assigned to isGreater
                         isGreater <- getLine
                         
                         --IF block
                         if (read isGreater)
-                             --type IO ()
+                             --IO action
                              then loop (try + 1) b
-                             --type IO ()
-                             else loop a       try
-                                  
-                        -- Another do block ends
-    --funktion call type IO ()
+                             --IO action
+                             else loop a       try         
+                        -- the second do block ends
+                        
+    --funktion call that returns type IO () and then that gets executed
     loop 1 10
-    --IO operation type IO ()
+    --IO operation that writes a String to Console
     putStrLn "Thanks for playing"
     --Do block ends here
