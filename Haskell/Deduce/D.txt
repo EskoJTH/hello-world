@@ -1,14 +1,18 @@
         {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
 ⊢f xs = map                        map                      xs
-= So that everything will work a := (c -> d) -> [c], b := [d] 
 
-        {((c -> d) -> [d] -> [d]) -> [(c -> d) -> [c]] -> [[d]]}  {(c -> d) -> [c] -> [d]}
-⊢f xs = map                                                         map                      xs
-= Lets apply 2nd map
+= The first parameter that map gets is xs which must be type (c->d) then.
 
-        {[(c -> d) -> [c]] -> [[d]]}
-⊢f xs = map map                      xs
-= xs must be type [(c -> d) -> [c]] so we get a result
+        {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
+⊢f xs = map                        map xs
 
-                          {[(c -> d) -> [c]] -> [[d]]}
-xs :: [(c -> d) -> [c]] ⊢f xs = map map xs
+= map xs returns a funktion of type [c] -> [d] which first map then takes as its first parameter
+
+        {([c] -> [d]) -> [[a]] -> [[b]]}  {(c -> d) -> [c] -> [d]}
+⊢f xs = map                        map xs
+
+= Lets combine these two and we get
+
+        {(c -> d) -> [[a]] -> [[b]]}
+⊢f xs = map map xs
+

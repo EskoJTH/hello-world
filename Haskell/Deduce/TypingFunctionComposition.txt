@@ -1,0 +1,28 @@
+f . g = \x -> f (g x)   infixr
+
+g f = map f . concat . words
+--{. märitelmän mukaan seuraava voidaan muotoilla}
+g f = map f (concat words)
+
+      {(a -> b) -> [a] -> [b]}   {Foldable t => t [a] -> [a]}   {String -> [String]}
+g f = map                      f (concat                        words)
+
+--{ String on taulukko. Yhdistetään concat ja words}
+
+      {(a -> b) -> [a] -> [b]}   {String -> String}
+g f = map                      f (concat words)
+
+--{ f:n täytyy olla tyyppiä (a -> b)}
+
+      {(a -> b) -> [a] -> [b]}   {String -> String}
+g f = map f                      (concat words)
+
+--{ Sijoitetaan String [a] paikalle. Tällöin a:n täytyy olla Char }
+
+      {(Char -> b) -> String -> [b]}   {String -> String}
+g f = map f                            (concat words)
+
+--{ yhdistetään loput}
+
+      {(Char -> b) -> String -> [b]}
+g f = map f (concat words)
