@@ -1,0 +1,11 @@
+esjutaha
+Mon Apr  3 14:48:33 EEST 2017
+Linux jalava.cc.jyu.fi 2.6.32-642.15.1.el6.x86_64 #1 SMP Mon Feb 20 02:26:38 EST 2017 x86_64 x86_64 x86_64 GNU/Linux
+UID        PID  PPID  C STIME TTY          TIME CMD
+esjutaha  8074  8073  0 14:31 pts/147  00:00:00 -bash
+esjutaha 14260  8074  0 14:49 pts/147  00:00:00 ps -f
+Login: esjutaha       			Name: Esko Hanell
+Directory: /nashome1/esjutaha       	Shell: /bin/bash
+On since Mon Apr  3 14:31 (EEST) on pts/147 from dyn-130-234-229-146.dynamic.jyu.fi
+No mail.
+No Plan.
