@@ -1,0 +1,23 @@
+esjutaha
+/nashome1/esjutaha/kj17/demo2
+Linux jalava.cc.jyu.fi 2.6.32-642.15.1.el6.x86_64 #1 SMP Mon Feb 20 02:26:38 EST 2017 x86_64 x86_64 x86_64 GNU/Linux
+Tue Apr  4 03:23:46 EEST 2017
+total 16
+-rwx------. 1 esjutaha users 237 Apr  4 03:01 ekaScripti.hs
+-rw-------. 1 esjutaha users 186 Apr  4 03:23 kj17_demo2_tuloste.txt
+UID        PID  PPID  C STIME TTY          TIME CMD
+esjutaha  9043 14597  0 03:23 pts/3    00:00:00 screen -r
+esjutaha  9067 19748  0 03:23 pts/120  00:00:00 /bin/bash
+esjutaha  9073  9067  0 03:23 pts/120  00:00:00 ps -u esjutaha -f
+esjutaha 14596 14581  0 01:39 ?        00:00:01 sshd: esjutaha@pts/3
+esjutaha 14597 14596  0 01:39 pts/3    00:00:00 -bash
+esjutaha 19710     1  0 02:46 ?        00:00:00 SCREEN emacs ekaScripti.
+esjutaha 19711 19710  0 02:46 pts/101  00:00:00 emacs ekaScripti.
+esjutaha 19748 19710  0 02:47 pts/120  00:00:00 /bin/bash
+whoami >> kj17_demo2_tuloste.txt
+pwd >> kj17_demo2_tuloste.txt
+uname -a >> kj17_demo2_tuloste.txt
+date >> kj17_demo2_tuloste.txt
+ls -l >> kj17_demo2_tuloste.txt
+ps -u `whoami` -f >> kj17_demo2_tuloste.txt
+cat $0 >> kj17_demo2_tuloste.txt
