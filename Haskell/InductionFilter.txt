@@ -1,32 +1,48 @@
-filter p []    = []
-filter p (x:xs) 
+filter p []    = []  --filter 1
+filter p (x:xs)  --filter 2
   | p x        = x : filter p xs
   | otherwise  = filter p xs
 
-null [] = True; null _ = False 
+null [] = True --null 1
+null _ = False 
 
-no p [] = True
-no p (x:xs)
-  | p x = False
+no p [] = True --no 1
+no p (x:xs) --no 2
+  | p x = False 
   | otherwise = no p xs
 
 no f xs ==> null (filter f xs)
 
-in order fotr this to be true:
+in order for this to be true:
 True ==> False = False
 _    ==> _     = True
 
-in order fotr this to be true:
+lets see if this holds for an empty list
 
+null (filter f [])
+=={-By the definition (filter 1) filter f [] == []-}
+null []
+=={-By the definition (null 1) null [] = True-}
+True
+=={-by the definition (no 1) no p [] = True -}
+no f []
+
+works for empty lists
+
+lets make induction assumption:
+no f xs ==> null (filter f xs)
+
+lets try to prove that it works for (x:xs) as well.
+
+because of (==>) we can only focus in situation where no f x:xs = True
+that will only hapen if p x == False. See (no 2).
+
+no f (x:xs)
+=={-because p x == False we can use this: no p (x:xs) = no p xs. See (no 2).-}
 no f xs
-xs=[]                               --True
-xs := ∃x : x ∊ xs  AND f x == True  --False
-xs := !(∃x : x ∊ xs  AND f x == True)  --True
-
-
+=={-induction assumption no f xs ==> null (filter f xs)-}
 null (filter f xs)
-xs=[]                               --True   Pitää paikkansa
-xs := ∃x : x ∊ xs  AND f x == True  --False   
-xs := !(∃x : x ∊ xs  AND f x == True)  --True jos ei löydy yhtään alkiota jonka funktio hyväksyisi tulee takaisin taas True
+=={-because p x == False (filter 2) filter p (x:xs) = filter p xs-}
+null (filter f (x:xs))
 
-Tällöin funktio pitää paikkansa kaikissa mahdollisissa tiloissa.
+induction holds when p x = False.

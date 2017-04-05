@@ -2,7 +2,7 @@ module Exercise where
 
 destutter :: Eq a => [a] -> [a]
 destutter [] = []
-destutter (x:xs) = x:recursion xs x
+destutter (x:xs) = x:recursion xs x --recursion 1
     where
     recursion :: Eq a => [a]-> a -> [a]
     recursion [] lastChar = []
@@ -11,10 +11,65 @@ destutter (x:xs) = x:recursion xs x
         | otherwise = x:recursion xs x
 
 Assumption: destutter (destutter xs) == destutter xs
-=={- destutter (x:xs) = x:recursion xs x -}
-destutter (x:recursion xs x) ==x:recursion xs x 
 
 Claim: destutter (destutter (x:xs)) == destutter (x:xs)
+
+lets see that it holds for empty lists
+destutter (destutter [])
+=={-destutter [] = []-}
+destutter []
+=={-destutter [] = []-}
+[]
+=={-destutter [] = []-}
+destutter []
+
+Induction Assumption:
+destutter (destutter xs) == destutter xs
+
+destutter (destutter (x:xs)) == destutter (x:xs)
+We can reshape this funktion as described in (recursion 1)
+destutter (x:recursion xs x) == x:recursion xs x
+x: recursion (recursion xs x) x == x:recursion xs x
+
+lets take this new funktion as induktion claim:
+x: recursion (recursion xs x) x == x:recursion xs x
+
+lets start the proof with empty lists
+x:recursion (recursion [] x) x
+=={-recursion [] x = []-}
+x:recursion [] x
+
+induction holds for empty lists.
+induction assumption:
+	  x:recursion (recursion ys x) x == x:recursion ys x
+Lets see if it holds for lists of length (y:ys)
+
+There are two different cases which we have to check separately.
+    recursion (x:xs) lastChar
+        | lastChar == x = recursion xs lastChar --y==x --definition 1
+        | otherwise = x:recursion xs x          --y!=x --definition 2
+
+first y==x
+
+x:recursion (recursion (x:ys) x) x
+=={- (definition 1) recursion (x:xs) lastChar = recursion xs lastChar-}
+x:recursion (recursion ys x) x
+=={-induction assumption:    x:recursion (recursion ys x) x == x:recursion ys x-}
+x:recursion ys x
+=={-(definition 1) recursion (x:xs) lastChar x = recursion xs lastChar-}
+x:recursion (x:ys) x
+
+second y!=x
+
+x:recursion (recursion (y:ys) x) x
+=={-(definition 2) recursion (x:xs) lastChar = x:recursion xs x -}
+x:recursion (y:recursion ys x) x
+=={-(definition 2) recursion (x:xs) lastChar = x:recursion xs x -}
+x:y: recursion (recursion ys x) x
+=={-induktion assumption:    x:recursion (recursion ys x) x == x:recursion ys x -} ------Miten tehdä x:ien kasnnsa?
+x:recursion (y:ys) x
+
+
 
 destutter (destutter (x:xs))
 =={- destutter (x:xs) = x:recursion (xs) x -}

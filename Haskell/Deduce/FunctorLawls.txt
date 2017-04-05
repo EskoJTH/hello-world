@@ -1,0 +1,42 @@
+map _ []     = []             -- map 1
+map f (x:xs) = f x : map f xs -- map 2
+
+(.)    :: (b -> c) -> (a -> b) -> a -> c
+(.) f g = \x -> f (g x)
+
+lets prove that
+map (f . g) xs == (map f . map g) xs 
+
+1.st lets see if it works with empty lists
+
+map (f . g) []
+== {- Map 1 -}
+[]
+== {- Inverse of Map 1 -}
+map f []
+== {- map 1 ==> [] = map _ [] -}
+map f (map g [])
+== {- Inverse of definition of (.) -}
+(map f . map g) []
+
+works with empty lists
+
+map (f . g) xs == (map f . map g) xs --Induction assumption.
+
+now lets try with x:xs
+
+map (f . g) (x:xs)
+== {- Map 2 -}
+(f . g) x : map (f . g) xs
+== {- The inductive assumption -}
+(f . g) x : (map f . map g) xs
+== {-Definition of (.) operatiopn. See beginning.  -}
+f (g  x) : (map f (map g xs))
+== {- Definition of map (map 2) -}
+map f (g x:map g xs)
+== {- Definition of map (map 2) -}
+map f (map g (x:xs))
+== {- Definition of (.)-}
+(map f . map g) (x:xs)
+
+induction holds.
