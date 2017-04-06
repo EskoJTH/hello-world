@@ -54,6 +54,9 @@ main =
       putStrLn (show taulukko4)
       putStrLn (show arvo5)
 
+
+ 
+
   
   
 
