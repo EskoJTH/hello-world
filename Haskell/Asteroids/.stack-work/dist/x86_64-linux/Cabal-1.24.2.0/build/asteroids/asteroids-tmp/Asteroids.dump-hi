@@ -1,0 +1,1689 @@
+
+==================== FINAL INTERFACE ====================
+2017-03-15 15:11:26.143871 UTC
+
+interface main@main:Main 8002
+  interface hash: d6e670249ffd90545f57498bdf1c42ca
+  ABI hash: 6c18e639f29ca73792cbb23ba58a4141
+  export-list hash: 87a2bbc51558c0deb4a67f1d6991ae8b
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a539aed96a3aa6e20d170ce40d6b47b8
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main..*
+  Main..+
+  Main..-
+  Main.cycleCoordinates
+  Main.drawWorld
+  Main.handleEvents
+  Main.initialWorld
+  Main.limitMag
+  Main.magV
+  Main.main
+  Main.norm
+  Main.restoreToScreen
+  Main.rotateV
+  Main.simulateWorld
+  Main.splitRock
+  Main.Age
+  Main.AsteroidWorld{Main.GameOver Main.Play}
+  Main.Bullet{Main.Bullet}
+  Main.PointInSpace
+  Main.Rock{Main.Rock}
+  Main.Ship{Main.Ship}
+  Main.Size
+  Main.Velocity
+module dependencies:
+package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-G12M6COyQIU5WfRlrIwPuj
+                      GLUT-2.7.0.11@GLUT-2.7.0.11-IP0PzJz4wI8KYXyKTnttpl
+                      ObjectName-1.1.0.1@ObjectName-1.1.0.1-EiFOWjUQWWuLyOhtrmuIWX
+                      OpenGL-3.0.1.0@OpenGL-3.0.1.0-BckrJgI63aX3I0VRJxU6fY
+                      OpenGLRaw-3.2.4.0@OpenGLRaw-3.2.4.0-JDyGgOXR61GG549SwmWm2Q
+                      StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bmp-1.2.6.3@bmp-1.2.6.3-43OLkH0uuwm831pBFpx2PZ
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      fixed-0.2.1.1@fixed-0.2.1.1-8Jr82l0kss5Gr4nEevmXlZ ghc-prim-0.5.0.0
+                      gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz
+                      gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-4njwxhM0L51DDTj3f5QCty
+                      half-0.2.2.3@half-0.2.2.3-GHJ372Ls7FBA3PAGtGHfOR
+                      integer-gmp-1.0.0.1 stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-4njwxhM0L51DDTj3f5QCty:Graphics.Gloss.Internals.Data.Picture
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.Float 33e2b9ffe427edd6a5c2fd6a3b26703c
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss 446fba84c72c2162e0e53dbea5b10a12
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Data.Color 35f09dcf5824a501e40cfcf03326b2bc
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Data.Display 5392242cf7ec93ea58fa9cb1cc259a3f
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Data.Picture 32f91608a8bdee9c0064dc93458da74d
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Interface.Pure.Display f9bbb5030cc08baf8142d887df63f19f
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Interface.Pure.Game 8edbb692a3fcd2fcaa82ef071b853aea
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Interface.Pure.Simulate 7d85c20229e42520b9adab85f50d5f7a
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Internals.Interface.Backend.Types 132a27a009994a72df34599aa7eddcec
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-Cjq2LIsB60XBDXiLGr6ISz:Graphics.Gloss.Internals.Interface.Event 497e82185fdb8b44e516b3e985181648
+import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-4njwxhM0L51DDTj3f5QCty:Graphics.Gloss.Internals.Data.Picture ec8d0a362f39091fe9e13deed4330688
+fixities infixl 7 .*, infixl 6 .+, infixl 6 .-
+2727d30da37c11358e78957c9e8a5173
+  $fEqAsteroidWorld :: GHC.Classes.Eq Main.AsteroidWorld
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.AsteroidWorld
+                  Main.$fEqAsteroidWorld_$c==
+                  Main.$fEqAsteroidWorld_$c/= -}
+2727d30da37c11358e78957c9e8a5173
+  $fEqAsteroidWorld_$c/= ::
+    Main.AsteroidWorld -> Main.AsteroidWorld -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Main.AsteroidWorld) (b :: Main.AsteroidWorld) ->
+                 case Main.$fEqAsteroidWorld_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+2727d30da37c11358e78957c9e8a5173
+  $fEqAsteroidWorld_$c== ::
+    Main.AsteroidWorld -> Main.AsteroidWorld -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Main.AsteroidWorld)
+                   (ds1 :: Main.AsteroidWorld) ->
+                 case ds of wild {
+                   Main.Play a1 a2 a3
+                   -> case ds1 of wild1 {
+                        Main.Play b1 b2 b3
+                        -> case GHC.Classes.$fEq[]_$c==
+                                  @ Main.Rock
+                                  Main.$fEqRock
+                                  a1
+                                  b1 of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case a2 of ww { Main.Ship ww1 ww2 ->
+                                case ww1 of ww3 { (,) ww4 ww5 ->
+                                case ww4 of ww6 { GHC.Types.F# ww7 ->
+                                case b2 of ww8 { Main.Ship ww9 ww10 ->
+                                case ww9 of ww11 { (,) ww12 ww13 ->
+                                case ww12 of ww14 { GHC.Types.F# ww15 ->
+                                case GHC.Prim.tagToEnum#
+                                       @ GHC.Types.Bool
+                                       (GHC.Prim.eqFloat# ww7 ww15) of wild3 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> case ww5 of wild4 { GHC.Types.F# x ->
+                                     case ww13 of wild5 { GHC.Types.F# y ->
+                                     case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.eqFloat# x y) of wild6 {
+                                       GHC.Types.False -> GHC.Types.False
+                                       GHC.Types.True
+                                       -> case ww2 of ww16 { (,) ww17 ww18 ->
+                                          case ww10 of ww19 { (,) ww20 ww21 ->
+                                          case ww17 of wild7 { GHC.Types.F# x1 ->
+                                          case ww20 of wild8 { GHC.Types.F# y1 ->
+                                          case GHC.Prim.tagToEnum#
+                                                 @ GHC.Types.Bool
+                                                 (GHC.Prim.eqFloat# x1 y1) of wild9 {
+                                            GHC.Types.False -> GHC.Types.False
+                                            GHC.Types.True
+                                            -> case ww18 of wild10 { GHC.Types.F# x2 ->
+                                               case ww21 of wild11 { GHC.Types.F# y2 ->
+                                               case GHC.Prim.tagToEnum#
+                                                      @ GHC.Types.Bool
+                                                      (GHC.Prim.eqFloat# x2 y2) of wild12 {
+                                                 GHC.Types.False -> GHC.Types.False
+                                                 GHC.Types.True
+                                                 -> GHC.Classes.$fEq[]_$c==
+                                                      @ Main.Bullet
+                                                      Main.$fEqBullet
+                                                      a3
+                                                      b3 } } } } } } } } } } } } } } } } } } }
+                        Main.GameOver -> GHC.Types.False }
+                   Main.GameOver
+                   -> case ds1 of wild1 {
+                        Main.Play ipv ipv1 ipv2 -> GHC.Types.False
+                        Main.GameOver -> GHC.Types.True } }) -}
+7401c660ce68f256c51c263c45f3c576
+  $fEqBullet :: GHC.Classes.Eq Main.Bullet
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Bullet Main.$fEqBullet_$c== Main.$fEqBullet_$c/= -}
+7401c660ce68f256c51c263c45f3c576
+  $fEqBullet_$c/= :: Main.Bullet -> Main.Bullet -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)),1*U(U))><S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)),1*U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Main.Bullet) (b :: Main.Bullet) ->
+                 case Main.$fEqBullet_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+7401c660ce68f256c51c263c45f3c576
+  $fEqBullet_$c== :: Main.Bullet -> Main.Bullet -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)),1*U(U))><S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Bullet) (w1 :: Main.Bullet) ->
+                 case w of ww { Main.Bullet ww1 ww2 ww3 ->
+                 case ww1 of ww4 { (,) ww5 ww6 ->
+                 case ww5 of ww7 { GHC.Types.F# ww8 ->
+                 case w1 of ww9 { Main.Bullet ww10 ww11 ww12 ->
+                 case ww10 of ww13 { (,) ww14 ww15 ->
+                 case ww14 of ww16 { GHC.Types.F# ww17 ->
+                 Main.$w$c== ww8 ww6 ww2 ww3 ww17 ww15 ww11 ww12 } } } } } }) -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fEqRock :: GHC.Classes.Eq Main.Rock
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Rock Main.$fEqRock_$c== Main.$fEqRock_$c/= -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fEqRock_$c/= :: Main.Rock -> Main.Rock -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(U),1*U(1*U(U),1*U(U)))><S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(U),1*U(1*U(U),1*U(U)))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Main.Rock) (b :: Main.Rock) ->
+                 case Main.$fEqRock_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fEqRock_$c== :: Main.Rock -> Main.Rock -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(U),1*U(1*U(U),1*U(U)))><S(S(S(S)L)LL),1*U(1*U(1*U(U),1*U(U)),1*U(U),1*U(1*U(U),1*U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Rock) (w1 :: Main.Rock) ->
+                 case w of ww { Main.Rock ww1 ww2 ww3 ->
+                 case ww1 of ww4 { (,) ww5 ww6 ->
+                 case ww5 of ww7 { GHC.Types.F# ww8 ->
+                 case w1 of ww9 { Main.Rock ww10 ww11 ww12 ->
+                 case ww10 of ww13 { (,) ww14 ww15 ->
+                 case ww14 of ww16 { GHC.Types.F# ww17 ->
+                 Main.$w$c==1 ww8 ww6 ww2 ww3 ww17 ww15 ww11 ww12 } } } } } }) -}
+597981c41912fe413c3d8f2143536945
+  $fEqShip :: GHC.Classes.Eq Main.Ship
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Ship Main.$fEqShip_$c== Main.$fEqShip_$c/= -}
+597981c41912fe413c3d8f2143536945
+  $fEqShip_$c/= :: Main.Ship -> Main.Ship -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S)L)L),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))><S(S(S(S)L)L),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Main.Ship) (b :: Main.Ship) ->
+                 case Main.$fEqShip_$c== a b of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+597981c41912fe413c3d8f2143536945
+  $fEqShip_$c== :: Main.Ship -> Main.Ship -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S(S)L)L),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))><S(S(S(S)L)L),1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Ship) (w1 :: Main.Ship) ->
+                 case w of ww { Main.Ship ww1 ww2 ->
+                 case ww1 of ww3 { (,) ww4 ww5 ->
+                 case ww4 of ww6 { GHC.Types.F# ww7 ->
+                 case w1 of ww8 { Main.Ship ww9 ww10 ->
+                 case ww9 of ww11 { (,) ww12 ww13 ->
+                 case ww12 of ww14 { GHC.Types.F# ww15 ->
+                 Main.$w$c==2 ww7 ww5 ww2 ww15 ww13 ww10 } } } } } }) -}
+2727d30da37c11358e78957c9e8a5173
+  $fShowAsteroidWorld :: GHC.Show.Show Main.AsteroidWorld
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.AsteroidWorld
+                  Main.$fShowAsteroidWorld_$cshowsPrec
+                  Main.$fShowAsteroidWorld_$cshow
+                  Main.$fShowAsteroidWorld_$cshowList -}
+2727d30da37c11358e78957c9e8a5173
+  $fShowAsteroidWorld1 :: Main.AsteroidWorld -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Main.$fShowAsteroidWorld_$cshowsPrec
+                   Main.$fShowAsteroidWorld2) -}
+0169b932af6b982b31f06fdaf89d61af
+  $fShowAsteroidWorld10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Rock "#) -}
+7d534afa9e39751855999efe103b1ce0
+  $fShowAsteroidWorld2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+630e08ca945182e6b83ee79419591f40
+  $fShowAsteroidWorld3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "GameOver"#) -}
+366cc179dba9342b1c440d71b7fb97a9
+  $fShowAsteroidWorld4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Play "#) -}
+7401c660ce68f256c51c263c45f3c576
+  $fShowAsteroidWorld5 :: Main.Bullet -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Main.Bullet) ->
+                 case w of ww { Main.Bullet ww1 ww2 ww3 ->
+                 Main.$w$cshowsPrec 0# ww1 ww2 ww3 }) -}
+b659aa2e3b29cde28c19c6a54f2e2a38
+  $fShowAsteroidWorld6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Bullet "#) -}
+622f52de4a42b7f06e31966a0bc8642c
+  $fShowAsteroidWorld7 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+5f5815138d8ffb88dc836ef748f8cf17
+  $fShowAsteroidWorld8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Ship "#) -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fShowAsteroidWorld9 :: Main.Rock -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Main.Rock) ->
+                 case w of ww { Main.Rock ww1 ww2 ww3 ->
+                 Main.$w$cshowsPrec2 0# ww1 ww2 ww3 }) -}
+2727d30da37c11358e78957c9e8a5173
+  $fShowAsteroidWorld_$cshow :: Main.AsteroidWorld -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.AsteroidWorld) ->
+                 Main.$fShowAsteroidWorld_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+2727d30da37c11358e78957c9e8a5173
+  $fShowAsteroidWorld_$cshowList ::
+    [Main.AsteroidWorld] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.AsteroidWorld
+                   Main.$fShowAsteroidWorld1) -}
+2727d30da37c11358e78957c9e8a5173
+  $fShowAsteroidWorld_$cshowsPrec ::
+    GHC.Types.Int -> Main.AsteroidWorld -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U>,
+     Unfolding: (\ (a :: GHC.Types.Int)
+                   (ds :: Main.AsteroidWorld)
+                   (eta :: GHC.Base.String) ->
+                 case ds of wild {
+                   Main.Play b1 b2 b3
+                   -> case a of wild1 { GHC.Types.I# x ->
+                      let {
+                        g :: GHC.Base.String -> GHC.Base.String
+                          {- Arity: 1, Strictness: <L,U> -}
+                        = \ (x1 :: GHC.Base.String)[OneShot] ->
+                          GHC.Show.showList__
+                            @ Main.Rock
+                            Main.$fShowAsteroidWorld9
+                            b1
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.showSpace1
+                               (case b2 of ww { Main.Ship ww1 ww2 ->
+                                Main.$w$cshowsPrec1
+                                  11#
+                                  ww1
+                                  ww2
+                                  (GHC.Types.:
+                                     @ GHC.Types.Char
+                                     GHC.Show.showSpace1
+                                     (GHC.Show.showList__
+                                        @ Main.Bullet
+                                        Main.$fShowAsteroidWorld5
+                                        b3
+                                        x1)) }))
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# x 11#) of wild2 {
+                        GHC.Types.False
+                        -> GHC.Base.++ @ GHC.Types.Char Main.$fShowAsteroidWorld4 (g eta)
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Main.$fShowAsteroidWorld4
+                                (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 eta))) } }
+                   Main.GameOver
+                   -> GHC.Base.++ @ GHC.Types.Char Main.$fShowAsteroidWorld3 eta }) -}
+7401c660ce68f256c51c263c45f3c576
+  $fShowBullet :: GHC.Show.Show Main.Bullet
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Bullet
+                  Main.$fShowBullet_$cshowsPrec
+                  Main.$fShowBullet_$cshow
+                  Main.$fShowBullet_$cshowList -}
+7401c660ce68f256c51c263c45f3c576
+  $fShowBullet_$cshow :: Main.Bullet -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.Bullet) ->
+                 Main.$fShowBullet_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+7401c660ce68f256c51c263c45f3c576
+  $fShowBullet_$cshowList :: [Main.Bullet] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.Bullet
+                   Main.$fShowAsteroidWorld5) -}
+7401c660ce68f256c51c263c45f3c576
+  $fShowBullet_$cshowsPrec ::
+    GHC.Types.Int -> Main.Bullet -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(U(U(U),U(U)),U(U(U),U(U)),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Main.Bullet) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.Bullet ww3 ww4 ww5 ->
+                 Main.$w$cshowsPrec ww1 ww3 ww4 ww5 } }) -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fShowRock :: GHC.Show.Show Main.Rock
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Rock
+                  Main.$fShowRock_$cshowsPrec
+                  Main.$fShowRock_$cshow
+                  Main.$fShowRock_$cshowList -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fShowRock_$cshow :: Main.Rock -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U(U(U),U(U)),1*U(U),U(U(U),U(U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.Rock) ->
+                 Main.$fShowRock_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fShowRock_$cshowList :: [Main.Rock] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.Rock
+                   Main.$fShowAsteroidWorld9) -}
+654e07c8399c76bb4417ad9c4b6314b3
+  $fShowRock_$cshowsPrec ::
+    GHC.Types.Int -> Main.Rock -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(U(U(U),U(U)),1*U(U),U(U(U),U(U)))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Main.Rock) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.Rock ww3 ww4 ww5 ->
+                 Main.$w$cshowsPrec2 ww1 ww3 ww4 ww5 } }) -}
+597981c41912fe413c3d8f2143536945
+  $fShowShip :: GHC.Show.Show Main.Ship
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Ship
+                  Main.$fShowShip_$cshowsPrec
+                  Main.$fShowShip_$cshow
+                  Main.$fShowShip_$cshowList -}
+597981c41912fe413c3d8f2143536945
+  $fShowShip1 :: Main.Ship -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Main.Ship) (w1 :: GHC.Base.String) ->
+                 case w of ww { Main.Ship ww1 ww2 ->
+                 Main.$w$cshowsPrec1 0# ww1 ww2 w1 }) -}
+597981c41912fe413c3d8f2143536945
+  $fShowShip_$cshow :: Main.Ship -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <S,1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Main.Ship) ->
+                 Main.$fShowShip_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+597981c41912fe413c3d8f2143536945
+  $fShowShip_$cshowList :: [Main.Ship] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Main.Ship Main.$fShowShip1) -}
+597981c41912fe413c3d8f2143536945
+  $fShowShip_$cshowsPrec ::
+    GHC.Types.Int -> Main.Ship -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Main.Ship)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.Ship ww3 ww4 ->
+                 Main.$w$cshowsPrec1 ww1 ww3 ww4 w2 } }) -}
+a362c6c9d066a99023fd4c88cd2ee759
+  $tc'Bullet :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14533057039368359050##
+                   4378615470775444077##
+                   Main.$trModule
+                   Main.$tc'Bullet1) -}
+99dd213cea8467e29e682609ea5cf9c4
+  $tc'Bullet1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Bullet"#) -}
+532d6b507b1871081c819af649775abf
+  $tc'GameOver :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3451391899980584996##
+                   4724146676709662412##
+                   Main.$trModule
+                   Main.$tc'GameOver1) -}
+4bb4eeb44e1c8e869ab5d4aa70265f73
+  $tc'GameOver1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'GameOver"#) -}
+f33b08154fa118799fddc592addd197f
+  $tc'Play :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11079318598596063466##
+                   11767134265205948710##
+                   Main.$trModule
+                   Main.$tc'Play1) -}
+eb3c9defd6ec43d876d99650e0410d89
+  $tc'Play1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Play"#) -}
+aa110189ab45d1841c9c9ee314f8d420
+  $tc'Rock :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11353862468912040836##
+                   17494350844943924505##
+                   Main.$trModule
+                   Main.$tc'Rock1) -}
+03b98fb10e526a951edec908b228c0e5
+  $tc'Rock1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Rock"#) -}
+82729510aef7ba748d999dbdf2d0bf7b
+  $tc'Ship :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16887846692331552665##
+                   6946442089937210802##
+                   Main.$trModule
+                   Main.$tc'Ship1) -}
+59780cbcb505967e93c8791ad6a350ea
+  $tc'Ship1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Ship"#) -}
+f8c96d5381b513be4d0094135c8a847e
+  $tcAsteroidWorld :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14637506219665032653##
+                   11299018532447807794##
+                   Main.$trModule
+                   Main.$tcAsteroidWorld1) -}
+861e7edcaf7942bca4f0aced44576f95
+  $tcAsteroidWorld1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "AsteroidWorld"#) -}
+2624aaf39c02c47cc3d278add21ea781
+  $tcBullet :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5845814067266775939##
+                   6995908709638320259##
+                   Main.$trModule
+                   Main.$tcBullet1) -}
+1b112297ba61049096d4c1c91d587180
+  $tcBullet1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Bullet"#) -}
+f39a5b3d57469ce97493a6cb21f4bd1d
+  $tcRock :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10924530836931477975##
+                   1449854725703248675##
+                   Main.$trModule
+                   Main.$tcRock1) -}
+d747a499a58608e4070be9dafc39be24
+  $tcRock1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Rock"#) -}
+ba8803e17c83d21e85de700084c80fe8
+  $tcShip :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   4552705915324658077##
+                   16306820604633315408##
+                   Main.$trModule
+                   Main.$tcShip1) -}
+2183f953ae5192757f096f5bbd9529a8
+  $tcShip1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Ship"#) -}
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+d0c269d265995075b01c821297af8db8
+  $w$c== ::
+    GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> Main.Velocity
+    -> Main.Age
+    -> GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> Main.Velocity
+    -> Main.Age
+    -> GHC.Types.Bool
+  {- Arity: 8, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><L,1*U(1*U(U),1*U(U))><L,1*U(U)><S,U><L,1*U(U)><L,1*U(1*U(U),1*U(U))><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Float#)
+                   (ww1 :: GHC.Types.Float)
+                   (ww2 :: Main.Velocity)
+                   (ww3 :: Main.Age)
+                   (ww4 :: GHC.Prim.Float#)
+                   (ww5 :: GHC.Types.Float)
+                   (ww6 :: Main.Velocity)
+                   (ww7 :: Main.Age) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww4) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case ww1 of wild1 { GHC.Types.F# x ->
+                      case ww5 of wild2 { GHC.Types.F# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqFloat# x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case ww2 of ww8 { (,) ww9 ww10 ->
+                           case ww6 of ww11 { (,) ww12 ww13 ->
+                           case ww9 of wild4 { GHC.Types.F# x1 ->
+                           case ww12 of wild5 { GHC.Types.F# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.eqFloat# x1 y1) of wild6 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case ww10 of wild7 { GHC.Types.F# x2 ->
+                                case ww13 of wild8 { GHC.Types.F# y2 ->
+                                case GHC.Prim.tagToEnum#
+                                       @ GHC.Types.Bool
+                                       (GHC.Prim.eqFloat# x2 y2) of wild9 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> GHC.Classes.eqFloat ww3 ww7 } } } } } } } } } } } }) -}
+84bf6c5deacbbfd491bb55fbd3f41585
+  $w$c==1 ::
+    GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> Main.Size
+    -> Main.Velocity
+    -> GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> Main.Size
+    -> Main.Velocity
+    -> GHC.Types.Bool
+  {- Arity: 8, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><L,1*U(U)><L,1*U(1*U(U),1*U(U))><S,U><L,1*U(U)><L,1*U(U)><L,1*U(1*U(U),1*U(U))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Float#)
+                   (ww1 :: GHC.Types.Float)
+                   (ww2 :: Main.Size)
+                   (ww3 :: Main.Velocity)
+                   (ww4 :: GHC.Prim.Float#)
+                   (ww5 :: GHC.Types.Float)
+                   (ww6 :: Main.Size)
+                   (ww7 :: Main.Velocity) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww4) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case ww1 of wild1 { GHC.Types.F# x ->
+                      case ww5 of wild2 { GHC.Types.F# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqFloat# x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case ww2 of wild4 { GHC.Types.F# x1 ->
+                           case ww6 of wild5 { GHC.Types.F# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.eqFloat# x1 y1) of wild6 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case ww3 of ww8 { (,) ww9 ww10 ->
+                                case ww7 of ww11 { (,) ww12 ww13 ->
+                                case ww9 of wild7 { GHC.Types.F# x2 ->
+                                case ww12 of wild8 { GHC.Types.F# y2 ->
+                                case GHC.Prim.tagToEnum#
+                                       @ GHC.Types.Bool
+                                       (GHC.Prim.eqFloat# x2 y2) of wild9 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> GHC.Classes.eqFloat ww10 ww13 } } } } } } } } } } } }) -}
+d092a18b33a184d3b0f9f285ad2b4ee5
+  $w$c==2 ::
+    GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> Main.Velocity
+    -> GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> Main.Velocity
+    -> GHC.Types.Bool
+  {- Arity: 6, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><L,1*U(1*U(U),1*U(U))><S,U><L,1*U(U)><L,1*U(1*U(U),1*U(U))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Float#)
+                   (ww1 :: GHC.Types.Float)
+                   (ww2 :: Main.Velocity)
+                   (ww3 :: GHC.Prim.Float#)
+                   (ww4 :: GHC.Types.Float)
+                   (ww5 :: Main.Velocity) ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqFloat# ww ww3) of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case ww1 of wild1 { GHC.Types.F# x ->
+                      case ww4 of wild2 { GHC.Types.F# y ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqFloat# x y) of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case ww2 of ww6 { (,) ww7 ww8 ->
+                           case ww5 of ww9 { (,) ww10 ww11 ->
+                           case ww7 of wild4 { GHC.Types.F# x1 ->
+                           case ww10 of wild5 { GHC.Types.F# y1 ->
+                           case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.eqFloat# x1 y1) of wild6 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> GHC.Classes.eqFloat ww8 ww11 } } } } } } } } }) -}
+5940b19e9e0a6308b4cc2cc38dc04d2e
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Main.PointInSpace -> Main.Velocity -> Main.Age -> GHC.Show.ShowS
+  {- Arity: 4,
+     Strictness: <S,U><L,U(U(U),U(U))><L,U(U(U),U(U))><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Main.PointInSpace)
+                   (ww2 :: Main.Velocity)
+                   (ww3 :: Main.Age) ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = case ww3 of ww4 { GHC.Types.F# ww5 ->
+                     GHC.Float.$w$sshowSignedFloat1
+                       GHC.Float.$fShowFloat_$sshowFloat
+                       Main.$fShowAsteroidWorld7
+                       ww5 }
+                 } in
+                 let {
+                   g1 :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     case ww1 of ww4 { (,) ww5 ww6 ->
+                     GHC.Types.:
+                       @ GHC.Types.Char
+                       GHC.Show.shows7
+                       (case ww5 of ww7 { GHC.Types.F# ww8 ->
+                        GHC.Float.$w$sshowSignedFloat1
+                          GHC.Float.$fShowFloat_$sshowFloat
+                          GHC.Show.shows22
+                          ww8
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows5
+                             (GHC.Show.$fShow(,)_$sgo
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows4
+                                   (GHC.Types.:
+                                      @ GHC.Types.Char
+                                      GHC.Show.showSpace1
+                                      (case ww2 of ww9 { (,) ww10 ww11 ->
+                                       GHC.Types.:
+                                         @ GHC.Types.Char
+                                         GHC.Show.shows7
+                                         (case ww10 of ww12 { GHC.Types.F# ww13 ->
+                                          GHC.Float.$w$sshowSignedFloat1
+                                            GHC.Float.$fShowFloat_$sshowFloat
+                                            GHC.Show.shows22
+                                            ww13
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               GHC.Show.shows5
+                                               (GHC.Show.$fShow(,)_$sgo
+                                                  (GHC.Types.:
+                                                     @ GHC.Types.Char
+                                                     GHC.Show.shows4
+                                                     (GHC.Types.:
+                                                        @ GHC.Types.Char
+                                                        GHC.Show.showSpace1
+                                                        (g x)))
+                                                  (case ww11 of ww14 { GHC.Types.F# ww15 ->
+                                                   GHC.Float.$w$sshowSignedFloat1
+                                                     GHC.Float.$fShowFloat_$sshowFloat
+                                                     GHC.Show.shows22
+                                                     ww15 })
+                                                  (GHC.Types.[] @ GHC.Show.ShowS))) }) })))
+                                (case ww6 of ww9 { GHC.Types.F# ww10 ->
+                                 GHC.Float.$w$sshowSignedFloat1
+                                   GHC.Float.$fShowFloat_$sshowFloat
+                                   GHC.Show.shows22
+                                   ww10 })
+                                (GHC.Types.[] @ GHC.Show.ShowS))) }) }
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char Main.$fShowAsteroidWorld6 (g1 x)
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Main.$fShowAsteroidWorld6
+                           (g1 (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }) -}
+9b41f5f90e9db74b5af2d6bdf69985c4
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> Main.PointInSpace
+    -> Main.Velocity
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4,
+     Strictness: <S,U><L,1*U(1*U(U),1*U(U))><L,1*U(1*U(U),1*U(U))><L,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Main.PointInSpace)
+                   (ww2 :: Main.Velocity)
+                   (w :: GHC.Base.String) ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     case ww1 of ww3 { (,) ww4 ww5 ->
+                     GHC.Types.:
+                       @ GHC.Types.Char
+                       GHC.Show.shows7
+                       (case ww4 of ww6 { GHC.Types.F# ww7 ->
+                        GHC.Float.$w$sshowSignedFloat1
+                          GHC.Float.$fShowFloat_$sshowFloat
+                          GHC.Show.shows22
+                          ww7
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows5
+                             (GHC.Show.$fShow(,)_$sgo
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows4
+                                   (GHC.Types.:
+                                      @ GHC.Types.Char
+                                      GHC.Show.showSpace1
+                                      (case ww2 of ww8 { (,) ww9 ww10 ->
+                                       GHC.Types.:
+                                         @ GHC.Types.Char
+                                         GHC.Show.shows7
+                                         (case ww9 of ww11 { GHC.Types.F# ww12 ->
+                                          GHC.Float.$w$sshowSignedFloat1
+                                            GHC.Float.$fShowFloat_$sshowFloat
+                                            GHC.Show.shows22
+                                            ww12
+                                            (GHC.Types.:
+                                               @ GHC.Types.Char
+                                               GHC.Show.shows5
+                                               (GHC.Show.$fShow(,)_$sgo
+                                                  (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x)
+                                                  (case ww10 of ww13 { GHC.Types.F# ww14 ->
+                                                   GHC.Float.$w$sshowSignedFloat1
+                                                     GHC.Float.$fShowFloat_$sshowFloat
+                                                     GHC.Show.shows22
+                                                     ww14 })
+                                                  (GHC.Types.[] @ GHC.Show.ShowS))) }) })))
+                                (case ww5 of ww8 { GHC.Types.F# ww9 ->
+                                 GHC.Float.$w$sshowSignedFloat1
+                                   GHC.Float.$fShowFloat_$sshowFloat
+                                   GHC.Show.shows22
+                                   ww9 })
+                                (GHC.Types.[] @ GHC.Show.ShowS))) }) }
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> GHC.Base.++ @ GHC.Types.Char Main.$fShowAsteroidWorld8 (g w)
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Main.$fShowAsteroidWorld8
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w))) }) -}
+450310f07122ba06b1d01df99a3839b7
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int#
+    -> Main.PointInSpace
+    -> Main.Size
+    -> Main.Velocity
+    -> GHC.Show.ShowS
+  {- Arity: 4,
+     Strictness: <S,U><L,U(U(U),U(U))><L,1*U(U)><L,U(U(U),U(U))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Main.PointInSpace)
+                   (ww2 :: Main.Size)
+                   (ww3 :: Main.Velocity) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = case ww2 of ww4 { GHC.Types.F# ww5 ->
+                     GHC.Float.$w$sshowSignedFloat1
+                       GHC.Float.$fShowFloat_$sshowFloat
+                       Main.$fShowAsteroidWorld7
+                       ww5 }
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     case ww1 of ww4 { (,) ww5 ww6 ->
+                     GHC.Types.:
+                       @ GHC.Types.Char
+                       GHC.Show.shows7
+                       (case ww5 of ww7 { GHC.Types.F# ww8 ->
+                        GHC.Float.$w$sshowSignedFloat1
+                          GHC.Float.$fShowFloat_$sshowFloat
+                          GHC.Show.shows22
+                          ww8
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows5
+                             (GHC.Show.$fShow(,)_$sgo
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows4
+                                   (GHC.Types.:
+                                      @ GHC.Types.Char
+                                      GHC.Show.showSpace1
+                                      (f (GHC.Types.:
+                                            @ GHC.Types.Char
+                                            GHC.Show.showSpace1
+                                            (case ww3 of ww9 { (,) ww10 ww11 ->
+                                             GHC.Types.:
+                                               @ GHC.Types.Char
+                                               GHC.Show.shows7
+                                               (case ww10 of ww12 { GHC.Types.F# ww13 ->
+                                                GHC.Float.$w$sshowSignedFloat1
+                                                  GHC.Float.$fShowFloat_$sshowFloat
+                                                  GHC.Show.shows22
+                                                  ww13
+                                                  (GHC.Types.:
+                                                     @ GHC.Types.Char
+                                                     GHC.Show.shows5
+                                                     (GHC.Show.$fShow(,)_$sgo
+                                                        (GHC.Types.:
+                                                           @ GHC.Types.Char
+                                                           GHC.Show.shows4
+                                                           x)
+                                                        (case ww11 of ww14 { GHC.Types.F# ww15 ->
+                                                         GHC.Float.$w$sshowSignedFloat1
+                                                           GHC.Float.$fShowFloat_$sshowFloat
+                                                           GHC.Show.shows22
+                                                           ww15 })
+                                                        (GHC.Types.[] @ GHC.Show.ShowS))) }) })))))
+                                (case ww6 of ww9 { GHC.Types.F# ww10 ->
+                                 GHC.Float.$w$sshowSignedFloat1
+                                   GHC.Float.$fShowFloat_$sshowFloat
+                                   GHC.Show.shows22
+                                   ww10 })
+                                (GHC.Types.[] @ GHC.Show.ShowS))) }) }
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char Main.$fShowAsteroidWorld10 (g x)
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Main.$fShowAsteroidWorld10
+                           (g (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }) -}
+c828018cf710b7aaa44bf5b1c180a6c0
+  $wrestoreToScreen ::
+    GHC.Types.Float
+    -> GHC.Types.Float -> (# GHC.Types.Float, GHC.Types.Float #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U)><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Float) (ww1 :: GHC.Types.Float) ->
+                 (# case ww of wild { GHC.Types.F# x ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.ltFloat# x -400.0#) of wild1 {
+                      GHC.Types.False
+                      -> case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.gtFloat# x 400.0#) of wild2 {
+                           GHC.Types.False -> wild
+                           GHC.Types.True -> GHC.Types.F# (GHC.Prim.minusFloat# x 800.0#) }
+                      GHC.Types.True -> GHC.Types.F# (GHC.Prim.plusFloat# 800.0# x) } },
+                    case ww1 of wild { GHC.Types.F# x ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.ltFloat# x -400.0#) of wild1 {
+                      GHC.Types.False
+                      -> case GHC.Prim.tagToEnum#
+                                @ GHC.Types.Bool
+                                (GHC.Prim.gtFloat# x 400.0#) of wild2 {
+                           GHC.Types.False -> wild
+                           GHC.Types.True -> GHC.Types.F# (GHC.Prim.minusFloat# x 800.0#) }
+                      GHC.Types.True
+                      -> GHC.Types.F# (GHC.Prim.plusFloat# 800.0# x) } } #)) -}
+8ad6cd765a9cd1defe1377f39b691ce5
+  $wsplitRock ::
+    Main.PointInSpace
+    -> Main.Size -> Main.Velocity -> (# Main.Rock, [Main.Rock] #)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U><L,U(U)><L,U(U(U),U(U))>, Inline: [0],
+     Unfolding: (\ (ww :: Main.PointInSpace)
+                   (ww1 :: Main.Size)
+                   (ww2 :: Main.Velocity) ->
+                 (# Main.Rock
+                      ww
+                      (case ww1 of wild { GHC.Types.F# x ->
+                       GHC.Types.F# (GHC.Prim.divideFloat# x 2.0#) })
+                      (case ww2 of wild { (,) x y ->
+                       (case x of wild1 { GHC.Types.F# x1 ->
+                        case y of wild2 { GHC.Types.F# x2 ->
+                        GHC.Types.F#
+                          (GHC.Prim.timesFloat#
+                             3.0#
+                             (GHC.Prim.minusFloat#
+                                (GHC.Prim.timesFloat# x1 (GHC.Prim.cosFloat# 1.0471976#))
+                                (GHC.Prim.timesFloat# x2 (GHC.Prim.sinFloat# 1.0471976#)))) } },
+                        case x of wild1 { GHC.Types.F# x1 ->
+                        case y of wild2 { GHC.Types.F# x2 ->
+                        GHC.Types.F#
+                          (GHC.Prim.timesFloat#
+                             3.0#
+                             (GHC.Prim.plusFloat#
+                                (GHC.Prim.timesFloat# x1 (GHC.Prim.sinFloat# 1.0471976#))
+                                (GHC.Prim.timesFloat#
+                                   x2
+                                   (GHC.Prim.cosFloat# 1.0471976#)))) } }) }),
+                    GHC.Types.:
+                      @ Main.Rock
+                      (Main.Rock
+                         ww
+                         (case ww1 of wild { GHC.Types.F# x ->
+                          GHC.Types.F# (GHC.Prim.divideFloat# x 2.0#) })
+                         (case ww2 of wild { (,) x y ->
+                          (case x of wild1 { GHC.Types.F# x1 ->
+                           case y of wild2 { GHC.Types.F# x2 ->
+                           GHC.Types.F#
+                             (GHC.Prim.timesFloat#
+                                3.0#
+                                (GHC.Prim.minusFloat#
+                                   (GHC.Prim.timesFloat# x1 (GHC.Prim.cosFloat# -1.0471976#))
+                                   (GHC.Prim.timesFloat# x2 (GHC.Prim.sinFloat# -1.0471976#)))) } },
+                           case x of wild1 { GHC.Types.F# x1 ->
+                           case y of wild2 { GHC.Types.F# x2 ->
+                           GHC.Types.F#
+                             (GHC.Prim.timesFloat#
+                                3.0#
+                                (GHC.Prim.plusFloat#
+                                   (GHC.Prim.timesFloat# x1 (GHC.Prim.sinFloat# -1.0471976#))
+                                   (GHC.Prim.timesFloat#
+                                      x2
+                                      (GHC.Prim.cosFloat# -1.0471976#)))) } }) }))
+                      (GHC.Types.[] @ Main.Rock) #)) -}
+3888b7ea7b487d0f15286d7d6c92ff19
+  (.*) :: GHC.Types.Float -> Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U)><S,1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (s :: GHC.Types.Float)
+                   (ds :: (GHC.Types.Float, GHC.Types.Float)) ->
+                 case ds of wild { (,) u v ->
+                 (GHC.Float.timesFloat s u, GHC.Float.timesFloat s v) }) -}
+9e677889b92777b41a7bbef8663c89bb
+  (.+) :: Main.PointInSpace -> Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U(1*U(U),1*U(U))><S,1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: (GHC.Types.Float, GHC.Types.Float))
+                   (ds1 :: (GHC.Types.Float, GHC.Types.Float)) ->
+                 case ds of wild { (,) x y ->
+                 case ds1 of wild1 { (,) u v ->
+                 (GHC.Float.plusFloat x u, GHC.Float.plusFloat y v) } }) -}
+4b736889e5515f089a3b5051a6b323c4
+  (.-) :: Main.PointInSpace -> Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U(1*U(U),1*U(U))><S,1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: (GHC.Types.Float, GHC.Types.Float))
+                   (ds1 :: (GHC.Types.Float, GHC.Types.Float)) ->
+                 case ds of wild { (,) x y ->
+                 case ds1 of wild1 { (,) u v ->
+                 (GHC.Float.minusFloat x u, GHC.Float.minusFloat y v) } }) -}
+280b29f7cb2c98abc69803cd9fdecdf8
+  type Age = GHC.Types.Float
+2727d30da37c11358e78957c9e8a5173
+  data AsteroidWorld
+    = Play [Main.Rock] Main.Ship [Main.Bullet] | GameOver
+7401c660ce68f256c51c263c45f3c576
+  data Bullet = Bullet Main.PointInSpace Main.Velocity Main.Age
+ec7fc31bdbb22a868a082d3966b5b65a
+  type PointInSpace = (GHC.Types.Float, GHC.Types.Float)
+654e07c8399c76bb4417ad9c4b6314b3
+  data Rock = Rock Main.PointInSpace Main.Size Main.Velocity
+597981c41912fe413c3d8f2143536945
+  data Ship = Ship Main.PointInSpace Main.Velocity
+e7070d88aaf59a83d9e0d0886d37620d
+  type Size = GHC.Types.Float
+7c23489e6a108cb584f6d3e12cd21a9c
+  type Velocity = (GHC.Types.Float, GHC.Types.Float)
+28b357989079864a28822537a6c23685
+  cycleCoordinates :: (GHC.Classes.Ord a, GHC.Num.Num a) => a -> a
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(LLC(C(S))LLLLL),U(A,A,1*C1(C1(U)),A,1*C1(C1(U)),A,A,A)><L,U(1*C1(C1(U)),1*C1(C1(U)),A,1*C1(U),A,A,C(U))><L,U>,
+     Unfolding: (\ @ a
+                   ($dOrd :: GHC.Classes.Ord a)
+                   ($dNum :: GHC.Num.Num a)
+                   (x :: a) ->
+                 case GHC.Classes.<
+                        @ a
+                        $dOrd
+                        x
+                        (GHC.Num.negate
+                           @ a
+                           $dNum
+                           (GHC.Num.fromInteger @ a $dNum Main.cycleCoordinates2)) of wild {
+                   GHC.Types.False
+                   -> case GHC.Classes.>
+                             @ a
+                             $dOrd
+                             x
+                             (GHC.Num.fromInteger @ a $dNum Main.cycleCoordinates2) of wild1 {
+                        GHC.Types.False -> x
+                        GHC.Types.True
+                        -> GHC.Num.-
+                             @ a
+                             $dNum
+                             x
+                             (GHC.Num.fromInteger @ a $dNum Main.cycleCoordinates1) }
+                   GHC.Types.True
+                   -> GHC.Num.+
+                        @ a
+                        $dNum
+                        (GHC.Num.fromInteger @ a $dNum Main.cycleCoordinates1)
+                        x }) -}
+499ba38fc6587c0d60d67721e64c6e12
+  cycleCoordinates1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (800) -}
+d277c8dfb411384a3cec705a65e9eb19
+  cycleCoordinates2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (400) -}
+8cf37cfa1b31e1651ae146b41d91387e
+  drawWorld ::
+    Main.AsteroidWorld -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (ds :: Main.AsteroidWorld) ->
+                 case ds of wild {
+                   Main.Play rocks ds1 bullets
+                   -> case ds1 of wild1 { Main.Ship ds2 ds3 ->
+                      case ds2 of wild2 { (,) x y ->
+                      case ds3 of wild3 { (,) vx vy ->
+                      Graphics.Gloss.Internals.Data.Picture.Pictures
+                        (GHC.Types.:
+                           @ Graphics.Gloss.Internals.Data.Picture.Picture
+                           (Graphics.Gloss.Internals.Data.Picture.Color
+                              Graphics.Gloss.Data.Color.red
+                              (Graphics.Gloss.Internals.Data.Picture.Pictures
+                                 (GHC.Types.:
+                                    @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                    (Graphics.Gloss.Internals.Data.Picture.Translate
+                                       x
+                                       y
+                                       Main.drawWorld9)
+                                    (GHC.Types.[]
+                                       @ Graphics.Gloss.Internals.Data.Picture.Picture))))
+                           (GHC.Types.:
+                              @ Graphics.Gloss.Internals.Data.Picture.Picture
+                              (Graphics.Gloss.Internals.Data.Picture.Pictures
+                                 (Main.drawWorld_go1 rocks))
+                              (GHC.Types.:
+                                 @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                 (Graphics.Gloss.Internals.Data.Picture.Pictures
+                                    (Main.drawWorld_go bullets))
+                                 (GHC.Types.[]
+                                    @ Graphics.Gloss.Internals.Data.Picture.Picture)))) } } }
+                   Main.GameOver -> Main.drawWorld1 }) -}
+75b17a2853b0dd526876a04143bf28d9
+  drawWorld1 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m13,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Scale
+                   Main.drawWorld8
+                   Main.drawWorld8
+                   Main.drawWorld2) -}
+cc5a819c136876aaa6be571907bd4f1d
+  drawWorld10 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 10.0#) -}
+f2c282be9553dadca579d110298a86b0
+  drawWorld2 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m11,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+                   Main.drawWorld7
+                   Main.drawWorld6
+                   Main.drawWorld3) -}
+e5c839afdeb26c23d247bd315cef07b9
+  drawWorld3 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m10,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Color
+                   Graphics.Gloss.Data.Color.red
+                   Main.drawWorld4) -}
+ba91205681010fb086bfac1bc1be43f7
+  drawWorld4 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m8,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Text
+                   Main.drawWorld5) -}
+431887ad6f855f01f40e434559c59da6
+  drawWorld5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Game Over!"#) -}
+37db9121c3815ecf99391975f878a9f9
+  drawWorld6 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+376562265767bc83b293793c4cc68087
+  drawWorld7 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -400.0#) -}
+0ce3941222876a4ce07750b91b71fdcb
+  drawWorld8 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.3#) -}
+5090e8bd20333822e516351d46a548fb
+  drawWorld9 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- HasNoCafRefs, Strictness: m4,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Circle
+                   Main.drawWorld10) -}
+4364e2b87c2a59acb003581b3a8e0703
+  drawWorld_go ::
+    [Main.Bullet] -> [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+dc0c1336d1ab966b97cc4e10376cf770
+  drawWorld_go1 ::
+    [Main.Rock] -> [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Arity: 1, Strictness: <S,1*U> -}
+51a125f266c3d8254a80613d666d6203
+  handleEvents ::
+    Graphics.Gloss.Internals.Interface.Event.Event
+    -> Main.AsteroidWorld -> Main.AsteroidWorld
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U> -}
+4b59fde36c9f0bda558a5df4d27f51f6
+  initialWorld :: Main.AsteroidWorld
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Main.Play
+                   Main.initialWorld5
+                   Main.initialWorld1
+                   (GHC.Types.[] @ Main.Bullet)) -}
+353a96e643cff62672d9d3673f9b6af8
+  initialWorld1 :: Main.Ship
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Ship Main.initialWorld4 Main.initialWorld2) -}
+b052d5b8e7ef925438c5f7c14b843216
+  initialWorld10 :: Main.Rock
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Rock
+                   Main.initialWorld15
+                   Main.initialWorld14
+                   Main.initialWorld11) -}
+4cea0f7fb36a66eccf50a3e0e0953cd6
+  initialWorld11 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld13, Main.initialWorld12)) -}
+0b3c625481c9e9fd6935687a4bcc3b7e
+  initialWorld12 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 2.0#) -}
+733397881bc8df5aaaea1919f0ca4fa6
+  initialWorld13 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 8.0#) -}
+5f4a11423c550e3a7b24fa0d0954d881
+  initialWorld14 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 25.0#) -}
+cfe308b234c44168d58f0b520428a285
+  initialWorld15 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld17, Main.initialWorld16)) -}
+4692d2ed0312410e099416e1613c71dd
+  initialWorld16 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -201.0#) -}
+1cb8e8b66d33842810a1d2b75afb7880
+  initialWorld17 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -45.0#) -}
+cf6b9400490b64f01c240dc0a7b28d51
+  initialWorld18 :: Main.Rock
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Rock
+                   Main.initialWorld23
+                   Main.initialWorld22
+                   Main.initialWorld19) -}
+d07222fba898a4523947243f32bed79f
+  initialWorld19 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld21, Main.initialWorld20)) -}
+5ff976fb72e4a0c2058e25720f977d0a
+  initialWorld2 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.drawWorld6, Main.initialWorld3)) -}
+91000a9523266c0357555a87b7b0e259
+  initialWorld20 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -8.0#) -}
+5bf0f060188b777901d1ae97c001193b
+  initialWorld21 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -2.0#) -}
+a44637f3e9a9986e7cdc87659937e50a
+  initialWorld22 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 30.0#) -}
+9be4eed5c7e63d197ff1aa6476f3a1ec
+  initialWorld23 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld25, Main.initialWorld24)) -}
+d1b73e6cc5eba2ca61e348a40d7fc2c0
+  initialWorld24 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# -15.0#) -}
+dc1e07a9020d3ccbef38e1d97c324260
+  initialWorld25 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -210.0#) -}
+d706384c661aed178f04ef1342824b13
+  initialWorld26 :: Main.Rock
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Rock
+                   Main.initialWorld28
+                   Main.initialWorld14
+                   Main.initialWorld27) -}
+3a479a7b0ba5fd6c4655195766f457b5
+  initialWorld27 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld21, Main.initialWorld13)) -}
+63b67245bcf7aa7cfc96b1f419e89874
+  initialWorld28 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld30, Main.initialWorld29)) -}
+3a94e732b53694899bfbaa5daef250e7
+  initialWorld29 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 22.0#) -}
+6353879a8fcb9e4c3b44ec87f3fd1f49
+  initialWorld3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 5.0#) -}
+3504dfaad1ead2a52c2d0337192c4686
+  initialWorld30 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 45.0#) -}
+13ff75610e5ad9cbba64e56c547c9376
+  initialWorld31 :: Main.Rock
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Rock
+                   Main.initialWorld34
+                   Main.initialWorld30
+                   Main.initialWorld32) -}
+106dc310c22f825831e63ca626f8004b
+  initialWorld32 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld33, Main.initialWorld20)) -}
+fafd3182032ceef01b8e9f22464bd6e2
+  initialWorld33 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 13.0#) -}
+3b2adfb0722044329bfdc578740d5ec1
+  initialWorld34 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld17, Main.initialWorld35)) -}
+1315e86bf3f332b2c672295610cd0448
+  initialWorld35 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 201.0#) -}
+275f316c4c31da0c8a90d2cef0fddae8
+  initialWorld36 :: Main.Rock
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Main.Rock
+                   Main.initialWorld39
+                   Main.initialWorld30
+                   Main.initialWorld37) -}
+98ab43a2beb1b11703a65fef375e9026
+  initialWorld37 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld12, Main.initialWorld38)) -}
+d3d87d984c00d8e0a1345c7c4c3ab9d1
+  initialWorld38 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 6.0#) -}
+51110e71eebd57b0f436ae86710096c2
+  initialWorld39 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.initialWorld40, Main.initialWorld40)) -}
+aa3a90639654ba335d87ad0dc42fb8d2
+  initialWorld4 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Main.drawWorld6, Main.drawWorld6)) -}
+46213182e063f9adb1fa716b320072a9
+  initialWorld40 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 150.0#) -}
+5681e8e0ef59aabf8e9280fa02c566eb
+  initialWorld5 :: [Main.Rock]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Main.Rock
+                   Main.initialWorld36
+                   Main.initialWorld6) -}
+65271d3bab3a90973eb8f1d5b94322f4
+  initialWorld6 :: [Main.Rock]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Main.Rock
+                   Main.initialWorld31
+                   Main.initialWorld7) -}
+312c6bfce8bee89cb02f025e2782f750
+  initialWorld7 :: [Main.Rock]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Main.Rock
+                   Main.initialWorld26
+                   Main.initialWorld8) -}
+4777e6485a8d2e1207f3931a1da1ca43
+  initialWorld8 :: [Main.Rock]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Main.Rock
+                   Main.initialWorld18
+                   Main.initialWorld9) -}
+c016f4859e07bc5980763c6b0a22f38e
+  initialWorld9 :: [Main.Rock]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Main.Rock
+                   Main.initialWorld10
+                   (GHC.Types.[] @ Main.Rock)) -}
+eb4f94691e9bc81a5d9d4e18533b9fab
+  limitMag ::
+    GHC.Types.Float -> Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S),1*U(U)><S(S(S)S(S)),1*U(U(U),U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Float) (w1 :: Main.PointInSpace) ->
+                 case w of ww { GHC.Types.F# ww1 ->
+                 case w1 of ww2 { (,) ww3 ww4 ->
+                 case ww3 of ww5 { GHC.Types.F# ww6 ->
+                 case ww4 of ww7 { GHC.Types.F# ww8 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.gtFloat#
+                           (GHC.Prim.sqrtFloat#
+                              (GHC.Prim.plusFloat#
+                                 (GHC.Prim.powerFloat# ww6 2.0#)
+                                 (GHC.Prim.powerFloat# ww8 2.0#)))
+                           ww1) of wild {
+                   GHC.Types.False -> (GHC.Types.F# ww6, GHC.Types.F# ww8)
+                   GHC.Types.True
+                   -> let {
+                        m :: GHC.Prim.Float#
+                        = GHC.Prim.sqrtFloat#
+                            (GHC.Prim.plusFloat#
+                               (GHC.Prim.powerFloat# ww6 2.0#)
+                               (GHC.Prim.powerFloat# ww8 2.0#))
+                      } in
+                      (case GHC.Prim.divideFloat# ww6 m of wild2 { DEFAULT ->
+                       GHC.Types.F# (GHC.Prim.timesFloat# ww1 wild2) },
+                       case GHC.Prim.divideFloat# ww8 m of wild2 { DEFAULT ->
+                       GHC.Types.F# (GHC.Prim.timesFloat# ww1 wild2) }) } } } } }) -}
+d0938250c1a2d94c2c675fbb7805e219
+  magV :: Main.PointInSpace -> GHC.Types.Float
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(S)S(S)),1*U(1*U(U),1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: (GHC.Types.Float, GHC.Types.Float)) ->
+                 case ds of wild { (,) x y ->
+                 case x of wild1 { GHC.Types.F# x1 ->
+                 case y of wild2 { GHC.Types.F# x2 ->
+                 GHC.Types.F#
+                   (GHC.Prim.sqrtFloat#
+                      (GHC.Prim.plusFloat#
+                         (GHC.Prim.powerFloat# x1 2.0#)
+                         (GHC.Prim.powerFloat# x2 2.0#))) } } }) -}
+75c5eef07a8721a66b7ba237faba6acd
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+958cab7bd2be94d01f0d0b1b1d74a9dc
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (eta :: GHC.Prim.State#
+                             GHC.Prim.RealWorld)[OneShot] ->
+                 case Graphics.Gloss.Internals.Interface.Game.playWithBackendIO1
+                        @ Main.AsteroidWorld
+                        @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
+                        Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState_$cinitBackendState
+                        Main.main6
+                        Graphics.Gloss.Data.Color.black
+                        Main.main5
+                        Main.initialWorld
+                        Main.main4
+                          `cast`
+                        (<Main.AsteroidWorld>_R
+                         ->_R Sym (GHC.Types.N:IO[0]
+                                       <Graphics.Gloss.Internals.Data.Picture.Picture>_R))
+                        Main.main3
+                          `cast`
+                        (<Graphics.Gloss.Internals.Interface.Event.Event>_R
+                         ->_R <Main.AsteroidWorld>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Main.AsteroidWorld>_R))
+                        Main.main2
+                          `cast`
+                        (<GHC.Types.Float>_R
+                         ->_R <Main.AsteroidWorld>_R
+                         ->_R Sym (GHC.Types.N:IO[0] <Main.AsteroidWorld>_R))
+                        GHC.Types.True
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv, GHC.Tuple.() #) }) -}
+dec3c3abd1cdc1985e94a471eb86a854
+  main10 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 550#) -}
+70518a9724e54f527bfed0a9d9d0f620
+  main11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Asteroids!"#) -}
+f8a17f0af88d8277f6f997cda92aab90
+  main12 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+89a551f34b7677a9f23276a9dee97588
+  main2 ::
+    GHC.Types.Float
+    -> Main.AsteroidWorld
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.AsteroidWorld #)
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ (time :: GHC.Types.Float)
+                   (world1 :: Main.AsteroidWorld)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, Main.simulateWorld time world1 #)) -}
+2d4c0502fd90e92000dae5005ec3daa1
+  main3 ::
+    Graphics.Gloss.Internals.Interface.Event.Event
+    -> Main.AsteroidWorld
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Main.AsteroidWorld #)
+  {- Arity: 3, HasNoCafRefs,
+     Unfolding: (\ (event :: Graphics.Gloss.Internals.Interface.Event.Event)
+                   (world1 :: Main.AsteroidWorld)[OneShot]
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, Main.handleEvents event world1 #)) -}
+b9c22d53c8be7b9d72f8643104909083
+  main4 ::
+    Main.AsteroidWorld
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Graphics.Gloss.Internals.Data.Picture.Picture #)
+  {- Arity: 2,
+     Unfolding: (\ (x :: Main.AsteroidWorld)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 (# s, Main.drawWorld x #)) -}
+7552dfb60855b2648d30f6d8ec2f7ce2
+  main5 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 24#) -}
+8f15b9e472b3f45fc800a5f1e3761648
+  main6 :: Graphics.Gloss.Data.Display.Display
+  {- Unfolding: (Graphics.Gloss.Data.Display.InWindow
+                   Main.main11
+                   Main.main9
+                   Main.main7) -}
+589eebeff73ce32b2af2631b7097f02c
+  main7 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main8, Main.main8)) -}
+66f0036c806f9f76caf0755f62f0489d
+  main8 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 20#) -}
+685bd115e3db5653acef6510b99be32a
+  main9 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main10, Main.main10)) -}
+7b3717eafa3e49a6450b26ee7216a9f3
+  norm :: Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U(U),U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.PointInSpace) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 let {
+                   m :: GHC.Types.Float
+                   = case ww1 of wild { GHC.Types.F# x ->
+                     case ww2 of wild1 { GHC.Types.F# x1 ->
+                     GHC.Types.F#
+                       (GHC.Prim.sqrtFloat#
+                          (GHC.Prim.plusFloat#
+                             (GHC.Prim.powerFloat# x 2.0#)
+                             (GHC.Prim.powerFloat# x1 2.0#))) } }
+                 } in
+                 (GHC.Float.divideFloat ww1 m, GHC.Float.divideFloat ww2 m) }) -}
+e463d91d55eac57b6609acd44e7fcaae
+  restoreToScreen :: Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(1*U(U),1*U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.PointInSpace) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 case Main.$wrestoreToScreen ww1 ww2 of ww3 { (#,#) ww4 ww5 ->
+                 (ww4, ww5) } }) -}
+68f0227a26e4168a29af72fb669250dc
+  rotateV ::
+    GHC.Types.Float -> Main.PointInSpace -> Main.PointInSpace
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U)><S,1*U(U(U),U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Float) (w1 :: Main.PointInSpace) ->
+                 case w1 of ww { (,) ww1 ww2 ->
+                 (case ww1 of wild { GHC.Types.F# x ->
+                  case w of wild1 { GHC.Types.F# x1 ->
+                  case ww2 of wild2 { GHC.Types.F# x2 ->
+                  GHC.Types.F#
+                    (GHC.Prim.minusFloat#
+                       (GHC.Prim.timesFloat# x (GHC.Prim.cosFloat# x1))
+                       (GHC.Prim.timesFloat# x2 (GHC.Prim.sinFloat# x1))) } } },
+                  case ww1 of wild { GHC.Types.F# x ->
+                  case w of wild1 { GHC.Types.F# x1 ->
+                  case ww2 of wild2 { GHC.Types.F# x2 ->
+                  GHC.Types.F#
+                    (GHC.Prim.plusFloat#
+                       (GHC.Prim.timesFloat# x (GHC.Prim.sinFloat# x1))
+                       (GHC.Prim.timesFloat# x2 (GHC.Prim.cosFloat# x1))) } } }) }) -}
+2cf7cc01b633e15271af4b98b92de453
+  simulateWorld ::
+    GHC.Types.Float -> Main.AsteroidWorld -> Main.AsteroidWorld
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U)><S,1*U> -}
+439553ec909dcfc7dadbd16b3aaedc65
+  splitRock :: Main.Rock -> [Main.Rock]
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S,1*U(U,U(U),U(U(U),U(U)))>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.Rock) ->
+                 case w of ww { Main.Rock ww1 ww2 ww3 ->
+                 case Main.$wsplitRock ww1 ww2 ww3 of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Types.: @ Main.Rock ww5 ww6 } }) -}
+instance GHC.Classes.Eq [Main.AsteroidWorld]
+  = Main.$fEqAsteroidWorld
+instance GHC.Classes.Eq [Main.Bullet] = Main.$fEqBullet
+instance GHC.Classes.Eq [Main.Rock] = Main.$fEqRock
+instance GHC.Classes.Eq [Main.Ship] = Main.$fEqShip
+instance GHC.Show.Show [Main.AsteroidWorld]
+  = Main.$fShowAsteroidWorld
+instance GHC.Show.Show [Main.Bullet] = Main.$fShowBullet
+instance GHC.Show.Show [Main.Rock] = Main.$fShowRock
+instance GHC.Show.Show [Main.Ship] = Main.$fShowShip
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

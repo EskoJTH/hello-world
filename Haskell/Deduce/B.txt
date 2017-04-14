@@ -1,34 +1,45 @@
-        {Ord a, Foldable t =>t a->a} {(a -> b) -> [a] -> [b]}  {[a] -> Int} {Str->[Str]}
-⊢f str = maximum                     (map                      length       (words str))
-= str must be a string
+	 {Ord a => [a] > a}  {(a->b)->[a]->[b]}  {[a]->Int}  {Str->[Str]}  {}  
+⊢f str = maximum             (map                length      (words        str))
 
-                 {Ord c, Foldable t =>t c->c} {(a -> b) -> [a] -> [b]}  {[x] -> Int} {Str->[Str]}
-str::Str ⊢f str = maximum                     (map                      length       (words str))
-= Lets apply b:=Int a:=[a]
 
-                 {Ord c, Foldable t =>t c->c} {([a] -> Int) -> [[a]] -> [Int]}  {[x] -> Int} {Str->[Str]}
-str::Str ⊢f str = maximum                     (map                              length       (words str))
-= Lets apply lenght {[x] -> Int} to map {([a] -> Int) -> [[a]] -> [Int]}
+⊢maximum (map length (words str))
 
-                 {Ord c, Foldable t =>t c->c} {[[a]] -> [Int]} {Str->[Str]}
-str::Str ⊢f str = maximum                     (map length      (words str))
-= Lets apply [[a]]:=[Str]
-x
-                 {Ord c, Foldable t =>t c->c} {[Str] -> [Int]} {Str->[Str]}
-str::Str ⊢f str = maximum                     (map length      (words str))
-= Lets apply Str->[Str] to map length
+=Free variable str to Str. words :: Str->[Str]
 
-                 {Ord c, Foldable t =>t c->c} {Str -> [Int]}
-str::Str ⊢f str = maximum                     (map length(words str))
-= Maximum gets [Int] as input which is Ord
+              		     {Str->[Str]}  {Str}
+Str str ⊢maximum (map length (words         str))
 
-                                    {t c->c}  {Str -> [Int]}
-Foldable t, Ord c, str::Str ⊢f str = maximum  (map length(words str))
-= Lets apply c := Int
+=Funktion application. length :: [c]->Int
 
-                                    {[Int]->Int}  {Str -> [Int]}
-Foldable t, Ord c, str::Str ⊢f str = maximum        (map length(words str))
-= Lets combine the rest
+                      {[c]->Int}  {[Str]     }
+Str str ⊢maximum (map length      (words str))
 
-                                    {Str->Int}
-str::Str ⊢f str = maximum(map length(words str))
+= map :: (a->b)->[a]->[b]
+
+                  {(a->b)->[a]->[b]}  {[c]->Int}  {[Str]     }
+Str str ⊢maximum (map                 length      (words str))
+
+
+=Set type variable a to Str. Set type variabel [c] to Str. Set type b to Int. Funktion application
+
+                 { [Int]                }
+Str str ⊢maximum (map length (words str))
+
+=maximum :: Ord a => [a] -> a. Lets set a as Int
+
+         {[Int]->Int} { [Int]                }
+Str str ⊢maximum      (map length (words str))
+
+=Funktion application.
+
+         { Int                               }
+Str str ⊢maximum      (map length (words str))
+
+
+
+
+
+
+
+
+
