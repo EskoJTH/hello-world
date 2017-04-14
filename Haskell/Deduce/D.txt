@@ -1,18 +1,26 @@
-        {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
-⊢f xs = map                        map                      xs
+ {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
+⊢map                        map                      xs
 
-= The first parameter that map gets is xs which must be type (c->d) then.
+⊢map map xs
 
-        {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
-⊢f xs = map                        map xs
+=map :: (a->b)->[a]->[b]
 
-= map xs returns a funktion of type [c] -> [d] which first map then takes as its first parameter
+ {(a -> b) -> [a] -> [b]}  {(c -> d) -> [c] -> [d]}
+⊢map                        map                      xs
 
-        {([c] -> [d]) -> [[a]] -> [[b]]}  {(c -> d) -> [c] -> [d]}
-⊢f xs = map                        map xs
+=set type variable a to (c -> d) -> [c] and b to [d]
 
-= Lets combine these two and we get
+ {((c -> d) -> [c] -> [d]) -> [(c -> d) -> [c]] -> [[d]]}  {(c -> d) -> [c] -> [d]}
+⊢map                                                        map                      xs
 
-        {(c -> d) -> [[a]] -> [[b]]}
-⊢f xs = map map xs
+=set free variable xs to [(c -> d) -> [c]]
 
+ {((c -> d) -> [c] -> [d]) -> [(c -> d) -> [c]] -> [[d]]}  {(c -> d) -> [c] -> [d]}  {[(c -> d) -> [c]]}
+⊢map                                                        map                      xs
+
+=Function aplication
+
+ { [[d]]  }
+⊢map map xs
+
+ 
