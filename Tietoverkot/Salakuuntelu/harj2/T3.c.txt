@@ -1,0 +1,1 @@
+Kuvat ladataan vierekkäin ja sen näkee siitä, että molempien kuvien saapuminen tapahtuu vasta sen jälkeen kun kuvat on pyydetty Get komennolla.
