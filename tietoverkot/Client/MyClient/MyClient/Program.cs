@@ -18,13 +18,13 @@ namespace MyClient
             s.Send(buffer);
             String sivu = "";
             int count;
-            do
+            //do
             {
                 byte[] rec = new byte[1024 * 10000];
                 count = s.Receive(rec);
                 Console.Write("Tavuaja vastaanotettu: " + count + "\n");
                 sivu += Encoding.ASCII.GetString(rec, 0, count);
-            } while (count > 0);
+            } //while (count > 0);
             Console.Write(sivu);
             Console.ReadKey();
 
