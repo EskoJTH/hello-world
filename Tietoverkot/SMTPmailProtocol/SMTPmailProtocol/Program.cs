@@ -13,7 +13,7 @@ namespace SMTPmailProtocol
         static void Main(string[] args)
         {
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            s.Connect("localhost", 25000);
+            s.Connect("localhost", 25000); //smtpauth.jyu.fi tai jotain
             NetworkStream ns = new NetworkStream(s);
             StreamReader read = new StreamReader(ns);
             StreamWriter write = new StreamWriter(ns);
@@ -36,6 +36,7 @@ namespace SMTPmailProtocol
                         switch (palat[1])
                         {
                             case "2.0.0":
+                                write.WriteLine("QUIT");
                                 break;
                             case "2.1.0":
                                 write.WriteLine("RCPT TO: esjutaha@student.jyu.fi");
@@ -50,11 +51,11 @@ namespace SMTPmailProtocol
                         break;
                     case "354":
                         string email = "";
-                        while (email != ".")
+                        do
                         {
-                            email = Console.ReadLine();
                             write.Write(email+"\n");
-                        }
+                            email = Console.ReadLine();
+                        } while (email != ".");
                         write.Write("Eskon Sähköposti ohjelma!");
                         write.Write("\n.\n");
                         break;
