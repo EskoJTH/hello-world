@@ -28,7 +28,7 @@ namespace WebbiKaiku
                     byte[] rec = new byte[128];
                     int paljon = asiakas.Receive(rec);
                     viesti =Encoding.ASCII.GetString(rec, 0, paljon);
-                    asiakas.Send(Encoding.ASCII.GetBytes("EskoHanell;  " +viesti+ "\n"));
+                    asiakas.Send(Encoding.ASCII.GetBytes("EskoHanell; " +viesti+ "\n"));
                 }
                 //lähetä
                 asiakas.Send(Encoding.ASCII.GetBytes(viesti));
