@@ -1,4 +1,5 @@
 Suoritin tehtävän windows:sin bash:lla käyttämällä telnet kometoa.
+Erillinen ".pcap" tiedosto jossa näkyy liikenne on mukana nimellä "T5.pcap".
 Seuraavaksi komentorivin antama teskti Tapahtuman yhteydessä:
 
 
@@ -10,18 +11,20 @@ Connected to example.com.
 Escape character is '^]'.
 GET / HTTP/1.1
 HOST: example.com
+Connection: close
 
 HTTP/1.1 200 OK
 Cache-Control: max-age=604800
 Content-Type: text/html
-Date: Wed, 26 Apr 2017 10:12:48 GMT
+Date: Wed, 26 Apr 2017 10:40:30 GMT
 Etag: "359670651+ident"
-Expires: Wed, 03 May 2017 10:12:48 GMT
+Expires: Wed, 03 May 2017 10:40:30 GMT
 Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
 Server: ECS (iad/182A)
 Vary: Accept-Encoding
 X-Cache: HIT
 Content-Length: 1270
+Connection: close
 
 <!doctype html>
 <html>
@@ -73,4 +76,5 @@ Content-Length: 1270
 </div>
 </body>
 </html>
-
+Connection closed by foreign host.
+~$
