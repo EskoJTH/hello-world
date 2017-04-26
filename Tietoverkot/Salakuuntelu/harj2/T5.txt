@@ -1,0 +1,76 @@
+Suoritin tehtävän windows:sin bash:lla käyttämällä telnet kometoa.
+Seuraavaksi komentorivin antama teskti Tapahtuman yhteydessä:
+
+
+
+
+~$ telnet example.com 80
+Trying 93.184.216.34...
+Connected to example.com.
+Escape character is '^]'.
+GET / HTTP/1.1
+HOST: example.com
+
+HTTP/1.1 200 OK
+Cache-Control: max-age=604800
+Content-Type: text/html
+Date: Wed, 26 Apr 2017 10:12:48 GMT
+Etag: "359670651+ident"
+Expires: Wed, 03 May 2017 10:12:48 GMT
+Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
+Server: ECS (iad/182A)
+Vary: Accept-Encoding
+X-Cache: HIT
+Content-Length: 1270
+
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 1em;
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        body {
+            background-color: #fff;
+        }
+        div {
+            width: auto;
+            margin: 0 auto;
+            border-radius: 0;
+            padding: 1em;
+        }
+    }
+    </style>
+</head>
+
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is established to be used for illustrative examples in documents. You may use this
+    domain in examples without prior coordination or asking for permission.</p>
+    <p><a href="http://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+
