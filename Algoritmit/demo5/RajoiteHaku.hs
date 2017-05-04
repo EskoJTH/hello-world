@@ -1,0 +1,24 @@
+-- p -> 12, 10,  6,  4
+-- w ->  5,  3,  2,  3
+-- reppu = 6 
+import Data.List
+
+kapsakki = [(12,5),(10,3),(6,2),(4,3)]
+reppu = 6
+
+--mySortOrder :: Fractional a =>(a,a)->(a,a)->Ordering
+mySortOrder a b
+  |(fst a / snd a) > (fst b / snd b) = LT
+  |(fst a / snd a) == (fst b / snd b) = EQ
+  | otherwise = GT
+  
+--sortedList' :: Fractional a=>((a,a)->(a,a)->Ordering)->[(a,a)]->[(a,a)]
+sortedList' list = sortBy mySortOrder list
+
+run = sortedList' kapsakki
+--taytareppu reppu kapsakki = recursio reppu kapsakki 0
+ -- where recursio reppu (x:kapsakki) paino
+  --        |reppu = paino
+--
+
+
