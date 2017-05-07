@@ -1,0 +1,21 @@
+5.5.2017
+I will have to use UART appaerently. USB will not work because raspberry pi 3 B has a usb bus that controls the USB communication. So I do not have an easy access to it. I actually don't have access to it at all. Uart.
+-Worked for 5 hours.
+I will probably have to use a Teensy for this... Uart appears to be a terminal interface only.
+
+
+# KeyboardProject
+This is a repository I made to document my diy Raspberry Pi keyboard project.
+My purpose is to build my own keyboard pretty much from the ground up. I will use a raspberry pi as a control unit. I might change that to a more fitting controller at some point, but one purpose of this project is for me to get familiar with the pi. Keyboard inputs will be read through a matrix formed with the GPIO pins and data collected will be processed by the raspberry pi and send trough a hid interface to another computer.
+
+-I have to delve deeper on how to connect a pi to a pc in a way that the pc can read it as an hid device. I would imagine it should be doable through one of the usb ports with more or less work.
+
+-Oh noes usb is going to maybe not even work.
+
+-I have a pretty solid idea on a 9X9 grid level how the keyboard matrix will work. I just have to scale it up later. I'll do that once the small scale works.
+
+-I am not a pro with electronics side of things but I'll make do. Outside of that I have pretty good grasp now of how to handle GPIO pins in python or code in general.
+
+
+
+-I have pretty g
