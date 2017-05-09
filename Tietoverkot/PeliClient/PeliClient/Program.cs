@@ -13,7 +13,7 @@ namespace PeliClient
         static void Main(string[] args)
         {
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            IPEndPoint palvelin = new IPEndPoint(IPAddress.Loopback, 9999);
+            IPEndPoint palvelin = new IPEndPoint(IPAddress.Loopback, 25000);
             Console.Write("Anna nimesi > ");
             bool on = true;
             string nimi = Console.ReadLine();
