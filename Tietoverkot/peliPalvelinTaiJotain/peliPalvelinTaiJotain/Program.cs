@@ -25,9 +25,11 @@ namespace peliPalvelinTaiJotain
             int pelaajia = 0;
             int vuoro = -1;
             int luku = -1;
+            int kuittauksia = 0;
             
             while (on)
             {
+                Console.WriteLine(tila);
                 IPEndPoint jokuasiakas = new IPEndPoint(IPAddress.Any, 0);
                 EndPoint remoteEP = (EndPoint)jokuasiakas; // viimeisimmän paketin lähettäjä.
                 if (!tila.Equals("CLOSED"))
@@ -36,6 +38,7 @@ namespace peliPalvelinTaiJotain
                 }
                 switch (tila)
                 {
+           
                     case "CLOSED":
                         tila = "WAIT"; //palvelin päällä mennään WAIT tilaan
                         break;
@@ -60,7 +63,7 @@ namespace peliPalvelinTaiJotain
                                             luku = rand.Next(0, 1);
                                             Console.WriteLine("Oikea luku: " + luku.ToString());
                                             laheta(palvelin, asiakkaat[vuoro], "ACK", "202" + " " + nimet[vastustaja(vuoro)]);
-                                            laheta(palvelin, asiakkaat[vastustaja(vuoro)], "ACK", "202" + nimet[vuoro]);
+                                            laheta(palvelin, asiakkaat[vastustaja(vuoro)], "ACK", "203" + " " + nimet[vuoro]);
                                             pelaajia++;
                                             tila = "GAME";
                                         }
@@ -76,7 +79,7 @@ namespace peliPalvelinTaiJotain
                         }
                         break;
                     case "GAME":
-                        if (palat[0].Equals("Data") && remoteEP.Equals(asiakkaat[vuoro]))
+                        if (palat[0].Equals("DATA") && remoteEP.Equals(asiakkaat[vuoro]))
                         {
                             try
                             {
@@ -102,13 +105,23 @@ namespace peliPalvelinTaiJotain
                         }                        
                         break;
                     case "WAIT_ACK":
-                        if(palat[0].Equals("ACK"))
+                        if(palat[0].Equals("ACK") && palat[1].Equals("300") && remoteEP.Equals(asiakkaat[vuoro]))
+                        {
+                            tila = "GAME";
+                        }
                         break;
                     case "END":
+                        if (palat[0].Equals("ACK") && palat[1].Equals("500")) kuittauksia++;
+                        if(kuittauksia == 2)
+                        {
+                            tila = "CLOSED";
+                            on = false; // lopeteteaan ensimmäisen pelin jälkeen
+                        }
                         break;
                 }
             }
-
+            Console.ReadKey();
+            palvelin.Close();
         }
         static int vastustaja(int vuoro)
         {
