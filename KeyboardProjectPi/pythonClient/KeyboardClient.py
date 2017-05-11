@@ -11,10 +11,10 @@ try:
 
     while (message != "exit" ):
         message = input()
-        snd = bytes(message, 'ASCII') #Encoding.ASCII.GetBytes(message)
+        snd = message.encode("ascii") #Encoding.ASCII.GetBytes(message)
         s.send(snd)
-        sivu = s.recv(128)
-        print(sivu)
+        paluu = s.recv(128)
+        print(paluu)
         #sivu = #Encoding.ASCII.GetString(rec, 0, paljon)
         #palaset = sivu.Split()
         #loput = palaset
