@@ -79,7 +79,7 @@ namespace PeliClient
                                 break;
                             case "QUIT":
                                 if (palat[1].Equals("501")) Console.WriteLine("Peli loppui.");
-                                else Console.WriteLine("Vastustaja voitti :( "+ palat[2]);
+                                else Console.WriteLine("Vastustaja voitti :( Oikea vastaus oli:"+ palat[2]);
                                 Laheta(s, palvelin, "ACK", "500", erotinmerkki);
                                 TILA = "CLOSED";
                                 break;

@@ -1,0 +1,6 @@
+C:\projects\Tietoverkot\peliPalvelinTaiJotain\peliPalvelinTaiJotain\bin\Debug\peliPalvelinTaiJotain.exe.config
+C:\projects\Tietoverkot\peliPalvelinTaiJotain\peliPalvelinTaiJotain\bin\Debug\peliPalvelinTaiJotain.exe
+C:\projects\Tietoverkot\peliPalvelinTaiJotain\peliPalvelinTaiJotain\bin\Debug\peliPalvelinTaiJotain.pdb
+C:\projects\Tietoverkot\peliPalvelinTaiJotain\peliPalvelinTaiJotain\obj\Debug\peliPalvelinTaiJotain.csprojResolveAssemblyReference.cache
+C:\projects\Tietoverkot\peliPalvelinTaiJotain\peliPalvelinTaiJotain\obj\Debug\peliPalvelinTaiJotain.exe
+C:\projects\Tietoverkot\peliPalvelinTaiJotain\peliPalvelinTaiJotain\obj\Debug\peliPalvelinTaiJotain.pdb
