@@ -1,0 +1,62 @@
+filter p []    = []  --filter1
+filter p (x:xs)  --filter2
+  | p x        = x : filter p xs
+  | otherwise  = filter p xs
+
+null [] = True --null1
+null _ = False 
+
+no p [] = True --no1
+no p (x:xs) --no2
+  | p x = False 
+  | otherwise = no p xs
+
+no f xs ==> null (filter f xs)
+
+in order for this to be true:
+True ==> False = False --impl1
+_    ==> _     = True --impl2
+
+Therorem:
+no f xs ==> null (filter f xs) == True
+proof:
+
+Consider first the case where xs is [].
+
+no f [] ==> null (filter f [])
+=={- no1, fillter1 -}
+True ==> null []
+=={- null1 -}
+True ==> True
+=={- impl1 -}
+True
+
+Now consider the inductive case:
+
+Assumption:
+no f xs ==> null (filter f xs) == True
+
+Induction claim:
+no f (x:xs) ==> null (filter f (x:xs)) == True
+
+when:
+p x == False
+
+no f (x:xs) ==> null (filter f (x:xs))
+=={- no2 -}
+no f (xs) ==> null (filter f (x:xs))
+=={- filter2 -}
+no f (xs) ==> null (filter f (xs))
+=={- Induction assumption -}
+True
+
+when:
+p x == True
+
+no f (x:xs) ==> null (filter f (x:xs))
+=={- no2 -}
+False ==> null (filter f (x:xs))
+=={- impl2 -}
+True
+
+
