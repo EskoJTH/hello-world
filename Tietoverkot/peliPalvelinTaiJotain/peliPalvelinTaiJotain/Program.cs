@@ -55,12 +55,12 @@ namespace peliPalvelinTaiJotain
                                         nimet.Add(palat[1]);
                                         break;
                                     case 1:
-                                        if (!remoteEP.Equals(asiakkaat)) {
+                                        if (!remoteEP.Equals(asiakkaat[0])) {
                                             asiakkaat.Add(remoteEP);
                                             nimet.Add(palat[1]);
                                             Random rand = new Random();
                                             vuoro = rand.Next(0, 1);
-                                            luku = rand.Next(0, 1);
+                                            luku = rand.Next(0, 10);
                                             Console.WriteLine("Oikea luku: " + luku.ToString());
                                             laheta(palvelin, asiakkaat[vuoro], "ACK", "202" + " " + nimet[vastustaja(vuoro)]);
                                             laheta(palvelin, asiakkaat[vastustaja(vuoro)], "ACK", "203" + " " + nimet[vuoro]);
@@ -85,8 +85,8 @@ namespace peliPalvelinTaiJotain
                             {
                                 if (luku == int.Parse(palat[1]))
                                 {
-                                    laheta(palvelin,asiakkaat[vuoro],"QUIT","501");
-                                    laheta(palvelin, asiakkaat[vastustaja(vuoro)], "QUIT", "501" + " hävisiit peliin oikea luku oli "+palat[1]);
+                                    laheta(palvelin,asiakkaat[vuoro],"QUIT","501" + " Voitit!");
+                                    laheta(palvelin, asiakkaat[vastustaja(vuoro)], "QUIT", "501" + " hävisit pelin. Oikea luku oli "+palat[1]);
                                     tila = "END";
                                 }
                                 else
@@ -120,7 +120,6 @@ namespace peliPalvelinTaiJotain
                         break;
                 }
             }
-            Console.ReadKey();
             palvelin.Close();
         }
         static int vastustaja(int vuoro)

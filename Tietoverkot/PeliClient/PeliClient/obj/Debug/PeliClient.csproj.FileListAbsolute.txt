@@ -1,0 +1,6 @@
+C:\projects\Tietoverkot\PeliClient\PeliClient\bin\Debug\PeliClient.exe.config
+C:\projects\Tietoverkot\PeliClient\PeliClient\bin\Debug\PeliClient.exe
+C:\projects\Tietoverkot\PeliClient\PeliClient\bin\Debug\PeliClient.pdb
+C:\projects\Tietoverkot\PeliClient\PeliClient\obj\Debug\PeliClient.exe
+C:\projects\Tietoverkot\PeliClient\PeliClient\obj\Debug\PeliClient.pdb
+C:\projects\Tietoverkot\PeliClient\PeliClient\obj\Debug\PeliClient.csprojResolveAssemblyReference.cache
