@@ -1,0 +1,68 @@
+Demon 5 palautustehtävä
+=========================
+
+Vastaa seuraaviin kysymyksiin tutkimalla ohjelmaosuuden jälkeä
+lokitiedostossa, joka syntyi komennolla "make loki.txt" ja jota voi
+selata edestakaisin komennolla "make selaile". Lisää vastaukset, mutta
+jätä vastaustiedosto muuten alkuperäiseen muotoonsa.
+
+Montako konekielikäskyä ohjelman tutkittavassa osuudessa tapahtui?
+VASTAUS01 (kymmenjärjestelmän lukuna): 72
+
+Mistä muistiosoitteesta kokonaislukutaulukolle varattu tila alkoi?
+VASTAUS02 (heksana): 0x000000000040054d
+
+Mikä oli suurin muistiosoite, joka vielä kuului kokonaislukutaulukolle
+varattuun tilaan? (Laske siis taulukon viimeisen 64-bittisen luvun
+kahdeksannen tavun osoite!)
+VASTAUS03 (heksana):0x0000000000400575 
+
+Missä muistiosoitteessa sijaitsi arvo taulu[2]?
+VASTAUS04 (heksana):0x000000000040055d
+
+Montako tavua (ts. montako yksittäistä muistiosoitetta) tilaa oli siis
+varattu taulukolle?
+VASTAUS05 (kymmenjärjestelmän lukuna):40
+
+Mikä oli pinokehyksen kantaosoite, kun taulukon kääntävää silmukkaa
+oltiin suorittamassa?
+VASTAUS06 (heksana):0x7fffffffe3b0:
+
+Mikä oli pinon huipun osoite, kun taulukon kääntävää silmukkaa
+oltiin suorittamassa?
+VASTAUS07 (heksana):0x7fffffffe380
+
+Mikä oli pinon huipun osoite pienimmillään (ts. pinon sisällön ollessa
+täysimmillään), kun suoritettiin aliohjelmaa "sakkokierros()"?
+VASTAUS08 (heksana):0x7fffffffe370
+
+Mikä oli pinon huipun osoite juuri ennen kuin aliohjelmasta
+kaanna_taulukko() tapahtui paluu retq-käskyllä?
+VASTAUS09 (heksana):0x7fffffffe380
+
+Mikä 64-bittinen lukuarvo pinon huipulla oli juuri ennen kuin
+aliohjelmasta kaanna_taulukko() tapahtui paluu retq-käskyllä?
+VASTAUS10 (heksana):0x0000000000000006
+
+Mistä aliohjelman kaanna_taulukko() kutsuja saa paluuarvon käyttöönsä?
+VASTAUS11: rax registerin sisältä se tallennetaan rbp registeriin alkaen kahdeksasta tavusta ennen rbp registerin alkua. 
+
+Miksi aliohjelman kaanna_taulukko() kutsuja ei pystyisi ottamaan
+paluuarvoa pinomuistista siitä osoitteesta, johon kaanna_taulukko()
+sen alunperin laski?
+VASTAUS12:kutsuja ei tiedä kuinka kaukaa ennen rbp:n alkua sen pitäisi etsiä palautus arvoa.
+
+Missä muistiosoitteessa pääohjelman muuttujan "samoja" arvo oli?
+VASTAUS13 (heksana):osoitteessa rax sekä 8 tavua ennen osoitetta rbp
+
+Mikä arvo pääohjelman muuttujalla "samoja" oli ohjelman alussa?
+VASTAUS14 (heksana):Sitä ei alustettu ollenkaan.
+
+Voitko sanoa nyt ymmärtäväsi, miten pinomuistialuetta ja rekistereitä
+RSP ja RBP käytetään aliohjelmakutsussa (Linuxin x86-64 ABI:ssa,
+C-kielessä)? Jos vastaat kieltävästi, kerro, mikä asiassa tuntuu vielä
+epäselvältä.
+
+VASTAUS15 (suomen kielellä): RSP kertoo missä pinon huippu on ja RBP muistaa mistä kohtaa pinoa löytyy edellinen RBP:n osoite.
+
+PERUSTELU (suomen kielellä): Pino itsessään tuntuu vielä hieman epäselvältä. En esimerkiksi ymmärrä mistä pinoon pomppaa läjä asioita kun aliohjelma kutsu tehdään pääohjelmasta.

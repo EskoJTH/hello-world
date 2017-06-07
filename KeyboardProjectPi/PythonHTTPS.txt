@@ -1,0 +1,31 @@
+import ssl
+import socket
+BUFFER_SIZE = 1024
+s_ = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s = ssl.wrap_socket(s_,
+                    cert_reqs=ssl.CERT_NONE)
+
+
+server = ''
+resurssi = ''
+tulosta_vain_otsikot = False
+
+metodi = 'GET'
+message = metodi + ' ' + resurssi + ' HTTP/1.1\r\nHost:' + server + \
+'\r\nConnection:Close\r\n\r\n'
+
+s.connect((server, 443))
+s.send(message.encode())
+sivu = ''
+while True:
+  data = s.recv(BUFFER_SIZE)
+  #print(data.decode())
+  sivu += data.decode()
+  if not data: break
+
+s.close()
+
+if tulosta_vain_otsikot:
+    print(sivu.split('\r\n\r\n')[0]) # Tulostetaan vain otsikot
+else:
+    print(sivu)

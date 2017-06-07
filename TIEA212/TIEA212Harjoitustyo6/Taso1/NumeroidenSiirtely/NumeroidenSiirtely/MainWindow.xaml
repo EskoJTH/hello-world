@@ -1,0 +1,46 @@
+﻿<Window x:Class="NumeroidenSiirtely.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumeroidenSiirtely"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="20"/>
+            <EventSetter Event="MouseMove" Handler="Label_MouseMove"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel  Grid.Row="0">
+            <Label Name="Tulos" Content="0"/>
+            <ListBox x:Name="listBox" AllowDrop="True" Drop="listCalcutable_Drop" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinHeight="3" Width="1000">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </DockPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Content="1" />
+            <Label Content="2" />
+            <Label Content="3" />
+            <Label Content="4" />
+            <Label Content="5" />
+            <Label Content="6" />
+            <Label Content="7" />
+            <Label Content="8" />
+            <Label Content="9" />
+            <Label Content="10"/>
+            <Label Content="11"/>
+            <Label Content="12"/>
+            <Label Content="13"/>
+        </StackPanel>
+    </Grid>
+</Window>

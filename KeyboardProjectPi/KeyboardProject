@@ -1,11 +1,20 @@
 5.5.2017
 I will have to use UART appaerently. USB will not work because raspberry pi 3 B has a usb bus that controls the USB communication. So I do not have an easy access to it. I actually don't have access to it at all. Uart.
 -Worked for 5 hours.
-I will probably have to use a Teensy for this... Uart appears to be a terminal interface only.
-
-
 # KeyboardProject
 This is a repository I made to document my diy Raspberry Pi keyboard project.
+
+5.5 Research about how to make windows raspberry pi conncetion work.
+Cannot use usb because raspberry pi 3 model B can only work  as a host and it cannot be modified. Looked into other ways of representing usb. Wont work. Solved that uart connection is for Terminal communication and wont be ideal for this. Endedup Looking into teensy or perhaps arduino as a possible future controller. Communication will be done over ethernet with TCP communication. 5h
+
+7.5 - 9.5 Figured up server and client through ethernet and sockets for the project and made them work. Server written with c# and client python. Python is new language to me. 5h
+I also had to reinstall windows because wireshark decided to end all functionality of all input devioces and it took me a day to get windows back operational... but I won't count it here.
+
+9.5 Trying to figure out how to invoke a keyboard action inside windows. Thought it would be easy with c# but appears it is extreamely hard and I would have to build half a kilometer of libraries that I have no clue on how to do. It seems implementing this on python is easier maybe. I may have read the c# instructions from a place where it was written in a quite hard manner. I downloaded someones implementation in c# and I'am trying to make sense in to it. Git does not want to work well with branches with me at all. Everythings terrible. I'm tired. blaaah. 3h 
+
+
+
+
 My purpose is to build my own keyboard pretty much from the ground up. I will use a raspberry pi as a control unit. I might change that to a more fitting controller at some point, but one purpose of this project is for me to get familiar with the pi. Keyboard inputs will be read through a matrix formed with the GPIO pins and data collected will be processed by the raspberry pi and send trough a hid interface to another computer.
 
 -I have to delve deeper on how to connect a pi to a pc in a way that the pc can read it as an hid device. I would imagine it should be doable through one of the usb ports with more or less work.

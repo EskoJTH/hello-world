@@ -1,0 +1,6 @@
+C:\projects\KeyboardProjectPi\KeyboardComm\KeyboardComm\bin\Debug\KeyboardComm.exe.config
+C:\projects\KeyboardProjectPi\KeyboardComm\KeyboardComm\bin\Debug\KeyboardComm.exe
+C:\projects\KeyboardProjectPi\KeyboardComm\KeyboardComm\bin\Debug\KeyboardComm.pdb
+C:\projects\KeyboardProjectPi\KeyboardComm\KeyboardComm\obj\Debug\KeyboardComm.csprojResolveAssemblyReference.cache
+C:\projects\KeyboardProjectPi\KeyboardComm\KeyboardComm\obj\Debug\KeyboardComm.exe
+C:\projects\KeyboardProjectPi\KeyboardComm\KeyboardComm\obj\Debug\KeyboardComm.pdb
