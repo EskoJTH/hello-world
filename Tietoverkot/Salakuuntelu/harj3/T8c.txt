@@ -1,0 +1,3 @@
+Kaappauksessa jossa ei käytetä persisrent http:ta joudutaan yhteys muodostamaan uudelleen jokaisen session välillä.
+
+non-presistentti http putkitettuna ei jostain syystä saanut toista pakettia läpi ollenkaan.

@@ -1,0 +1,1 @@
+A kohdan liinketeessä ei ole html paketteja vaan kaikki liikenne tcp syn/ack paketteja lukuunottamatta on ssl tai tls salatuissa paketeissa.b kohdassa on selkokielisiä html paketteja mistä niissä kulkeneen sisällön voi helposti lukea.

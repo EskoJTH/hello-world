@@ -1,0 +1,15 @@
+Get / HTTP/1.1
+If-Modified-Since: Thu, 22 Jun 2017 21:10:21 GMT
+Host: www.example.com
+Connection: Close
+
+HTTP/1.1 304 Not Modified
+Cache-Control: max-age=604800
+Date: Thu, 22 Jun 2017 21:22:55 GMT
+Etag: "359670651+gzip+ident"
+Expires: Thu, 29 Jun 2017 21:22:55 GMT
+Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
+Server: ECS (ewr/15BD)
+Vary: Accept-Encoding
+X-Cache: HIT
+Connection: close

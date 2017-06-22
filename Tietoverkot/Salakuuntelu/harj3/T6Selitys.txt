@@ -1,0 +1,1 @@
+En onnistunut lähettämään paketteja jostain syystä erllään kurssin työkaluissa annetulla TCP asiakkaalla. Onnistuin kuitenkin saamaan HTTP viestin eri paketteihin käyttämällä windowssin bashin telnettiä.
