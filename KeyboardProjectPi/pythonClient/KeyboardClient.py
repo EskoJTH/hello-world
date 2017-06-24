@@ -7,7 +7,7 @@ try:
     s.connect(("localhost", 25000))
     server = "localhost"
     message = ""
-    snd = message #Encoding.ASCI I.GetBytes(message)
+    snd = message #Encoding.ASCII.GetBytes(message)
 
     while (message != "exit" ):
         message = input()
