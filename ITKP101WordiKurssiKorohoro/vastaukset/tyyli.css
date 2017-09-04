@@ -1,0 +1,59 @@
+body {
+    padding: 1%;
+}
+
+h1 {
+    font-size: 129%;
+    font-family: Arial;
+    padding-right: 640px;
+}
+
+h2 {
+    font-size: 105%;
+    font-family: "Comic Sans Ms";
+    padding-right: 640px;
+}
+
+p {
+    padding: 1%;
+    font-family: Verdana;
+
+}
+
+span {
+    font-weight: bold;
+}
+.text {
+    padding-right: 640px;
+}
+.kuva {
+    float: right;
+}
+
+
+
+
+
+ #navbar ul { 
+	margin: 0; 
+	padding: 20px; 
+	list-style-type: none; 
+	text-align: left; 
+	background-color: #08D; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: #fff; 
+	background-color: #08D; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: #000; 
+	background-color: #fff; 
+	} 

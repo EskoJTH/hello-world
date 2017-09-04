@@ -1,0 +1,381 @@
+ Script started on Sat Jul 29 23:24:37 2017
+ bash-4.1$ mkdir tyovaline
+ echo demot faq harkka kurssilaiset linkit luennot moniste | xargs -n 1 mkdir
+ mkdir demot/demo{1,2,3}
+ echo harkka/{esitysgrafiikka,tekstinkasittely,unix,www} | xargs -n 1 mkdir
+ mkdir luennot/luento{1,2,3}
+ ls
+ ls demot
+ ls harkka
+ ls luennot
+ bash-4.1$ cd tyovaline/
+ bash-4.1$ echo demot faq harkka kurssilaiset linkit luennot moniste | xargs -n 1 
+>  mkdir
+ bash-4.1$ mkdir demot/demo{1,2,3}
+ bash-4.1$ echo harkka/{esitysgrafiikka,tekstinkasittely,unix,www} | xargs -n 1 m 
+> kdir
+ bash-4.1$ mkdir luennot/luento{1,2,3}
+ bash-4.1$ ls
+ demot  faq  harkka  kurssilaiset  linkit  luennot  moniste
+ bash-4.1$ ls demot
+ demo1  demo2  demo3
+ bash-4.1$ ls harkka
+ esitysgrafiikka  tekstinkasittely  unix  www
+ bash-4.1$ ls luennot
+ luento1  luento2  luento3
+ bash-4.1$ cd ..
+ bash-4.1$ ls
+ itkp101.txt  tyovaline
+ bash-4.1$ echo demo.txt luento.txt | xargs -n 1 cp itkp101.txt
+ bash-4.1$ ls
+ demo.txt  itkp101.txt  luento.txt  tyovaline
+ bash-4.1$ emv demo.txt tyovaline/demot/demo1/
+ bash-4.1$ mv luento.txt tyovaline/harkka
+ bash-4.1$ ls tyovaline/demot/demo1
+ demo.txt
+ bash-4.1$ ls tyovaline/harkka/
+ esitysgrafiikka  luento.txt  tekstinkasittely  unix  www
+ bash-4.1$ ls
+ itkp101.txt  tyovaline
+ bash-4.1$ mv itkp101.txt tyovaline/
+ bash-4.1$ ls tyovaline/
+ demot  faq  harkka  itkp101.txt  kurssilaiset  linkit  luennot	moniste
+ bash-4.1$ chmod a-r tyovaline/harkka/tekstinkasittely/
+ bash-4.1$ chmod a-rtyovaline/harkka/tekstinkasittely/
+>                   tyovaline/harkka/tekstinkasittely/
+>                  tyovaline/harkka/tekstinkasittely/
+>                 tyovaline/harkka/tekstinkasittely/
+ chmod: missing operand after `tyovaline/harkka/tekstinkasittely/'
+ Try `chmod --help' for more information.
+ bash-4.1$ cd tyovaline/
+ bash-4.1$ cd harkka/
+ bash-4.1$ ls -l
+ total 20
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 esitysgrafiikka
+ -rw-r--r--. 1 esjutaha users    9 Jul 29 23:40 luento.txt
+ d-wx--x--x. 2 esjutaha users 4096 Jul 29 23:25 tekstinkasittely
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 unix
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 www
+ bash-4.1$ chmod a-w tekstinkasittely/
+ bash-4.1$ chmod a-w tekstinkasittely/
+>           ls -l
+ total 20
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 esitysgrafiikka
+ -rw-r--r--. 1 esjutaha users    9 Jul 29 23:40 luento.txt
+ d--x--x--x. 2 esjutaha users 4096 Jul 29 23:25 tekstinkasittely
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 unix
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 www
+ bash-4.1$ chmod a-r tekstinkasittely/
+ bash-4.1$ chmod a-r tekstinkasittely/
+>           ls -l
+ total 20
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 esitysgrafiikka
+ -rw-r--r--. 1 esjutaha users    9 Jul 29 23:40 luento.txt
+ d--x--x--x. 2 esjutaha users 4096 Jul 29 23:25 tekstinkasittely
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 unix
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 www
+ bash-4.1$ chmod a+r tekstinkasittely/
+ bash-4.1$ chmod a+r tekstinkasittely/
+>           ls -l
+ total 20
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 esitysgrafiikka
+ -rw-r--r--. 1 esjutaha users    9 Jul 29 23:40 luento.txt
+ dr-xr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 tekstinkasittely
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 unix
+ drwxr-xr-x. 2 esjutaha users 4096 Jul 29 23:25 www
+ bash-4.1$ 
+> bash-4.1$ cd ..
+ bash-4.1$ cd ..
+ bash-4.1$ ls
+ tyovaline
+ bash-4.1$ echo find * -execdir du {} +
+ 4	./tyovaline/demot/demo3
+ 8	./tyovaline/demot/demo1
+ 4	./tyovaline/demot/demo2
+ 20	./tyovaline/demot
+ 4	./tyovaline/luennot/luento2
+ 4	./tyovaline/luennot/luento3
+ 4	./tyovaline/luennot/luento1
+ 16	./tyovaline/luennot
+ 4	./tyovaline/faq
+ 4	./tyovaline/harkka/unix
+ 4	./tyovaline/harkka/tekstinkasittely
+ 4	./tyovaline/harkka/esitysgrafiikka
+ 4	./tyovaline/harkka/www
+ 24	./tyovaline/harkka
+ 4	./tyovaline/moniste
+ 4	./tyovaline/linkit
+ 4	./tyovaline/kurssilaiset
+ 84	./tyovaline
+ 4	./demot/demo3
+ 8	./demot/demo1
+ 4	./demot/demo2
+ 20	./demot
+ 4	./demo3
+ 8	./demo1
+ 4	./demo.txt
+ 4	./demo2
+ 4	./itkp101.txt
+ 4	./luennot/luento2
+ 4	./luennot/luento3
+ 4	./luennot/luento1
+ 16	./luennot
+ 4	./luento2
+ 4	./luento3
+ 4	./luento1
+ 4	./faq
+ 4	./harkka/unix
+ 4	./harkka/tekstinkasittely
+ 4	./harkka/esitysgrafiikka
+ 4	./harkka/www
+ 24	./harkka
+ 4	./unix
+ 4	./tekstinkasittely
+ 4	./esitysgrafiikka
+ 4	./www
+ 4	./luento.txt
+ 4	./moniste
+ 4	./linkit
+ 4	./kurssilaiset
+ bash-4.1$ find * -execdir du {} + | sort
+ 16	./luennot
+ 16	./tyovaline/luennot
+ 20	./demot
+ 20	./tyovaline/demot
+ 24	./harkka
+ 24	./tyovaline/harkka
+ 4	./demo.txt
+ 4	./demo2
+ 4	./demo3
+ 4	./demot/demo2
+ 4	./demot/demo3
+ 4	./esitysgrafiikka
+ 4	./faq
+ 4	./harkka/esitysgrafiikka
+ 4	./harkka/tekstinkasittely
+ 4	./harkka/unix
+ 4	./harkka/www
+ 4	./itkp101.txt
+ 4	./kurssilaiset
+ 4	./linkit
+ 4	./luennot/luento1
+ 4	./luennot/luento2
+ 4	./luennot/luento3
+ 4	./luento.txt
+ 4	./luento1
+ 4	./luento2
+ 4	./luento3
+ 4	./moniste
+ 4	./tekstinkasittely
+ 4	./tyovaline/demot/demo2
+ 4	./tyovaline/demot/demo3
+ 4	./tyovaline/faq
+ 4	./tyovaline/harkka/esitysgrafiikka
+ 4	./tyovaline/harkka/tekstinkasittely
+ 4	./tyovaline/harkka/unix
+ 4	./tyovaline/harkka/www
+ 4	./tyovaline/kurssilaiset
+ 4	./tyovaline/linkit
+ 4	./tyovaline/luennot/luento1
+ 4	./tyovaline/luennot/luento2
+ 4	./tyovaline/luennot/luento3
+ 4	./tyovaline/moniste
+ 4	./unix
+ 4	./www
+ 8	./demo1
+ 8	./demot/demo1
+ 8	./tyovaline/demot/demo1
+ 84	./tyovaline
+ bash-4.1$ find * -execdir du {} + | sort -g
+ 4	./demo.txt
+ 4	./demo2
+ 4	./demo3
+ 4	./demot/demo2
+ 4	./demot/demo3
+ 4	./esitysgrafiikka
+ 4	./faq
+ 4	./harkka/esitysgrafiikka
+ 4	./harkka/tekstinkasittely
+ 4	./harkka/unix
+ 4	./harkka/www
+ 4	./itkp101.txt
+ 4	./kurssilaiset
+ 4	./linkit
+ 4	./luennot/luento1
+ 4	./luennot/luento2
+ 4	./luennot/luento3
+ 4	./luento.txt
+ 4	./luento1
+ 4	./luento2
+ 4	./luento3
+ 4	./moniste
+ 4	./tekstinkasittely
+ 4	./tyovaline/demot/demo2
+ 4	./tyovaline/demot/demo3
+ 4	./tyovaline/faq
+ 4	./tyovaline/harkka/esitysgrafiikka
+ 4	./tyovaline/harkka/tekstinkasittely
+ 4	./tyovaline/harkka/unix
+ 4	./tyovaline/harkka/www
+ 4	./tyovaline/kurssilaiset
+ 4	./tyovaline/linkit
+ 4	./tyovaline/luennot/luento1
+ 4	./tyovaline/luennot/luento2
+ 4	./tyovaline/luennot/luento3
+ 4	./tyovaline/moniste
+ 4	./unix
+ 4	./www
+ 8	./demo1
+ 8	./demot/demo1
+ 8	./tyovaline/demot/demo1
+ 16	./luennot
+ 16	./tyovaline/luennot
+ 20	./demot
+ 20	./tyovaline/demot
+ 24	./harkka
+ 24	./tyovaline/harkka
+ 84	./tyovaline
+ bash-4.1$ find * -execdir du {} + | sort -g -r
+ 84	./tyovaline
+ 24	./tyovaline/harkka
+ 24	./harkka
+ 20	./tyovaline/demot
+ 20	./demot
+ 16	./tyovaline/luennot
+ 16	./luennot
+ 8	./tyovaline/demot/demo1
+ 8	./demot/demo1
+ 8	./demo1
+ 4	./www
+ 4	./unix
+ 4	./tyovaline/moniste
+ 4	./tyovaline/luennot/luento3
+ 4	./tyovaline/luennot/luento2
+ 4	./tyovaline/luennot/luento1
+ 4	./tyovaline/linkit
+ 4	./tyovaline/kurssilaiset
+ 4	./tyovaline/harkka/www
+ 4	./tyovaline/harkka/unix
+ 4	./tyovaline/harkka/tekstinkasittely
+ 4	./tyovaline/harkka/esitysgrafiikka
+ 4	./tyovaline/faq
+ 4	./tyovaline/demot/demo3
+ 4	./tyovaline/demot/demo2
+ 4	./tekstinkasittely
+ 4	./moniste
+ 4	./luento3
+ 4	./luento2
+ 4	./luento1
+ 4	./luento.txt
+ 4	./luennot/luento3
+ 4	./luennot/luento2
+ 4	./luennot/luento1
+ 4	./linkit
+ 4	./kurssilaiset
+ 4	./itkp101.txt
+ 4	./harkka/www
+ 4	./harkka/unix
+ 4	./harkka/tekstinkasittely
+ 4	./harkka/esitysgrafiikka
+ 4	./faq
+ 4	./esitysgrafiikka
+ 4	./demot/demo3
+ 4	./demot/demo2
+ 4	./demo3
+ 4	./demo2
+ 4	./demo.txt
+ bash-4.1$ find * -exec du {} + | sort -g -r
+ 84	tyovaline
+ 24	tyovaline/harkka
+ 24	tyovaline/harkka
+ 20	tyovaline/demot
+ 20	tyovaline/demot
+ 16	tyovaline/luennot
+ 16	tyovaline/luennot
+ 8	tyovaline/demot/demo1
+ 8	tyovaline/demot/demo1
+ 8	tyovaline/demot/demo1
+ 4	tyovaline/moniste
+ 4	tyovaline/moniste
+ 4	tyovaline/luennot/luento3
+ 4	tyovaline/luennot/luento3
+ 4	tyovaline/luennot/luento3
+ 4	tyovaline/luennot/luento2
+ 4	tyovaline/luennot/luento2
+ 4	tyovaline/luennot/luento2
+ 4	tyovaline/luennot/luento1
+ 4	tyovaline/luennot/luento1
+ 4	tyovaline/luennot/luento1
+ 4	tyovaline/linkit
+ 4	tyovaline/linkit
+ 4	tyovaline/kurssilaiset
+ 4	tyovaline/kurssilaiset
+ 4	tyovaline/itkp101.txt
+ 4	tyovaline/harkka/www
+ 4	tyovaline/harkka/www
+ 4	tyovaline/harkka/www
+ 4	tyovaline/harkka/unix
+ 4	tyovaline/harkka/unix
+ 4	tyovaline/harkka/unix
+ 4	tyovaline/harkka/tekstinkasittely
+ 4	tyovaline/harkka/tekstinkasittely
+ 4	tyovaline/harkka/tekstinkasittely
+ 4	tyovaline/harkka/luento.txt
+ 4	tyovaline/harkka/esitysgrafiikka
+ 4	tyovaline/harkka/esitysgrafiikka
+ 4	tyovaline/harkka/esitysgrafiikka
+ 4	tyovaline/faq
+ 4	tyovaline/faq
+ 4	tyovaline/demot/demo3
+ 4	tyovaline/demot/demo3
+ 4	tyovaline/demot/demo3
+ 4	tyovaline/demot/demo2
+ 4	tyovaline/demot/demo2
+ 4	tyovaline/demot/demo2
+ 4	tyovaline/demot/demo1/demo.txt
+ bash-4.1$ find * -exec du {} + | sort -g -r | uniq
+ 84	tyovaline
+ 24	tyovaline/harkka
+ 20	tyovaline/demot
+ 16	tyovaline/luennot
+ 8	tyovaline/demot/demo1
+ 4	tyovaline/moniste
+ 4	tyovaline/luennot/luento3
+ 4	tyovaline/luennot/luento2
+ 4	tyovaline/luennot/luento1
+ 4	tyovaline/linkit
+ 4	tyovaline/kurssilaiset
+ 4	tyovaline/itkp101.txt
+ 4	tyovaline/harkka/www
+ 4	tyovaline/harkka/unix
+ 4	tyovaline/harkka/tekstinkasittely
+ 4	tyovaline/harkka/luento.txt
+ 4	tyovaline/harkka/esitysgrafiikka
+ 4	tyovaline/faq
+ 4	tyovaline/demot/demo3
+ 4	tyovaline/demot/demo2
+ 4	tyovaline/demot/demo1/demo.txt
+ bash-4.1$ exit
+ exit
+ /tmp/esjutaha/
+ `-- [drwxr-xr-x esjutaha]  tyovaline
+     |-- [drwxr-xr-x esjutaha]  demot
+     |   |-- [drwxr-xr-x esjutaha]  demo1
+     |   |   `-- [-rw-r--r-- esjutaha]  demo.txt
+     |   |-- [drwxr-xr-x esjutaha]  demo2
+     |   `-- [drwxr-xr-x esjutaha]  demo3
+     |-- [drwxr-xr-x esjutaha]  faq
+     |-- [drwxr-xr-x esjutaha]  harkka
+     |   |-- [drwxr-xr-x esjutaha]  esitysgrafiikka
+     |   |-- [-rw-r--r-- esjutaha]  luento.txt
+     |   |-- [dr-xr-xr-x esjutaha]  tekstinkasittely
+     |   |-- [drwxr-xr-x esjutaha]  unix
+     |   `-- [drwxr-xr-x esjutaha]  www
+     |-- [-rw-r--r-- esjutaha]  itkp101.txt
+     |-- [drwxr-xr-x esjutaha]  kurssilaiset
+     |-- [drwxr-xr-x esjutaha]  linkit
+     |-- [drwxr-xr-x esjutaha]  luennot
+     |   |-- [drwxr-xr-x esjutaha]  luento1
+     |   |-- [drwxr-xr-x esjutaha]  luento2
+     |   `-- [drwxr-xr-x esjutaha]  luento3
+     `-- [drwxr-xr-x esjutaha]  moniste

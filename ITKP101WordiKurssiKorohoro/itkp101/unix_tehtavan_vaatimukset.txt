@@ -1,0 +1,53 @@
+
+
+Unix-osuuden henkilˆkohtaiset vaatimukset
+----------------------------------------------------------------------------
+
+Ota ssh-komentoriviyhteys jalava.cc.jyu.fi-koneeseen.
+
+Aloita kirjoittamalla komento:
+
+~tjlahton/itkp101.csh
+
+Luo komentorivin avulla seuraavanlainen kansiohierarkia:
+
+.
+`-- tyovaline
+    |-- demot
+    |   |-- demo1
+    |   |-- demo2
+    |   `-- demo3
+    |-- faq
+    |-- harkka
+    |   |-- esitysgrafiikka
+    |   |-- tekstinkasittely
+    |   |-- unix
+    |   `-- www
+    |-- kurssilaiset
+    |-- linkit
+    |-- luennot
+    |   |-- luento1
+    |   |-- luento2
+    |   `-- luento3
+    `-- moniste
+
+Kopioi itkp101.txt-tiedosto demo1-kansioon demo.txt-nimelle
+
+Kopioi itkp101.txt-tiedosto harkka-kansioon luento.txt-nimelle
+
+Siirr‰ itkp101.txt-tiedosto tyovaline-kansioon.
+
+Muuta tekstinkasittely-kansion kirjoitusoikeuksia siten, ett‰ kenell‰k‰‰n ei ole tekstinkasittely-kansioon kirjoitusoikeutta. Tarvitset chmod-komentoa.
+
+
+Joudut mahdollisesti k‰ytt‰m‰‰n komentojen putkitusta
+ja lukemaan sopivien komentojen avustusta seuraavaa teht‰v‰‰ tehdess‰si:
+
+Kirjoita komento, joka listaa tyovaline-kansion alikansiot niiden viem‰n
+levytilan mukaan suuruusj‰rjestyksess‰. Tarvitset t‰ss‰ du-komentoa.
+
+
+Lopeta kirjoittamalla komento:
+
+exit
+

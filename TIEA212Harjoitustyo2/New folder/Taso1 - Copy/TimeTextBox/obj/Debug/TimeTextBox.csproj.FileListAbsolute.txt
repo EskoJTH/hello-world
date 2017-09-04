@@ -1,9 +1,0 @@
-C:\Projects\TIEA212Harjoitustyo2\Taso2\TimeTextBox\bin\Debug\TimeTextBox.dll
-C:\Projects\TIEA212Harjoitustyo2\Taso2\TimeTextBox\bin\Debug\TimeTextBox.pdb
-C:\Projects\TIEA212Harjoitustyo2\Taso2\TimeTextBox\obj\Debug\TimeTextBox.dll
-C:\Projects\TIEA212Harjoitustyo2\Taso2\TimeTextBox\obj\Debug\TimeTextBox.pdb
-C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\bin\Debug\TimeTextBox.dll
-C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\bin\Debug\TimeTextBox.pdb
-C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.csprojResolveAssemblyReference.cache
-C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.dll
-C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.pdb

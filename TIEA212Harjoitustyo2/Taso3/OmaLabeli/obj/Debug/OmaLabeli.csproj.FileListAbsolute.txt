@@ -1,5 +1,0 @@
-C:\Projects\TIEA212Harjoitustyo2\Taso3\OmaLabeli\bin\Debug\OmaLabeli.dll
-C:\Projects\TIEA212Harjoitustyo2\Taso3\OmaLabeli\bin\Debug\OmaLabeli.pdb
-C:\Projects\TIEA212Harjoitustyo2\Taso3\OmaLabeli\obj\Debug\OmaLabeli.dll
-C:\Projects\TIEA212Harjoitustyo2\Taso3\OmaLabeli\obj\Debug\OmaLabeli.pdb
-C:\Projects\TIEA212Harjoitustyo2\Taso3\OmaLabeli\obj\Debug\OmaLabeli.csprojResolveAssemblyReference.cache
