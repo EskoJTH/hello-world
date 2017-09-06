@@ -227,6 +227,118 @@ Return
    Send {}}
 Return
 
+
+
+;Right hand arrows start
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;Right hadn arrows start
+
+
++<!j::
+   Send {Shift down}{Left}
+Return
+
++<!l::
+   Send {Shift down}{Right}
+Return
+
++<!k::
+   Send {Shift down}{Down}
+Return
+
++<!i::
+   Send {Shift down}{Up}
+Return
+
++<!u::
+   Send {Shift down}{Home}
+Return
+
++<!o::
+   Send {Shift down}{End}
+Return
+
+^+<!j::
+   Send {Control down}{Shift down}{Left}
+Return
+
+^+<!l::
+   Send {Control down}{Shift down}{Right}
+Return
+
+^+<!k::
+   Send {Control down}{Shift down}{Down}
+Return
+
+^+<!i::
+   Send {Control down}{Shift down}{Up}
+Return
+
+^+<!u::
+   Send {Control down}{Shift down}{Home}
+Return
+
+^+<!o::
+   Send {Control down}{Shift down}{End}
+Return
+
+^<!j::
+   Send {Control down}{Left} 
+Return
+
+^<!l::
+   Send {Control down}{Right}
+Return
+
+^<!k::
+   Send {Control down}{Down}
+Return
+
+^<!i::
+   Send {Control down}{Up}
+Return
+
+^<!u::
+   Send {Control down}{Home}
+Return
+
+^<!o::
+   Send {Control down}{End}
+Return
+
+<!j::
+   Send {Left}
+Return
+
+<!l::
+   Send {Right}
+Return
+
+<!k::
+   Send {Down}
+Return
+
+<!i::
+   Send {Up}
+Return
+
+<!u::
+   Send {Home}
+Return
+
+<!o::
+   Send {End}
+Return
+
 CapsLock::Suspend
 
 

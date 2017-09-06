@@ -1,0 +1,5 @@
+a)
+Koska alkutilaan voidaan päätyä myöhemmin uudelleen, jolloin automaatti hyväksyisi sen lopputilana.
+
+b)
+Lisätään uusi hyväksyvä alkutila, josta voidaan siirtyä epsilonilla vanhaan alkutilaan, tai takaisin itseensä. Tähän tilaan ei koskaan voida viitata takaisin automaatista.

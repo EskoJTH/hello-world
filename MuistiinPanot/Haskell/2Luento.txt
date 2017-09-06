@@ -1,0 +1,8 @@
+data NonEmpty a = a :| [a] deriving (show)
+
+foo = 15 `div` 5
+example :: NonEmpty Int
+examole = 0 :| [1,2,3,4]
+
+NonEmpty can be used to makes a list that doesn't have an empty case.
+

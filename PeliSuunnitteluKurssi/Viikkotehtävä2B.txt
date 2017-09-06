@@ -1,0 +1,33 @@
+Viikkotehtävä 2B) Tarina:
+1. Peli on sivultapäin kuvattu tarinarikas mysteeriseikkailupeli.
+
+2. Pelissä pelaaja on nuori tyttö, joka lähtee lomalla saarelle, jossa alkaa tapahtua yliluonnollisia asioita. Pelaajan oli tarkoitus vain lomailla kavereittensa kanssa saarella, mutta matka muuttuukin kummitusmysteerien, muistinmenetyksien ja kaverien katoamisten selvittelyksi.
+
+3. Pelaajahahmo on ilmeisesti jo aikuinen nuori tyttö. Pelissä joudut päättämään mitenkä hän vastaa keskusteluihin ja tekemään päätöksiä hänen puolestaan. Ainakin itse lähestyin tarinaa siltä kantilta kuin itse olisin hän. Toisaalta henkilö on paljon etäisempi, kuin esimerkiksi portalin päähenkilö, johtuen kuvakulmasta ja siitä miten päähenkilö itse lopulta päättää mitä sanoo. Osallistut henkilöiden välisiin keskusteluihin reaaliajassa perustuen sinulle annettuihin vaihtoehtoihin. Voit yleensä myös olla vaan hiljaa. Siitä kun pelasin pelin läpi, on hieman liian kauan, muistan paikoin vähän huonosti.
+
+4. Ei muistaakseni ole yhtään cutsceneä, jossa kontrolli vietäisiin kokonaan pelaajalta. Tapahtumissa, joita voisi ajatella cutsceneinä pelaaja yleensä säilyttää hallinnan.
+Lähes kaikki puhe on interaktiivista dialogia.
+Saarelta löytyy joitakin audiolokeja ja kirjeitä.
+Musiikki on melko vähäistä. Audio athmospheeriin sopivaa ja sitä eteenpäin ajavaa.
+Kaikki tarinankerronta on melko hienovaraista. Tarinaa ei missään vaiheessa tuputeta pakolla sinulle, vaan sinun pitää itse huomata asioita ympäristöstä ja hahmoista. Pelissä ei taida olla yhtään kohtaa, jossa kertoja sanoisi suoraan mitä on tapahtunut ja mitä pitää tehdä seuraavaksi. Toki on kohtia, joissa päähenkilö toteaa, että pitääpäs käydä tuolla tai tehdä tällaista ja tällaista, mutta se ei tunnu liioitellulta, ja joudut itse kuitenkin yleensä keksimään, mitä maailmassa tapahtuu.
+En kuitenkaan muista yhtään varsinaista esimerkkiä hiljaisesta tarinankerronnasta.
+Dokumentoinnista ei muistikuvaa. En itse juuri koskaan käytä dokumentointityökaluja peleissä
+Jälkinarratiivejakin varmaan oli, mutta en muista.
+
+5. Pidin pelin tarinankerronnasta. Tarinankerronta tuki peliä ja tarinaa. Jos jotain olisin halunnut lisää, niin selkeämmän lopputuloksen ja että useammat pelikerrat eivät muistuttaisi niin paljoa toisiaan. Ensimmäisellä kerralla oli ihan jännä kävellä jotain uutta tietä pitkin, mutta toisella kerralla tämä tuntui vain ajan haaskaukselta.
+
+6. Olet hyvin pienen saaribanaanivaltion poliisiylipäällikkö. Tehtävänäsi on kitkeä valtiosta rikollisuus ja korruptio, jotta valtiosi pääsee hyödyntämään täysillä sen luontaisia banaaniresursseja sekö kilpailemaan naapureiden kanssa. Suoritat tämän kävelemällä ympäri saarta ja havaitsemalla ympäristöä. Jos havaitset jotain hämärää, voit käskeä alaisesi tarkkailemaan tilannetta tai olla itse mukana. Jos olet mukana tehtävässä voit antaa alaisillesi erilaisia taktisia käskyjä ja tekemään asioita itsekin, joka parantaa onnistumisen todennäköisyyksiä. Osa poliiseista voi myös olla korruptoituneita ja voit vain itse havaitsemalla heitä tehdä tälle jotain, koska et täysin voi luottaa kehenkään. Valtion johto on päättänyt hoitaa rikollisuus ongelman kertaheitolla, joten poliisin resurssit on 20-kertaistettu, mutta sinulla on vain 2 kuukautta aikaa hoitaa rikollisuus ongelma kuntoon. Jos et tähän pysty koko valtion talous romahtaa.
+
+7. Pienen etelänsaaren kilpailukyky on pohjamudissa koska saarella on paljon korruptiota ja rikollisuutta. Olet saaren uusi poliisipäällikkö. Tehtäväsi on pysäyttää korruptio ja rikollisuus. Resursseja sinulla on riittävästi.
+
+8. Pelaajahahmo on täysin hiljainen ja puhuu pelkästään toimiensa kautta.
+
+9. Cutscenejä ei olisi.
+Puhetta ei olisi ollenkaan.
+Tekstejä ainakin olisivat muiden poliisien sinulle antamat lyhyet toiminta raportit.
+Auditiivista tarinankerrontaa olisivat ympäristön äänet. Esimerkiksi autojen äänet, Naisen kiljahdus, Poliisiauton äänet.
+
+Suurin osa tarinasta olisi hiljaista. Pyrkisin välttämään turhaa tekstiä ja puhetta, mutta esimerkiksi alaisten suorittamat tutkimukset ja lyhyet kertomukset siitä miten tehtävä meni olisivat tekstiä.
+
+Dokumentointityökaluja olisivat automaattisesti syntyvät rikos raportit.
+Jälkinarratiiveihin voisi pistää erinäköisiä statistiikkoja siitä miten suoriuduit. Ja esimerkiksi listan uutis-otsikoita, joihin pääsit.

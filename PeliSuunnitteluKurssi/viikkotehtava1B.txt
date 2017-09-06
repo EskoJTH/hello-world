@@ -1,0 +1,44 @@
+Pelissä:
+Pelaaja valitsee serverin.
+Pelaaja valitsee osapuolen.
+Pelaaja pelaa tutoriaalin.
+Pelaaja vaihtaa mantereen.
+Pelaaja liikkuu.
+Pelaaja ampuu aseilla.
+Pelaaja lentää aluksilla.
+Pelaaja ajaa kulkuneuvoilla.
+Pelaaja valloittaa alueita.
+Pelaaja vaihtaa classin.
+Pelaaja lääkitsee ystäviä.
+Pelaaja henkiinherättää ystäviä.
+Pelaaja ohjaa exosceletonia.
+Pelaaja lentää jetpackillä.
+Pelaaja muuttuu näkymättömäksi.
+Pelaaja vaihtaa varusteita.
+Pelaaja ostaa kulkuneuvvon.
+Pelaaja ostaa ilma-aluksen.
+Pelaaja navigoi karttaa.
+Pelaaja vaihtaa spawni paikan.
+Pelaaja syntyy osapuolen hallitsemalle spawn alueelle.
+Pelaaja tiputetaan drop podilla taisteluun.
+Pelaaja asettaa spawn beaconin.
+Pelaaja muuttaa miehistönkuljetuspanssariajoneuvon spawnipísteeksi.
+Pelaaja tuhoaa miehistönkuljetuspanssariajoneuvon.
+Pelaaja heittää kranaatin.
+Pelaaja kuolee niin kuin voisi kuvitella.
+Pelaaja liittyy osaksi zerggiä
+Pelaaja kuolee meatgrinderissä.
+Pelaaja häviää ilmataistelun elitistiselle paskiaiselle.
+Pelaaja ampuu tykillä.
+Pelaaja valloittaa pisteitä.
+Pelaaja korjaa rikkinäistä sotakalustoa.
+Pelaaja jakaa ammuksia.
+Pelaaja liittyy ryhmään.
+Pelaaja lisää kaverin.
+Pelaaja luo ryhmän.
+Pelaaja luo joukkueen.
+Pelaaja luo järjestön.
+Pelaaja kommunikoi.
+
+Mielihyvää:
+Kaikki paitsi narratiivi ja ehkä fantasia toteutuvat merkittävässä määrin. Näistä erityisesti syitä, miksi peliä pelataan on haaste ja yhteisöllisyys.

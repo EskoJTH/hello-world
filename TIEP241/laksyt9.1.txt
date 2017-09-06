@@ -1,0 +1,29 @@
+oletetaan että pumppauslemma pätee.
+1. s=vuw
+2. u!=ε
+3. |vu|<=p
+4. ∀i∊N : v u^i w ∊A
+
+koska 3. |vu|=<|a^p|täytyy päteä.
+nyt siis u∊{a}*
+Jos s=a^p b a^p
+jolloin w=a^f b a^p f€N, f>=0
+
+vu=a^(p-f) P=k+l+f
+v=a^k
+u=a^l
+
+vuw= a^k + a^l + a^f b a^p
+
+Jotta kohta 4. pätee aina
+a^k (a^l)^i a^f ba^p ∊ A ∀i∊N
+
+jos i=0
+
+a^K a^f b a^p !∊ A
+
+koska
+a^k a^f != a^p
+
+tämä aiheuttaa ristiriidan.
+

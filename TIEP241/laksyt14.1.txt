@@ -1,0 +1,55 @@
+{ww|w∊{a,b}*}=A
+s=a^p b^p a^p b^p
+
+s=uvmxy | u,v,w,x,y ∊ Σ*
+|vwx|=<p
+
+1.vx!=ε
+2.|vwx|=<p
+3. uv^i wx^i y∊A i∊N
+
+oletetaan että 1.,2.,3. pätevät
+
+koska|a^p|=|b^p|=p
+ja |vwx|<=p
+
+joko
+
+4. |vwx|=|a^c|  5. |vwx|=|b^c|  6. |vwx|=|a^d b^e|  7. |vwx|=|b^d a^e|
+d+e=c=|vwx|
+
+Tutkitaan kaikki tilanteet erikseen:
+
+4. |vwx|=|a^c|
+
+u=a^(p-c)
+y=b^p a^p b^p
+3. uv^i wx^i y ∊ A
+a^(p-c) a^(ci) c b^p a^p b^p
+jos i = 0
+a^(p-c) b^p a^p b^p !∊ A ristiriita.
+
+jos a^c valitaan toisn a^p kohdalta päättely pysyy lähes samana.
+
+5. |vwx|=|b^c|
+
+todistus periaatteessa sama kuin a:n kanssa
+ei päde.
+
+6. |vwx|=|a^d b^e|
+
+u=a^(p-c)
+y=b^(p-e) a^p b^p
+vwx=a^d b^e
+
+a^(p-c) (a^d b^e)^i b^(p-e) a^p b^p
+
+jos i = 0
+
+a^(p-c)  b^(p-e) a^p b^p !∊ A
+
+sama periaate pätee jos ab valitaan lopusta.
+
+7. Sama periaate kuin kohdassa kuusi.
+
+Täällöin kieli A ei voi koskaan olla kontekstiton.

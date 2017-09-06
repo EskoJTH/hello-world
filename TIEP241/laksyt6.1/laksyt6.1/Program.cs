@@ -21,7 +21,7 @@ namespace laksyt6._1
         {
 
 #if DEBUG
-            args = new[] { "aabaa", "babaa" };
+            args = new[] { "babaa" };
 #endif
 
             

@@ -1,7 +1,0 @@
-Miksi tästä tulee vastauksesksi: Non-exhaustive patterns in function inspect
-syötteellä inspect "a" "c"
-
-inspect :: [Char] -> [Char] -> Bool
-inspect (x:targets) (y:subject) 
-    |length (x:targets)>0 = if x==y then True else inspect targets (y:subject)
-    |otherwise = False
