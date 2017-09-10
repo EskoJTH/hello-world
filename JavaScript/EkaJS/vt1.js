@@ -189,7 +189,6 @@ function laskeMatka(aikaPaikka, listLon, listLat) {
     if (aikaPaikka.length === 0) return 0; //jos tyhjä mennään takaisin.
     aikaPaikka.sort(compareTime); //järjestää aikaPaikan järjestykeen ajan mukaan.
 
-    console.log("" + aikaPaikka.length);
     //Seuraava on lähes turhaa toistoa jotta ensimmäistä rastia ei tarvitse laskea kahdesti, mutta toimii enkä jaksa korjata nyt kun on tehty.
     for (let i = 0; i < aikaPaikka.length; i++) { //käydään läpi koko aikaPaikka
         let a = parseInt(aikaPaikka[i].r); //aikapaikka sisältää tupa mallisia vekottimia.
