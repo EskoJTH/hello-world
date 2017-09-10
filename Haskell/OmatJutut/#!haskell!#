@@ -1,0 +1,25 @@
+Hours of hacking await!
+If I break, you can:
+  1. Restart:           M-x haskell-process-restart
+  2. Configure logging: C-h v haskell-process-log (useful for debugging)
+  3. General config:    M-x customize-mode
+  4. Hide these tips:   C-h v haskell-process-show-debug-tips
+λ> :load H:\projects\Haskell\OmatJutut\Data.hs
+[1 of 1] Compiling Main             ( H:\projects\Haskell\OmatJutut\Data.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> mappaus tupa2Jr rastinID
+[4.821274903707648e15,6.601880566235136e15,6.601880566235136e15,5.62741395849216e15,4.875454842404864e15,4.7501239386112e15,4.828368713285632e15,4.828368713285632e15,4.771528579219456e15,6.653934764556288e15,6.358096477683712e15,6.358096477683712e15]
+λ> kaikkiMatkat rastit (mappaus tupa2Jr rastinID)
+[(25.666688,62.13028),(25.650436,62.131207),(25.650436,62.131207),(25.649234,62.124222),(25.628228,62.11906),(25.615203,62.115047),(25.63595,62.10393),(25.63595,62.10393),(25.644512,62.11183),(25.674748,62.127514),(25.669574,62.131769),(25.669574,62.131769)]
+λ> reverse (kaikkiMatkat rastit (mappaus tupa2Jr rastinID))
+[(25.669574,62.131769),(25.669574,62.131769),(25.674748,62.127514),(25.644512,62.11183),(25.63595,62.10393),(25.63595,62.10393),(25.615203,62.115047),(25.628228,62.11906),(25.649234,62.124222),(25.650436,62.131207),(25.650436,62.131207),(25.666688,62.13028)]
+λ> kaikkiMatkat rastit (mappaus tupa2Jr rastinID)
+[(25.666688,62.13028),(25.650436,62.131207),(25.650436,62.131207),(25.649234,62.124222),(25.628228,62.11906),(25.615203,62.115047),(25.63595,62.10393),(25.63595,62.10393),(25.644512,62.11183),(25.674748,62.127514),(25.669574,62.131769),(25.669574,62.131769)]
+λ> :r
+[1 of 1] Compiling Main             ( H:\projects\Haskell\OmatJutut\Data.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> matkat
+9.19326652280387
+λ> 
