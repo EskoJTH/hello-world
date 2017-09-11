@@ -2,11 +2,19 @@ import Data.Time.Clock
 import Data.Semigroup as Semi
 import Data.Monoid as M
 import Data.Foldable
-data Vesa project subproject starttime endtime comment =
+import Data.List
+import GHC.Exts
+data Vesa =
   Vesa {project:: String, subproject :: String, starttime :: UTCTime, endtime :: UTCTime, comment :: Comment} deriving (Eq,Show)
---instance Monoid (Vesa p1 p2 start end com) where
+--instance Semigroup (Vesa p1 p2 start end com) where
+--  (<>) (Vesa p1 p2 start end com)  (Vesa p1' p2' start' end' com') = Vesa p1 p2 start
 --  mempty = Vesa [] [] (UTCTime 0)(UTCTime 0) (Comment [])
---  mappend (Vesa p1 p2 start end com)  (Vesa p1' p2' start' end' com') = 
+data Answer =
+  Answer {timeSpent :: TimeSpent, timeSpan :: TimeSpan, avgtime :: AvgTimeSpent, commment :: Comment} deriving (Eq,Show)
+instance Monoid Answer where
+  mempty = Answer mempty mempty mempty mempty
+  mappend (Answer t1 t2 avgt c) (Answer t1' t2' avgt' c') = Answer (t1 M.<>t1') (t2 Semi.<>t2') (avgt M.<>avgt') (c M.<>c')
+
 --  mempty = Vesa [] [] (UTCTime 0)(UTCTime 0) (Comment [])
 --{(project:: String, subproject :: String, starttime :: UTCTime, endtime :: UTCTime, comment :: Comment)}
 
@@ -20,8 +28,8 @@ instance Monoid AvgTimeSpent where
   mempty = AvgTimeSpent 0
   mappend (AvgTimeSpent a) (AvgTimeSpent b) = AvgTimeSpent((a+b)/2)
   
-newtype TimeSpan a b = TimeSpan {getTime :: (UTCTime,UTCTime)} deriving (Eq,Show,Ord)
-instance Semigroup (TimeSpan a b) where
+newtype TimeSpan = TimeSpan {getTime :: (UTCTime,UTCTime)} deriving (Eq,Show,Ord)
+instance Semigroup TimeSpan where
   (<>) (TimeSpan (a,b)) (TimeSpan (c,d)) = TimeSpan(min a c, max b d)
   
 newtype Comment = Comment {getComment :: String} deriving (Eq,Show,Ord)
@@ -29,13 +37,34 @@ instance Monoid Comment  where
   mempty = Comment []
   mappend (Comment a) (Comment b) = Comment (a ++ " " ++ b)
   
-data Vesat a = Vesat {a ::[Vesa String String UTCTime UTCTime Comment]} deriving (Eq,Show)
+data Vesat a = Vesat {a ::[Vesa]} deriving (Eq,Show)
 instance Monoid (Vesat a) where
   mempty = Vesat []
   mappend (Vesat a) (Vesat b) = Vesat (a ++ b)
 
-jarjesta :: [Vesa String String UTCTime UTCTime Comment] ->[[Vesa String String UTCTime UTCTime Comment]]
-jarjesta vesat = groupBy (\(Vesa a b c d e) ((Vesa a' b' c' d' e'):vesas)->if(a==(a'))then True else False) (sortWith (\(Vesa a b c d e)->a) vesat) 
+--tulosta projektit = tulostaAnswers (kasiteleProjektit projektit)
+--tulostaAnswers x:xs = 
+--tulostaAnswer vastaukset=
+jarjesta :: [Vesa] ->[[Vesa]]
+jarjesta vesat = groupBy groupHelper (sortWith (\(Vesa a b c d e)->a) vesat)
+
+groupHelper (Vesa a b c d e) (Vesa a' b' c' d' e') = if(a==(a'))then True else False
+
+kasiteleProjektit :: [[Vesa]]->[Answer]
+kasiteleProjektit (projekti:projektit) = (convertter projekti):kasiteleProjektit(projektit)
+convertter :: [Vesa]->Answer
+convertter vesat = foldMap (convert) vesat
+convert :: Vesa->Answer
+convert (Vesa p1 p2 start end com) =
+  Answer (TimeSpent (diffUTCTime start end)) (TimeSpan (start,end)) (AvgTimeSpent(diffUTCTime start end)) (com)
+
+convertter' :: [Vesa]->Answer
+convertter' [(Vesa p1 p2 start end com)] =
+  Answer (TimeSpent (diffUTCTime start end)) (TimeSpan (start,end)) (AvgTimeSpent(diffUTCTime start end)) (com)
+convertter' (vesa:vesat) =(convertter [vesa]) M.<> (convertter vesat)
+
+--laske :: [Vesa]->String
+--laske ((Vesa p1 p2 start end com):projektit) = 
 
 --Timespan ja kommentti lˆytyy t‰st‰.
 --data ToistottomatVesat a = ToistottomatVesat {a ::[Vesa String String UTCTime UTCTime Comment]} deriving (Eq,Show)
@@ -53,7 +82,7 @@ jarjesta vesat = groupBy (\(Vesa a b c d e) ((Vesa a' b' c' d' e'):vesas)->if(a=
 -- tulosta :: Vesat->String
 -- tulosta vesat =
 -- 
---
+--Kuinka voin kiert‰‰ rekursion t‰ss‰?
 --
 --
 --
