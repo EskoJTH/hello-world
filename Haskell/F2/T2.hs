@@ -55,6 +55,7 @@ groupHelper (Vesa a b c d e) (Vesa a' b' c' d' e') = if(a==(a'))then True else F
 
 kasiteleProjektit :: [[Vesa]]->[Answer]
 kasiteleProjektit (projekti:projektit) = (convertter projekti):kasiteleProjektit(projektit)
+--map
 convertter :: [Vesa]->Answer
 convertter vesat = foldMap (convert) vesat
 convert :: Vesa->Answer
