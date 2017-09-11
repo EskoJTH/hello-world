@@ -32,7 +32,7 @@ newtype TimeSpan = TimeSpan {getTime :: Maybe (UTCTime,UTCTime)} deriving (Eq,Sh
 instance Monoid TimeSpan where
   mempty = TimeSpan Nothing
   mappend (TimeSpan Nothing) (TimeSpan (Just(c,d))) = TimeSpan (Just (c,d))
-  mappend (TimeSpan (Just (a,b))) (TimeSpan Nothing) = TimeSpan (a,b)
+  mappend (TimeSpan (Just (a,b))) (TimeSpan Nothing) = TimeSpan (Just (a,b))
   mappend (TimeSpan (Just (a,b))) (TimeSpan (Just (c,d))) = TimeSpan (Just (min a c, max b d))
   
 newtype Comment = Comment {getComment :: String} deriving (Eq,Show,Ord)
@@ -59,11 +59,11 @@ convertter :: [Vesa]->Answer
 convertter vesat = foldMap (convert) vesat
 convert :: Vesa->Answer
 convert (Vesa p1 p2 start end com) =
-  Answer (TimeSpent (diffUTCTime start end)) (TimeSpan (start,end)) (AvgTimeSpent(diffUTCTime start end)) (com)
+  Answer (TimeSpent (diffUTCTime start end)) (TimeSpan (Just(start,end))) (AvgTimeSpent(diffUTCTime start end)) (com)
 
 convertter' :: [Vesa]->Answer
 convertter' [(Vesa p1 p2 start end com)] =
-  Answer (TimeSpent (diffUTCTime start end)) (TimeSpan (start,end)) (AvgTimeSpent(diffUTCTime start end)) (com)
+  Answer (TimeSpent (diffUTCTime start end)) (TimeSpan (Just(start,end))) (AvgTimeSpent(diffUTCTime start end)) (com)
 convertter' (vesa:vesat) =(convertter [vesa]) M.<> (convertter vesat)
 
 --laske :: [Vesa]->String
