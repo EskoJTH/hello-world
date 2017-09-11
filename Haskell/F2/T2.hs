@@ -28,9 +28,12 @@ instance Monoid AvgTimeSpent where
   mempty = AvgTimeSpent 0
   mappend (AvgTimeSpent a) (AvgTimeSpent b) = AvgTimeSpent((a+b)/2)
   
-newtype TimeSpan = TimeSpan {getTime :: (UTCTime,UTCTime)} deriving (Eq,Show,Ord)
-instance Semigroup TimeSpan where
-  (<>) (TimeSpan (a,b)) (TimeSpan (c,d)) = TimeSpan(min a c, max b d)
+newtype TimeSpan = TimeSpan {getTime :: Maybe (UTCTime,UTCTime)} deriving (Eq,Show,Ord)
+instance Monoid TimeSpan where
+  mempty = TimeSpan Nothing
+  mappend (TimeSpan Nothing) (TimeSpan (Just(c,d))) = TimeSpan (Just (c,d))
+  mappend (TimeSpan (Just (a,b))) (TimeSpan Nothing) = TimeSpan (a,b)
+  mappend (TimeSpan (Just (a,b))) (TimeSpan (Just (c,d))) = TimeSpan (Just (min a c, max b d))
   
 newtype Comment = Comment {getComment :: String} deriving (Eq,Show,Ord)
 instance Monoid Comment  where
