@@ -56,6 +56,7 @@ kaikkiMatkat xs [] = []
 kaikkiMatkat xs (y:ys) = case (nauta y xs) of
   Nothing -> kaikkiMatkat xs ys
   Just (lon,lat) -> (lon,lat):kaikkiMatkat xs ys
+  
 nauta y [] = Nothing
 nauta y (((a,lon),(c,lat),(e,f)):xs)
   |f == y = Just (lon,lat)
@@ -63,6 +64,7 @@ nauta y (((a,lon),(c,lat),(e,f)):xs)
 
 laskelonlatit [a] = 0
 laskelonlatit (a:b:as) = kahdenpisteenValinenEtaisuus a b + laskelonlatit (b:as)
+
 kahdenpisteenValinenEtaisuus (a,b) (c,d) = getDistanceFromLatLonInKm b a d c
 
 

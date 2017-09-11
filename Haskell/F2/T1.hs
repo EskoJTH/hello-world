@@ -81,8 +81,9 @@ instance Semigroup (Predicate a) where
 --OR operaation on assosiatiivinen  
 --k
 newtype Endo a = Endo {appEndo :: a -> a}
-instance Semigroup (Endo a) where
-  (<>) (Endo a) (Endo b)  = Endo (a . b)
+instance Monoid (Endo a) where
+  mempty = Endo (\a->a)
+  mappend (Endo a) (Endo b)  = Endo (a . b)
 --(.) f g = \x -> f (g x)
 --(Endo a <> Endo b) <> Endo c == Endo (a . b) <> Endo c = Endo ((a . b) . c)
 -- == Endo (\x -> a (b x)) . c == Endo (\x -> a (b (c x)))

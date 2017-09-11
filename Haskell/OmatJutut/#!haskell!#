@@ -22,4 +22,93 @@ Ok, 1 module loaded.
 Collecting type info for 1 module(s) ... 
 λ> matkat
 9.19326652280387
+λ> :r
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> :load h:\Projects\Haskell\F2\T2.hs
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Name {s = \"Palindromi\"}   Total time used:TimeSpent {getTimediff = -69600s}   Total time spanTimeSpan {getTime = Just (2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)}   Average time spent on project:AvgTimeSpent {getAvgTime = -18300s}    Comments:Comment {getComment = \"Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias.-Wikipedia Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. \"}Project:Name {s = \"elaimet\"}   Total time used:TimeSpent {getTimediff = -27200s}   Total time spanTimeSpan {getTime = Just (2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)}   Average time spent on project:AvgTimeSpent {getAvgTime = -10200s}    Comments:Comment {getComment = \"Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! \"}"
+λ> :load h:\Projects\Haskell\F2\T2.hs
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi   Total time used:-69600s   Total time spanJust (2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)   Average time spent on project:-18300s    Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias.-Wikipedia Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. Project:elaimet   Total time used:-27200s   Total time spanJust (2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)   Average time spent on project:-10200s    Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! "
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi   Total time used:-69600s   Total time span:(2051-11-25 11:06:40 UTC,2051-11-25 14:00:00 UTC)   Average time spent on project:-18300s    Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias.-Wikipedia Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. Project:elaimet   Total time used:-27200s   Total time span:(2050-07-13 22:13:20 UTC,2050-07-13 18:26:40 UTC)   Average time spent on project:-10200s    Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! "
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi   Total time used:-69600s   Total time span:(2051-11-25 11:06:40 UTC,2051-11-25 14:00:00 UTC)   Average time spent on project:-18300s    Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. Project:elaimet   Total time used:-27200s   Total time span:(2050-07-13 22:13:20 UTC,2050-07-13 18:26:40 UTC)   Average time spent on project:-10200s    Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! "
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi   Total time used:-69600s   Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)   Average time spent on project:18300s    Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. Project:elaimet   Total time used:-27200s   Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)   Average time spent on project:10200s    Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! "
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi   Total time used:69600s   Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)   Average time spent on project:18300s    Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. Project:elaimet   Total time used:27200s   Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)   Average time spent on project:10200s    Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! "
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi--------Total time used:69600s--------Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)--------Average time spent on project in one sitting:18300s--------Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. Project:elaimet--------Total time used:27200s--------Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)--------Average time spent on project in one sitting:10200s--------Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! "
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi--------Total time used:69600s--------Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)--------Average time spent on project in one sitting:18300s--------Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. ;;;;;;;;Project:elaimet--------Total time used:27200s--------Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)--------Average time spent on project in one sitting:10200s--------Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! ;;;;;;;;"
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi-----Total time used:69600s-----Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)-----Average time spent on project in one sitting:18300s-----Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. ;;;;;;;;Project:elaimet-----Total time used:27200s-----Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)-----Average time spent on project in one sitting:10200s-----Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! ;;;;;;;;"
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi-----Total time used:69600s-----Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)-----Average time spent on project in one sitting:34800s-----Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. ;;;;;;;;Project:elaimet-----Total time used:27200s-----Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)-----Average time spent on project in one sitting:13600s-----Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! ;;;;;;;;"
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi-----Total time used:69600s-----Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)-----Average time spent on project in one sitting:34800s-----Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. ;;;;;;;;Project:elaimet-----Total time used:27200s-----Total time span:(2050-07-13 18:26:40 UTC,2050-07-13 22:13:20 UTC)-----Average time spent on project in one sitting:13600s-----Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! ;;;;;;;;"
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi-----Total time used:69600s-----Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)-----Average time spent on project in one sitting:34800s-----Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. ;;;;;;;;Project:elaimet-----Total time used:20000s-----Total time span:(2050-07-13 02:46:40 UTC,2050-07-13 13:53:20 UTC)-----Average time spent on project in one sitting:10000s-----Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! ;;;;;;;;"
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"Project:Palindromi-----Total time used:69600s-----Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)-----Average time spent on project in one sitting:34800s-----Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. |||||||||Project:elaimet-----Total time used:20000s-----Total time span:(2050-07-13 02:46:40 UTC,2050-07-13 13:53:20 UTC)-----Average time spent on project in one sitting:10000s-----Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! |||||||||"
+λ> :r
+[1 of 1] Compiling Main             ( H:\Projects\Haskell\F2\T2.hs, interpreted )
+Ok, 1 module loaded.
+Collecting type info for 1 module(s) ... 
+λ> vastaus
+"||||Project:Palindromi-----Total time used:69600s-----Total time span:(2051-11-25 10:06:40 UTC,2051-11-26 08:20:00 UTC)-----Average time spent on project in one sitting:34800s-----Comments:Saippua- eli vuolukivea tyostava Tulikivi-yritys on saippuakivikauppias -Wikipedia. Palondromit ovat ohjelmointikielen tarkein String tyypin metodi. ||||||||Project:elaimet-----Total time used:20000s-----Total time span:(2050-07-13 02:46:40 UTC,2050-07-13 13:53:20 UTC)-----Average time spent on project in one sitting:10000s-----Comments:Kissa ohjelmoitiin istumaan nappaimmistolla. Hau Hau! ||||"
+λ> :t (.)
+(.) :: (b -> c) -> (a -> b) -> a -> c
 λ> 
