@@ -1,6 +1,3 @@
-
-
-
 class MyFunctor f where
   fmap :: (a -> b) -> (f a -> f b)
 
@@ -28,16 +25,27 @@ newtype Endo a = Endo {appEndo :: a -> a}
 
 newtype Kissa a b = Kissa {kissaks :: a -> b}
 instance ProFunctor (Kissa) where
-  promap f1 f2 (Kissa f) = Kissa (f2 . f . f1 )
---Functor
+  promap f1 f2 (Kissa f) = Kissa (f2 . f . f1)
+  
+instance MyFunctor (Kissa a) where
+  fmap fu (Kissa f) = Kissa (fu . f)
   
 newtype Ehka a = Ehka {ehka :: Maybe a}
 instance Functor Ehka where
   fmap f (Ehka (a)) = case a of 
     Just x -> Ehka (Just (f x))
     Nothing -> Ehka Nothing
---Jatkuu????
 
 newtype RIO a b = RIO {runRIO :: a -> IO b}
-instance Functor RIO where
+instance ProFunctor (RIO) where
+  promap f1 f2 (RIO f) = RIO (f3 . f . f1 ) where
+    f3 ioa = do
+      a <- ioa
+      return (f2 a)
 
+instance MyFunctor (RIO a) where
+  fmap fu (RIO f) = RIO (fu . f) where
+--    f0 ioaf fconvert = do
+--      a <- ioa
+--      return (a) where
+--        ioa = fconvert ioaf
