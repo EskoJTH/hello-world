@@ -101,5 +101,5 @@ vastaus = tulosta $ kasiteleProjektit $ jarjesta testiData
 -- tulosta :: Vesat->String
 -- tulosta vesat =
 -- 
---Kuinka voin kiert√§√§ rekursion t√§ss√§?
+--Kuinka voin kiert‰‰ rekursion t‰ss‰?
 --
