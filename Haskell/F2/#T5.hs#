@@ -21,11 +21,11 @@ instance BiFunctor Const where
 newtype Cont r a = Cont {runCont :: (a -> r) -> r}
 instance ProFunctor Cont where
   promap f1 f2 (Cont f) =  _ --Cont (f3 . f . f1) where
-    {-f3 ioa = do
+    f3 ioa = do
       a <- ioa
-      return (f2 a)-}
+      return (f2 a)
 
-newtype UpStar f a b = UpStar {runUpStar :: a -> f b}
+--newtype UpStar f a b = UpStar {runUpStar :: a -> f b}
 --instance (MyFunctor f) => MyFunctor (UpStar f a) where
 --  fmap fu (UpStar f) = (UpStar fu f)
   

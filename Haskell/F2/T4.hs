@@ -44,8 +44,10 @@ instance ProFunctor (RIO) where
       return (f2 a)
 
 instance MyFunctor (RIO a) where
-  fmap fu (RIO f) = RIO (fu . f) where
---    f0 ioaf fconvert = do
---      a <- ioa
---      return (a) where
---        ioa = fconvert ioaf
+  fmap f (RIO (ioa)) = RIO (foo . ioa) where
+      foo x =
+        do
+       a <- x
+       return (f a)
+        
+    
