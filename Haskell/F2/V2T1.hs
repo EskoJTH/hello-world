@@ -15,4 +15,8 @@ instance Functor Ehka where
 newtype Tupula a b = Tupula (a,b) deriving (Eq,Show)
 instance Functor (Tupula a) where
   fmap f (Tupula (a,b)) = Tupula ( (a,f b))
-  
+
+--c
+newtype ZipList a = Z [a]
+instance Functor ZipList where
+  fmap f (Z xs) = Z (map f xs)

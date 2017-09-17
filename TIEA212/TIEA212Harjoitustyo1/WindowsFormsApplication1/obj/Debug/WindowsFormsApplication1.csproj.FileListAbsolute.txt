@@ -8,3 +8,13 @@ C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsForms
 C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 C:\Projects\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AboutBox1.resources
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.AboutBox1.resources
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Ohjelma.resources
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+H:\projects\TIEA212\TIEA212Harjoitustyo1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
