@@ -1,6 +1,6 @@
 {-class (Functor f) => Applicative f where  
     pure :: a -> f a  
-    (<*>) :: f (a -> b) -> f a -> f b-}
+    (<*>) :: f (a -> b) -> f a -> f b-} 
 
 {-
 class (Functor f) => Applicative f where
@@ -26,8 +26,13 @@ instance Applicative Ehka where
     (<*>) _ (Eimittaan) = Eimittaan
     (<*>) (Pelkka f) (Pelkka a)= Pelkka (f a)
 
-    
---b Ei onnistu (a,b) ei ole Funktori?
+
+newtype Tupla a b = T  (a,b)
+instance Functor (Tupla a) where
+  fmap f (T (a,b)) = T (a,f b)
+instance (Monoid a) => Applicative (Tupla a) where
+  pure x = T (mempty,x)
+  (<*>) (T ((,) u f)) (T ((,) a b)) =  T (a ,(f b))
 
 --c
 newtype ZipList a = Z [a]

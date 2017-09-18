@@ -1,3 +1,5 @@
+import Data.Monoid
+
 class Functor f => ZipA f where
   zunit :: f ()
   zzip :: f a -> f b -> f (a, b)
@@ -10,13 +12,10 @@ instance ZipA Maybe where
   zzip (Just a) (Just b) = Just (a,b)
 
 --b
---Ei onnistu (a,b) ei ole Funktori?
-newtype Tupula a b = T (a,b) --T a b???
-instance Functor (Tupula a) where
-  fmap f (T t) = T ((fst t),f (snd t))
-instance ZipA (Tupula a) where
-  zunit = T a b
-  zzip (T (a,b)) (T (a',b')) = T (fmap ,(a',b'))
+instance (Monoid a)=> ZipA ((,) a) where
+  zunit = (mempty,()) 
+  zzip ((,) a b) ((,) a' b') = (a<>a', (b,b'))
+  
 --c
   --where the idea is that zzip (Z [1, 2, 3]) (Z ['a', 'b']) == Z [(1, 'a'), (2, 'b')]
 newtype ZipList a = Z [a]

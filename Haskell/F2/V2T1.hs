@@ -8,10 +8,6 @@ instance Functor Ehka where
     Nothing -> Ehka Nothing
 
 --b
---newtype Tupula a b = Tupula (a,b) deriving (Eq,Show)
---instance Bifunctor Tupula where
---  bimap f1 f2 (Tupula (a,b)) = Tupula (f1 a, f2 b)
-
 newtype Tupula a b = Tupula (a,b) deriving (Eq,Show)
 instance Functor (Tupula a) where
   fmap f (Tupula (a,b)) = Tupula ( (a,f b))

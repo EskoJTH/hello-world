@@ -1,3 +1,4 @@
+import Data.Monoid
 --a
 newtype Identity a = Identity a
 instance Functor Identity where
@@ -11,8 +12,8 @@ newtype Compose f g a = Compose (f (g a))
 instance (Functor g, Functor f) => Functor (Compose f g) where
   fmap f (Compose c) = Compose fmap2 where
     fmap2 = (fmap (fmap f) c)
---instance (Functor g, Functor f) => Applicative (Compose f g) where
---  pure = Compose
+instance (Monoid g, Monoid f) => Applicative (Compose f g) where
+  pure = Compose
 
   
 --c
