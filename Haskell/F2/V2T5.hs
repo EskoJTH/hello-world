@@ -1,8 +1,11 @@
 import Data.Monoid
---a
+--{-#LANGUAGE DeriveFunctor#-}
+--{-#LANGUAGE InstanceSigs#-}
 newtype Identity a = Identity a
 instance Functor Identity where
   fmap f (Identity a) = Identity (f a)
+
+--a
 instance Applicative Identity where
   pure = Identity
   (<*>) (Identity f) (Identity x)= Identity (f x)
@@ -14,20 +17,19 @@ instance (Functor g, Functor f) => Functor (Compose f g) where
     fmap2 = (fmap (fmap f) c)
 instance (Applicative g, Applicative f) => Applicative (Compose f g) where
   pure x = Compose (pure(pure x))
-  (<*>) (Compose foo) (Compose fga) = Compose (_h <*> fga) where
-    -- h :: f(g a -> g b)
-    -- (ga -> gb) -> f (ga -> gb)
-    -- (a -> b) -> g a -> g b
-    
-    h ga  = _ <*> ga where
-      h' a = foo <*> a
-      
+  (<*>) (Compose foo) (Compose fga) = Compose (h foo <*> fga) where
+    h :: (Applicative f, Applicative g) => f(g(a -> b)) -> f(g a -> g b)
+    h fo = fmap (\a-> (<*>) a) fo    
+--Eipä ollu yhtään helppoa. Vaati paljon tuijjottamista ja keskittymistä, että tajusin.
+--Ei ollu ohjauksissa ympärillä tapahtuvasta sählingistä paljoa hyötyä.
 
-  
+
 --C
---NEWTYPE State s a = State (s -> (a, s)) -- as in exercise E2
---instance Functor (State s) where
---  fmap f (State fa) = State g where
---    g h = (f(fst(fa h)), (snd(fa h)))
---instance Applicative (State s) where
---  pure = 
+-- as in exercise E2
+newtype State s a = State (s -> (a, s))
+instance Functor (State s) where
+  fmap f (State fa) = State g where
+    g h = (f(fst(fa h)), (snd(fa h)))
+instance (Monoid s) => Applicative (State s) where
+  pure a = State (\s -> (a, s))
+  (<*>) (State ff) (State fa) = State (\sIn ->(fst(ff sIn) (fst(fa sIn)),sIn))
