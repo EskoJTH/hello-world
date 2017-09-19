@@ -12,13 +12,20 @@ newtype Compose f g a = Compose (f (g a))
 instance (Functor g, Functor f) => Functor (Compose f g) where
   fmap f (Compose c) = Compose fmap2 where
     fmap2 = (fmap (fmap f) c)
-instance (Functor g, Functor f) => Applicative (Compose f g) where
-  pure x= Compose (mempty(mempty x))
-  (<*>) (Compose f) (Compose fga) = Compose(fmap (fmap f) fga)
+instance (Applicative g, Applicative f) => Applicative (Compose f g) where
+  pure x = Compose (pure(pure x))
+  (<*>) (Compose foo) (Compose fga) = Compose (_h <*> fga) where
+    -- h :: f(g a -> g b)
+    -- (ga -> gb) -> f (ga -> gb)
+    -- (a -> b) -> g a -> g b
+    
+    h ga  = _ <*> ga where
+      h' a = foo <*> a
+      
 
   
---c
---newtype State s a = State (s -> (a, s)) -- as in exercise E2
+--C
+--NEWTYPE State s a = State (s -> (a, s)) -- as in exercise E2
 --instance Functor (State s) where
 --  fmap f (State fa) = State g where
 --    g h = (f(fst(fa h)), (snd(fa h)))
