@@ -12,8 +12,9 @@ newtype Compose f g a = Compose (f (g a))
 instance (Functor g, Functor f) => Functor (Compose f g) where
   fmap f (Compose c) = Compose fmap2 where
     fmap2 = (fmap (fmap f) c)
-instance (Monoid g, Monoid f) => Applicative (Compose f g) where
-  pure = Compose
+instance (Functor g, Functor f) => Applicative (Compose f g) where
+  pure x= Compose (mempty(mempty x))
+  (<*>) (Compose f) (Compose fga) = Compose(fmap (fmap f) fga)
 
   
 --c
