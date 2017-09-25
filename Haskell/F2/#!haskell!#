@@ -1,14 +1,18 @@
-Hello, Haskell!
+The next big Haskell project is about to start!
 If I break, you can:
   1. Restart:           M-x haskell-process-restart
   2. Configure logging: C-h v haskell-process-log (useful for debugging)
   3. General config:    M-x customize-mode
   4. Hide these tips:   C-h v haskell-process-show-debug-tips
-λ> :load h:\projects\Haskell\F2\T4.hs
-[1 of 1] Compiling Main             ( H:\projects\Haskell\F2\T4.hs, interpreted )
-Ok, 1 module loaded.
-Collecting type info for 1 module(s) ... 
-λ> promap (\a->a) (\b->(read b) + 1) (RIO (\a->do putStr a; getLine))
-promap (\a->a) (\b->(read b) + 1) (RIO (\a->do putStr a; getLine))
-  :: (Read y, Num y) => RIO String y
-λ> 
+λ> :i (>>=)
+class Applicative m => Monad (m :: * -> *) where
+  (>>=) :: m a -> (a -> m b) -> m b
+  ...
+  	-- Defined in `GHC.Base'
+infixl 1 >>=
+λ> :i (.)
+(.) :: (b -> c) -> (a -> b) -> a -> c 	-- Defined in `GHC.Base'
+infixr 9 .
+λ> (((++) "koira") . (++) "naata") ("janis")
+"koiranaatajanis"
+λ> (++) ("koira") . (++) ("naata") ("janis")
