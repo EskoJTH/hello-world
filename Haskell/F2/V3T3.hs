@@ -32,6 +32,16 @@ instance ZipA Parser where
                        Just (r,leftover) -> case runParser p2 leftover of
                         Nothing -> Nothing
                         Just (r2,leftover2) -> Just ((r,r2),leftover2)
+
+instance Applicative Parser where
+  pure s = Parser s --where s =(\s -> Just ((),s))
+  (<*>) fab fa = Parser p
+        where 
+           p input = case runParser p1 input of --(runParser p1 input == Maybe (a,String))
+                       Nothing -> Nothing
+                       Just (r,leftover) -> case runParser p2 leftover of
+                        Nothing -> Nothing
+                        Just (r2,leftover2) -> Just ((r,r2),leftover2)
                       
 aDigit :: Parser Int
 aDigit = Parser p
@@ -53,5 +63,8 @@ orElse p1 p2 = Parser p
      p s = case runParser p1 s of
             Nothing -> runParser p2 s
             Just x  -> Just x
+
+zipParseNumbers :: String -> [Int]
+zipParseNumbers s = 
 
 --4.Look up two given words from a dictionary (of type Map String String) and return a result if both are found. Easy! Maybe?
