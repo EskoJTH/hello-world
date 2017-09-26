@@ -1,10 +1,28 @@
 --1.Produce n random numbers, where n is taken as an argument
---En käsitä mistä randomius esimerkeissä oikein kumpuaa. Tiedän että kätetään jotain satunnasilukuja tuottavaa funktiota. En tiedä mistä seedi alussa revitään? vissiin monad joka alkaa jollain purella ja sitten ent tiiä.
+--Onnistuu applicativellä koska tiedämme montako randomia haluamme etukäteen.
+--import System.Random
+
+data StdGen = StdGen(Int->Int)
+
+--random :: StdGen -> (a,StdGen)
+
+bind :: (a -> StdGen -> (b,StdGen)) -> (StdGen -> (a,StdGen)) -> (StdGen -> (b,StdGen))
+
+bind f x seed = let (x',seed') = x seed in f x' seed'
+
+
+
+
+
+
+
+--En käsitä mistä randomius esimerkeissä oikein kumpuaa. Tiedän että kätetään jotain satunnasilukuja tuottavaa funktiota. En tiedä mistä seedi alussa revitään? vissiin monad joka alkaa jollain purella ja sitten enttiiä.
 
 --2.Roll a die until a six comes up, printing out the rolls and their numbers
 
 --3.Parse a comma-separated list of natural numbers (such as the familiar "0,1,1,3,5,8,13,21,34")
 --tämän pitäisi onnistua ihan ok Applicativellä? Koska luennot?
+{-
 import Data.Char
 class Functor f => ZipA f where
     zunit :: f ()
@@ -13,7 +31,6 @@ class Functor f => ZipA f where
 newtype Parser a = Parser (String -> Maybe (a,String))
 runParser :: Parser a -> String -> Maybe (a,String)
 runParser (Parser p) s = p s
-
 
 instance Functor Parser where
     fmap f (Parser p) = Parser g
@@ -64,7 +81,5 @@ orElse p1 p2 = Parser p
             Nothing -> runParser p2 s
             Just x  -> Just x
 
-zipParseNumbers :: String -> [Int]
-zipParseNumbers s = 
-
+-}
 --4.Look up two given words from a dictionary (of type Map String String) and return a result if both are found. Easy! Maybe?
