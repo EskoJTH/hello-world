@@ -24,8 +24,9 @@ instance Applicative Parser where
 --MItä minä yritän tässä tehdä? Ainut tapa mitenkä minä tätä osaan ajatella on että haluan käydä tuon kohde listan läpi. Sitten riippuen siitä onko arvo luku vai pilkku, tallenan sen johonkin listaan tai jätän pois listasta. Miksi minä tarvitsen tähän tehätvään  mitään kolmen rivin rekursiota vaikeampaa? Enkö minä halua kerätä tuonne Maybe a:n alle listan oikeita tuloksia ja jotenkin viedä sitä listaa eteenpäin niin että saan sen lopulta ulos? Mitä ... nuo Stringit tuolla oikein tekee?
 
 --laskeYksiKasa s = pure choose <*>
-
-kasaaFunktiot s = Parser (\(x:xs) -> (xs,f x)) where f =
+kasaaFunktiot :: String -> String -> a ->
+kasaaFunktiot s [] f = 
+kasaaFunktiot s s f = Parser (\(x:xs) -> (xs,f x)) where f =
 
 strinki = "1,12,3,4,45,6,7"
 
@@ -41,15 +42,16 @@ isComma a
   | a == ',' = True
   | otherwise = False
 
+choose x = case parseInt x of
+a -> Just [a]
+Nothing -> b where
+  b=case parseComma x of
+     a -> Just []
+     Nothing -> Nothing
+{-
 juggler :: x ->  Parser -> Parser
 juggler = 
-
-choose x = case parseInt x of
-  a -> Just [a]
-  Nothing -> b where
-    b=case parseComma x of
-        a -> Just []
-        Nothing -> Nothing
+-}
 
 --applyString = 
 

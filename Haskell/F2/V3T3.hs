@@ -1,26 +1,133 @@
+{-#LANGUAGE DeriveFunctor#-}
+{-#LANGUAGE InstanceSigs#-}
 --1.Produce n random numbers, where n is taken as an argument
 --Onnistuu applicativell‰ koska tied‰mme montako randomia haluamme etuk‰teen.
---import System.Random
-
-data StdGen = StdGen(Int->Int)
-
+import System.Random
+import Data.Char
+--data StdGen = StdGen(Int->Int)
+--Randmo >>>   next :: g -> (Int, g)
 --random :: StdGen -> (a,StdGen)
 
-bind :: (a -> StdGen -> (b,StdGen)) -> (StdGen -> (a,StdGen)) -> (StdGen -> (b,StdGen))
+--bind :: (a -> StdGen -> (b,StdGen)) -> (StdGen -> (a,StdGen)) -> (StdGen -> (b,StdGen))
+--bind f x seed = let (x',seed') = x seed in f x' seed'
 
-bind f x seed = let (x',seed') = x seed in f x' seed'
+next' :: Int -> (Int, Int)
+next' i = let
+  (x,y) = next (mkStdGen i) in
+  (x,x)
 
+data MyRandom g = MyRandom {runR :: Int -> (g, Int)}
+instance Functor MyRandom where
+  fmap f (MyRandom x) = MyRandom p where
+    p s = (f (fst (x s)),snd (x s))
 
+ -- :: f (a -> b) -> f a -> f b
+instance Applicative MyRandom where
+  pure r = MyRandom (\int -> (r, int))
+  (<*>) (MyRandom rf) (MyRandom rr) = MyRandom p where
+    p s = ((f a), s2) where
+      (f,s1)= (rf s)
+      (a,s2) = (rr s1)
 
+nRandomNums n seed = fst (runR (iteroi n) seed)
 
+iteroi 0 = pure []
+iteroi n = (:) <$> MyRandom next' <*> iteroi (n - 1) -- <|> (pure [])
+--(x :) x
 
-
-
---En k‰sit‰ mist‰ randomius esimerkeiss‰ oikein kumpuaa. Tied‰n ett‰ k‰tet‰‰n jotain satunnasilukuja tuottavaa funktiota. En tied‰ mist‰ seedi alussa revit‰‰n? vissiin monad joka alkaa jollain purella ja sitten enttii‰.
+--nRandom :: Int -> Int -> [Int]
+--nRandom n s = iteroi n (pure next s)
 
 --2.Roll a die until a six comes up, printing out the rolls and their numbers
+--Tarvitaan monoidi koska toiminnan tulost vaikuttaa tuleviin tapahtumiin.
+
+next' :: Int -> (Int, Int)
+next' i = let
+  (x,y) = next (mkStdGen i) in
+  (x,x)
+
+data MyRandom g = MyRandom {runR :: Int -> (g, Int)}
+instance Functor MyRandom where
+  fmap f (MyRandom x) = MyRandom p where
+    p s = (f (fst (x s)),snd (x s))
+
+ -- :: f (a -> b) -> f a -> f b
+instance Applicative MyRandom where
+  pure r = MyRandom (\int -> (r, int))
+  (<*>) (MyRandom rf) (MyRandom rr) = MyRandom p where
+    p s = ((f a), s2) where
+      (f,s1)= (rf s)
+      (a,s2) = (rr s1)
+
+instance Monad MyRandom where
+{-  join :: Random (Random a) -> Random a -- Mik‰ t‰‰ joini on
+  join = undefined-}
+  (>>=) :: m a -> (a -> m b) -> m b
+  (>>=) (MyRandom a) b = b a
+
+nRandomNums n seed = fst (runR (iteroi n) seed)
+
+iteroi 0 = pure []
+iteroi n = (:) <$> MyRandom next' <*> iteroi (n - 1) -- <|> (pure [])
+--(x :) x
+
+
+
+
+
 
 --3.Parse a comma-separated list of natural numbers (such as the familiar "0,1,1,3,5,8,13,21,34")
+
+newtype Parser a = Parser (String -> (String, Maybe a))
+
+instance Functor Parser where
+  fmap f (Parser x) = Parser p where
+    p s = case x s of
+      (s',Just a) -> (s',Just (f a))
+      (s',Nothing) -> (s',Nothing)
+
+instance Applicative Parser where
+ pure :: a -> Parser a
+ pure x = Parser (\ s -> (s,Just x))
+ (<*>) (Parser mf) (Parser mx) = Parser p where
+   p s = case mf s of
+     (s',Just f) -> case mx s' of
+       (s'',Just x) -> (s'', Just (f x))
+       (s'',Nothing) -> (s'', Nothing)
+     (s',Nothing) -> (s', Nothing)
+     
+
+--laskeYksiKasa s = pure choose <*>
+kasaaFunktiot :: String -> String -> a ->
+kasaaFunktiot s [] f = 
+kasaaFunktiot s s f = Parser (\(x:xs) -> (xs,f x)) where f =
+
+strinki = "1,12,3,4,45,6,7"
+
+parseInt a
+  |isDigit a = (Just a)
+  |otherwise = Nothing
+
+parseComma a
+  |isComma a = Just a
+  |otherwise = Nothing
+
+isComma a
+  | a == ',' = True
+  | otherwise = False
+
+choose x = case parseInt x of
+a -> Just [a]
+Nothing -> b where
+  b=case parseComma x of
+     a -> Just []
+     Nothing -> Nothing
+
+--f a = 'b'++a
+--Ei t‰ss‰ mik‰‰n liity mihink‰‰n yht‰‰n mitenk‰‰n!
+--MIt‰ min‰ yrit‰n t‰ss‰ tehd‰? Ainut tapa mitenk‰ min‰ t‰t‰ osaan ajatella on ett‰ haluan k‰yd‰ tuon kohde listan l‰pi. Sitten riippuen siit‰ onko arvo luku vai pilkku, tallenan sen johonkin listaan tai j‰t‰n pois listasta. Miksi min‰ tarvitsen t‰h‰n teh‰tv‰‰n  mit‰‰n kolmen rivin rekursiota vaikeampaa? Enkˆ min‰ halua ker‰t‰ tuonne Maybe a:n alle listan oikeita tuloksia ja jotenkin vied‰ sit‰ listaa eteenp‰in niin ett‰ saan sen lopulta ulos? Mit‰ ... nuo Stringit tuolla oikein tekee?
+
+
 --t‰m‰n pit‰isi onnistua ihan ok Applicativell‰? Koska luennot?
 {-
 import Data.Char
