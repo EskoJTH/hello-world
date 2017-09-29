@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PaceLabel
 {
-    public partial class PaceLabel: Label
+    public partial class PaceLabel : Label
     {
         public delegate void EventHandlerTextChanged(object sender, EventArgs e);
         public event EventHandlerTextChanged paceChangeCheck;
@@ -30,6 +30,11 @@ namespace PaceLabel
             set { distance = value; RaiseTextChangedEvent(); }
         }
 
+        private double fastMin;
+        private double slowMin;
+        public double FastMin {
+            get { }
+        }
 
         public PaceLabel()
         {
@@ -47,15 +52,21 @@ namespace PaceLabel
         private void tarkastaSisalto(object sender, EventArgs e)
         {
             double minuutit = time.TotalMinutes;
-            double luku = minuutit/distance;
-                error.SetError(this, "");
-                e.Cancel = false;
-                this.BackColor = Color.White;
-                if (luku<5)
-                {
-                    
-                }
+            double luku = minuutit / distance;
+            if (luku < slowMin)
+            {
+
+            }
+            else if (luku < fastMin)
+            {
+
+            }
+            else
+            {
+
+            }
             
+
 
 
         }
