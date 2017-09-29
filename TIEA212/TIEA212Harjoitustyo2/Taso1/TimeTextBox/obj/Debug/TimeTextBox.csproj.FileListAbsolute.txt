@@ -7,3 +7,8 @@ C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\bin\Debug\TimeTextBox.pdb
 C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.csprojResolveAssemblyReference.cache
 C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.dll
 C:\Projects\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso1\TimeTextBox\bin\Debug\TimeTextBox.dll
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso1\TimeTextBox\bin\Debug\TimeTextBox.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.csprojResolveAssemblyReference.cache
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.dll
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso1\TimeTextBox\obj\Debug\TimeTextBox.pdb

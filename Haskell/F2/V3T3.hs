@@ -2,18 +2,18 @@
 {-#LANGUAGE InstanceSigs#-}
 --1.Produce n random numbers, where n is taken as an argument
 --Onnistuu applicativell‰ koska tied‰mme montako randomia haluamme etuk‰teen.
-import System.Random
+
 import Data.Char
---data StdGen = StdGen(Int->Int)
---Randmo >>>   next :: g -> (Int, g)
---random :: StdGen -> (a,StdGen)
+--import System.Random
+
+
 
 --bind :: (a -> StdGen -> (b,StdGen)) -> (StdGen -> (a,StdGen)) -> (StdGen -> (b,StdGen))
 --bind f x seed = let (x',seed') = x seed in f x' seed'
 
 next' :: Int -> (Int, Int)
 next' i = let
-  (x,y) = next (mkStdGen i) in
+  (x,y) = (i*(3+i),0) in --next (mkStdGen i) in
   (x,x)
 
 data MyRandom g = MyRandom {runR :: Int -> (g, Int)}
@@ -41,34 +41,24 @@ iteroi n = (:) <$> MyRandom next' <*> iteroi (n - 1) -- <|> (pure [])
 --2.Roll a die until a six comes up, printing out the rolls and their numbers
 --Tarvitaan monoidi koska toiminnan tulost vaikuttaa tuleviin tapahtumiin.
 
-next' :: Int -> (Int, Int)
-next' i = let
-  (x,y) = next (mkStdGen i) in
-  (x,x)
 
-data MyRandom g = MyRandom {runR :: Int -> (g, Int)}
-instance Functor MyRandom where
-  fmap f (MyRandom x) = MyRandom p where
-    p s = (f (fst (x s)),snd (x s))
-
- -- :: f (a -> b) -> f a -> f b
-instance Applicative MyRandom where
-  pure r = MyRandom (\int -> (r, int))
-  (<*>) (MyRandom rf) (MyRandom rr) = MyRandom p where
-    p s = ((f a), s2) where
-      (f,s1)= (rf s)
-      (a,s2) = (rr s1)
-
-instance Monad MyRandom where
 {-  join :: Random (Random a) -> Random a -- Mik‰ t‰‰ joini on
   join = undefined-}
-  (>>=) :: m a -> (a -> m b) -> m b
-  (>>=) (MyRandom a) b = b a
+  --(>>=) :: m a -> (a -> m b) -> m b
+  {-
+instance Monad MyRandom where
+  (>>=) :: MyRandom (Int -> (a, Int)) -> (a -> MyRandom (Int -> (b, Int))) -> MyRandom (Int -> (b, Int))
+  (>>=) (MyRandom ma) (MyRandom amf) = amf a where
+    a i = fst (ma i)
 
-nRandomNums n seed = fst (runR (iteroi n) seed)
-
-iteroi 0 = pure []
-iteroi n = (:) <$> MyRandom next' <*> iteroi (n - 1) -- <|> (pure [])
+    
+    
+untillSix seed = do
+  (r, s) <- getRandom seed
+  if r == 6 then [r] else [r]:(nRandomNums s)
+  -}
+--iteroi 0 = pure []
+--iteroi n = (:) <$> MyRandom next' <*> iteroi (n - 1) -- <|> (pure [])
 --(x :) x
 
 
@@ -78,7 +68,7 @@ iteroi n = (:) <$> MyRandom next' <*> iteroi (n - 1) -- <|> (pure [])
 
 --3.Parse a comma-separated list of natural numbers (such as the familiar "0,1,1,3,5,8,13,21,34")
 
-newtype Parser a = Parser (String -> (String, Maybe a))
+newtype Parser a = Parser {skaViJobba :: String -> (String, Maybe a)}
 
 instance Functor Parser where
   fmap f (Parser x) = Parser p where
@@ -95,8 +85,13 @@ instance Applicative Parser where
        (s'',Just x) -> (s'', Just (f x))
        (s'',Nothing) -> (s'', Nothing)
      (s',Nothing) -> (s', Nothing)
-     
 
+parser s seed = fst (runR (iteroi' s) seed)
+
+iteroi' 0 = pure []
+iteroi' n = (:) <$> MyRandom next' <*> iteroi (n - 1)
+     
+{-
 --laskeYksiKasa s = pure choose <*>
 kasaaFunktiot :: String -> String -> a ->
 kasaaFunktiot s [] f = 
@@ -122,7 +117,7 @@ Nothing -> b where
   b=case parseComma x of
      a -> Just []
      Nothing -> Nothing
-
+-}
 --f a = 'b'++a
 --Ei t‰ss‰ mik‰‰n liity mihink‰‰n yht‰‰n mitenk‰‰n!
 --MIt‰ min‰ yrit‰n t‰ss‰ tehd‰? Ainut tapa mitenk‰ min‰ t‰t‰ osaan ajatella on ett‰ haluan k‰yd‰ tuon kohde listan l‰pi. Sitten riippuen siit‰ onko arvo luku vai pilkku, tallenan sen johonkin listaan tai j‰t‰n pois listasta. Miksi min‰ tarvitsen t‰h‰n teh‰tv‰‰n  mit‰‰n kolmen rivin rekursiota vaikeampaa? Enkˆ min‰ halua ker‰t‰ tuonne Maybe a:n alle listan oikeita tuloksia ja jotenkin vied‰ sit‰ listaa eteenp‰in niin ett‰ saan sen lopulta ulos? Mit‰ ... nuo Stringit tuolla oikein tekee?

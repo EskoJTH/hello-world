@@ -65,7 +65,6 @@ namespace OmaWindowsFormsComponenttiTaiJotainSemmosta
                     errorProvider1.SetError(this, string.Empty);
                     e.Cancel = false;
                     this.Text = "0";
-
                 }
                 else
                 {

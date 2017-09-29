@@ -22,3 +22,16 @@ C:\Projects\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Har
 C:\Projects\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.csproj.GenerateResource.Cache
 C:\Projects\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TimeTextBox.dll
 C:\Projects\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TimeTextBox.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TIEA212Harjoitustyo2.exe.config
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TIEA212Harjoitustyo2.exe
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TIEA212Harjoitustyo2.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TimeTextBox.dll
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\WindowsFormsControlLibrary1.dll
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\TimeTextBox.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\bin\Debug\WindowsFormsControlLibrary1.pdb
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.csprojResolveAssemblyReference.cache
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.Form1.resources
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.Properties.Resources.resources
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.csproj.GenerateResource.Cache
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.exe
+H:\projects\TIEA212\TIEA212Harjoitustyo2\Taso2\TIEA212Harjoitustyo2\obj\Debug\TIEA212Harjoitustyo2.pdb
