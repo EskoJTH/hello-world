@@ -10,7 +10,7 @@ data Terminal next =
   deriving Functor
 
 slurpLine :: Free Terminal String --as the counterpart of getLine,
-slurpLine = Free (SlurpLine (pure))
+slurpLine = Free (SlurpLine (pure)) --Kysy tästä!
 barfLine :: String -> Free Terminal () --as the counterpart of putStrLn and
 barfLine = _
 terminate :: Free Terminal () --as the counterpart of pure ()
