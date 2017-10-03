@@ -1,0 +1,5 @@
+cayleys theorem
+
+endo ++ operaatiolle.
+. opoeraatiolla free monoidit kasaan.
+-condensate?
