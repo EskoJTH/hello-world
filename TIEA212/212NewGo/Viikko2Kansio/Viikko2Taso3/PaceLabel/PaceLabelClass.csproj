@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PaceLabel.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PaceLabel.Designer.cs">
       <DependentUpon>PaceLabel.cs</DependentUpon>

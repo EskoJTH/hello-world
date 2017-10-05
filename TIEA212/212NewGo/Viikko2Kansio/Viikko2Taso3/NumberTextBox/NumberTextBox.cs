@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace OmaTextBox
 {
+
     public partial class NumberTextBox : TextBox
     {
         private ErrorProvider error = new ErrorProvider();
@@ -17,6 +18,9 @@ namespace OmaTextBox
         public double max { get; set; } = Double.MaxValue;
         public double value { get; private set; } = 0;
 
+        /// <summary>
+        /// TextBox joka ottaa sisäänsä double mallisen numeron tai ei validoidu.
+        /// </summary>
         public NumberTextBox()
         {
             InitializeComponent();
@@ -24,11 +28,21 @@ namespace OmaTextBox
             this.Text = "" + 0;
         }
 
+        /// <summary>
+        /// Tapahtuu kun NumberTextBox on onnistuneesti validoitu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Valid(object sender, EventArgs e)
         {
             error.SetError(this, "");
         }
 
+        /// <summary>
+        /// Tätä kutsutaan kun halutaan validoida tämä ollio. Sisältää siis validointiin liittyvät säännöt.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void validatingRuleSet(object sender, CancelEventArgs e)
         {
             e.Cancel = true;

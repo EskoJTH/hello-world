@@ -14,9 +14,20 @@ namespace TimeTextBox
     public partial class TimeTextBox: TextBox
     {
         private ErrorProvider error = new ErrorProvider();
-        public string value { get; set; } = "00:00:00";
-        private TimeSpan aika = TimeSpan.Parse("00:00:00");
 
+        /// <summary>
+        /// labelin sisältämä teksti
+        /// </summary>
+        public string value { get; set; } = "00:00:00";
+
+        /// <summary>
+        /// aika joka lasketaan yleensä tekstistä.
+        /// </summary>
+        public TimeSpan aika = TimeSpan.Parse("00:00:00");
+
+        /// <summary>
+        /// Laatikko joka aiheuttaa validationissa virheen jos se ei sisällä aikaa muodossa HH:MM:SS
+        /// </summary>
         public TimeTextBox()
         {
             InitializeComponent();
@@ -26,11 +37,21 @@ namespace TimeTextBox
             this.Text = "00:00:00";
         }
 
+        /// <summary>
+        /// Tapahtuu kun validointi mennyt läpi.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimeValid(object sender, EventArgs e)
         {
             error.SetError(this, "");
         }
 
+        /// <summary>
+        /// Katsoo onko aika sopivan muotoa ja asettaa vadilaation sen perustella.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TimeValidating(object sender, CancelEventArgs e)
         {
 
