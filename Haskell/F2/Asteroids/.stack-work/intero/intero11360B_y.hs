@@ -11,13 +11,11 @@ data Bullet = Bullet PointInSpace Velocity Age deriving (Eq,Show)
 data Rock = Rock PointInSpace Size Velocity deriving (Eq,Show)
 data UFO = UFO PointInSpace Size Velocity (UfoPhase Action) deriving (Eq,Show)--lisäsin uuden ufo datatyypin.
 
-data Action = Scan [Rock] |Move|Shoot Rock Int deriving (Eq,Show)
+data Action = Scan|Move|Shoot deriving (Eq,Show)
 data UfoPhase a = Phase (a, UfoPhase a)| Empty deriving (Eq,Show)
 type Velocity = (Float, Float)
 type Size = Float
 type Age = Float
-
-bulletVelocity = -150
 
 initialWorld :: AsteroidWorld
 initialWorld = Play
@@ -44,13 +42,8 @@ simulateWorld timeStep (Play rocks (Ship shipPos shipV) bullets ufo) --lisäsin t
    (doUfoAction ufo)
   where
     doUfoAction :: UFO -> UFO
-    doUfoAction (UFO point size v Empty) = UFO point size (0,0) (Scan)
-    doUfoAction (UFO point size v (Phase (x, xs))) = case x of
-      Scan [rock] (ScanData )->undefined
-      Move -> undefined
-      Shoot (Rock locationR sizeR vR) 0 ->
-        (Bullet point (-150 .* norm (point .- newRockLocation))) 0 where
-        newRockLocation = (bulletVelocity .* (norm (locationR .- point))) .+ (speedR)
+    doUfoAction 
+    doUfoAction (UFO point size v (Phase x, xs))= 
     
     collidesWith :: PointInSpace -> Rock -> Bool
     collidesWith p (Rock rp s _) = magV (rp .- p) < s 
@@ -58,7 +51,7 @@ simulateWorld timeStep (Play rocks (Ship shipPos shipV) bullets ufo) --lisäsin t
                                    --Lisäsin vielä toisen Collision detectorin Ufolle tähän jostain syystä
     collidesWithBullet :: Rock -> Bool
     collidesWithBullet r = any (\(Bullet bp _ _) -> collidesWith bp r) bullets
-
+     
     updateRock :: Rock -> [Rock]
     updateRock r@(Rock p s v) 
       |collidesWithBullet r && s < 7 = []
@@ -109,7 +102,7 @@ handleEvents (EventKey (MouseButton LeftButton) Down _ clickPos)
   (Play rocks (Ship shipPos shipVel) bullets)
   = Play rocks (Ship shipPos newVel) (newBullet : bullets)
   where 
-    newBullet = Bullet shipPos (bulletVelocity .* norm (shipPos .- clickPos)) 0
+    newBullet = Bullet shipPos (-150 .* norm (shipPos .- clickPos)) 0
     newVel = shipVel .+ (50 .* norm (shipPos .- clickPos))
   
 handleEvents _ w = w
