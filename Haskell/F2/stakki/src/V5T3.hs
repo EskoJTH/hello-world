@@ -8,10 +8,14 @@ instance Functor (Codensity m) where
     
       -- p :: (b -> mc) -> mc
       -- f':: b -> mc
-      -- f :: a -> b
+      -- f :: a -> b2
       -- g :: (a -> mc) -> mc
       -- p :: (b -> mc) -> mc
       
       -- (>>=) :: forall a b. m a -> (a -> m b) -> m b
       -- fmap :: (a -> b) -> f a -> f b
       -- (<*>) :: f (a -> b) -> f a -> f b 
+
+instance Applicative (Codensity m) where
+  pure = 
+--  (<*>) =

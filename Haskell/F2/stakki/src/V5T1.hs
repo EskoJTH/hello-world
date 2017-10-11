@@ -10,9 +10,10 @@ data UFOLanguage next =
   Shoot Point next
 -}
 
---testDrive = runT playRound
-  
+runUfoSimulation = snd $ runWriter $ runReaderT (playRound::T()) []
+
 playRound :: UFOLang m => m ()
+--playRound :: T ()
 playRound = do
   relax
   target <- scanTargets
