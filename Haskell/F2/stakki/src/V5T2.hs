@@ -65,4 +65,5 @@ instance UFOLang T where
     p <- ask
     tell $ ("tulitettiin pistetta (" ++ show a ++ "," ++ show b ++ "), ")
 
-runUfoRound = retract (playRound :: Free UFOLanguage )
+runUfoRound = retract (playRound :: Free UFOLanguage ())
+--  f = 
