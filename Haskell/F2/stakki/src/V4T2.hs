@@ -33,7 +33,7 @@ vapaaLista a b =Free (Villi(a,b))
 vapaaEiLista = Pure ()
 
 pyydystaVilliMonadi (Pure ()) = []
-yydystaVilliMonadi (Free(Villi(a,b))) = a:p where
+pyydystaVilliMonadi (Free(Villi(a,b))) = a:p where
   p=case b of
     Free (Villi(x,y)) -> pyydystaVilliMonadi b
     Pure () -> []

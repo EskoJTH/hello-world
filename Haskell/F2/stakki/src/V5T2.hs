@@ -1,7 +1,9 @@
 {-#language TypeSynonymInstances#-}
 {-#language FlexibleInstances#-}
+{-#language DeriveFunctor#-}
 import Control.Monad.Writer.Lazy
 import Control.Monad.Reader
+import Control.Monad.Free
 {-
 data UFOLanguage next =
   Move Point next |
@@ -10,8 +12,12 @@ data UFOLanguage next =
   Shoot Point next
 -}
 
+{-
+*Main>  (\ pt -> runWriter (runReaderT (playRound :: T ()) pt)) [""]
+((),"scannattiin, tulitettiin pistetta (0,0), liikuttiin pisteeseen (1,1), ")
+-}
 --testDrive = runT playRound
-  
+
 playRound :: UFOLang m => m ()
 playRound = do
   relax
@@ -28,6 +34,29 @@ class Monad m => UFOLang m where
 type T = ReaderT PeliTila (Writer String)
 
 type PeliTila = [String]
+
+data UFOLanguage next =
+  Move Point next |
+  Relax next |
+  ScanPlayer (Point -> next) |
+  Shoot Point next deriving Functor
+
+{-
+instance Functor UFOLanguage where
+  fmap f g = case g of
+      Move (Point (a,b)) next -> f next
+      Relax next -> f next
+      ScanPlayer fnext -> _ -- (\p -> f (fnext p))
+      Shoot (Point (a,b)) next -> f next
+-}
+
+newtype Point = Point (Int,Int)
+
+instance UFOLang (Free UFOLanguage) where
+  move (a,b) = Free $ Move (Point (a,b)) (Pure ())  -- :: (Int,Int) -> m() 
+  relax = Free $ Relax (Pure ())
+  scanTargets = Free $ ScanPlayer (\(Point p)-> Pure p)
+  shoot (a,b) = Free $ Shoot (Point (a,b)) (Pure ())
 
 instance UFOLang T where
   -- relax :: m()
