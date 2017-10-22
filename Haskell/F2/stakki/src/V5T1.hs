@@ -1,10 +1,10 @@
-{-#language TypeSynonymInstances#-}
+ {-#language TypeSynonymInstances#-}
 {-#language FlexibleInstances#-}
 import Control.Monad.Writer.Lazy
 import Control.Monad.Reader
 {-
 data UFOLanguage next =
-  Move Point next |
+  Move Point next |2
   Relax next |
   ScanPlayer (Point -> next) |
   Shoot Point next

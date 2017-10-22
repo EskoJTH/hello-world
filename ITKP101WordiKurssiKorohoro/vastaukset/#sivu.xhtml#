@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>itkp101</title>
+  <link rel="stylesheet" type="text/css" href="tyyli.css" />
+</head>
+
+<body>
+  <div id="navbar"> 
+    <ul> 
+      <li><a href="https://www.jyu.fi/">Yliopiston kotisivu</a></li> 
+      <li><a href="https://www.jyu.fi/it/laitokset/mit/">Tietotekniikan laitoksen kotisivu</a></li> 
+      <li><a href="http://appro.mit.jyu.fi/tyovaline/">ITKP101</a></li> 
+      <li><a href="http://appro.mit.jyu.fi/tyovaline/harkka/">HT ohje</a></li> 
+      <li><a href="itkp101.zip">ITKP101-Harjoitustyö</a></li> 
+    </ul> 
+  </div>
+
+  <div>Esko Hanell esjutaha@student.jyu.fi</div>
+
+  <p class="kuva"><img src="kuva_wmf.png" alt="tässä pitäsi olla lusikkahaarukka merkki."/></p>
+
+  <div id="toc">
+    <ol>
+      <li>
+	<a href="#O1">Tieto- ja viestintäteknologia</a>
+	<ol>
+	  <li>
+	    <a href="#O1.1">TVT voidaan jaotella seuraavasti:</a>
+	  </li>
+	  <li>	
+	    <a href="#O1.2">Tieto- ja viestintäteknologian opetuskäyttö</a>
+	  </li>
+	  <li>     
+	    <a href="#O1.3">Tieto- ja viestintäteknologian suhde opetukseen voidaan jakaa seuraavalla tavalla: kenen mukaan?</a>
+	  </li>
+      </ol>
+      </li>
+      <li>
+	<a href="#O2">Yhteisöllisent teknologiat</a>
+	<ol>
+	  <li>
+	    <a href="#O2.1">Teknologia ja oppimisvaikeudet</a>
+	  </li>
+	  <li>
+	    <a href="#O2.2">Teknologia ja opettajan ammattitaito</a>
+	  </li>
+	  <li>
+	    <a href="#O2.3">Opetuskäytön ongelmia</a>
+	  </li>
+	</ol>
+      </li>
+    </ol>
+  </div>
+
+  
+  <h1 id="O1">1 Tieto- ja viestintäteknologia</h1>
+    
+  <p class="text">Tieto- ja viestintäteknologia (TVT) tai tieto- ja viestintätekniikka (engl. information and communication technology eli ICT) tarkoittaa kaikkia niitä elektronisia medioita, joita voidaan käyttää apuna tietojenkäsittelyssä.</p>
+      
+  <h2 id="O1.1">1.1 TVT voidaan jaotella seuraavasti:</h2>
+
+  <ul>
+    <li>Magneettiset levyt/kasetit, optiset levyt (CD, DVD yms.), flash-muistit jne. Paperille tehtävät merkinnät voidaan myös lukea tieto- ja viestintäteknologian piiriin kuuluviksi.</li>
+    <li>Lähetysteknologia: radio ja televisio.</li>
+    <li>Teknologia, joka mahdollistaa kommunikoinnin kuvien, äänen ja videon välityksellä: mikrofoni, (web-)kamera, kaiutin, puhelin...</li>
+    <li>ICT sisältää kaikenlaiset tietotekniset päätelaitteet, kuten keskustietokoneet, pöytätietokoneet, kannettavat tietokoneet, kämmentietokoneet, mobiililaitteet ym. Lisäksi ICT sisältää myös tiedonsiirtoon tarkoitetut teknologiat, kuten lähiverkot (LAN), langattomat verkot (WLAN), mobiiliyhteydet (GSM, GPRS, UMTS, 3G ym.) sekä Internetin ym.</li>
+  </ul>
+
+  <h2 id="O1.2">1.2 Tieto- ja viestintäteknologian opetuskäyttö</h2>
+
+  <p class="text">Tieto- ja viestintäteknologia (TVT) on tullut arkipäiväiseksi osaksi opetuksen <a href="#luokkahuonekäytäntöjä">luokkahuonekäytäntöjä</a> ja erilaisia etä- ja monimuoto-opetuksen muotoja. Toisin sanoen oppiminen ei ole enää luokkahuonesidonnaista vaan opiskella voi missä vain.
+Luokkahuoneessa tapahtuvaan toimintaan TVT tarjoaa mahdollisuuksia asioiden esittämiseen, yhteiseen muokkaamiseen ja tallentamiseen.
+Tieto- ja viestintätekniikan on todettu olevan tehokas oppimisen väline. Kenen mukaan? Sen avulla voidaan herättää kiinnostusta ja motivoida sitoutumaan opittavaan asiaan. Hyvin suunnitellulla käytöllä ja tarkoituksenmukaisella työskentelyn arvioinnilla voi myös ohjata oppilasta toivotun laiseen tavoiteorientaatioon. Erityisesti oppimisvaikeuksista kärsivät oppilaat voivat hyötyä oppimisprosessia tukevasta teknologiasta. Scaffoldingin eli kognitiivisen tuen periaatteen mukaan oppija voi säädeltävän, väliaikaisen tuen avulla suoriutua taitojensa ylärajoilla, lähikehityksen vyöhykkeellä suoritettavasta tehtävästä, josta hän ei selviytyisi ilman apua.
+Teknologisissa oppimisympäristöissä scaffolding voidaan rakentaa siten, että se auttaa oppijaa suuntautumaan tehtävään, organisoi tehtävän rakennetta, kiinnittää oppilaan huomion ongelmanratkaisun kannalta tärkeisiin vaiheisiin esimerkiksi apukysymysten avulla tai tekee ajattelua näkyvämmäksi visualisoimalla oppimisen eri vaiheita, mallintamalla eksperttien ajattelua sekä tukemalla oppilaiden välistä keskustelua ja vuorovaikutusta. Lisäksi scaffolding saattaa toimia hyvin opettajan apuvälineenä luokkahuoneessa, jossa opettaja ei pysty auttamaan kaikkia yhtä aikaa.
+Tieto-ja viestintäteknologioiden kehityshankkeet ovat yrittäneet juurruttaa uusia laitteita ja ohjelmistoja koulumaailmaan. Usein nämä hankkeilla ei kuitenkaan ole saatu aikaan pitkäaikaisia muutoksia koulujen ja opettajien toimintatavoissa. "Kokeilujen päätyttyä teknologian käyttöinnostus on loppunut ja arkipäivän kiireiden paineessa on siirrytty takaisin vanhoihin toimintatapoihin. --- Tieto- ja viestintäteknologioiden opetuskäytön tehostaminen ja lisääminen edellyttää kuitenkin, että lähtökohtana on koulun rakenteellinen ja pedagoginen kehittäminen sekä riittävä digitaalisen opetusmateriaalin saatavuus ja opettajien teknispedagoginen koulutus." On tarpeen myös arvioida, voisiko oppilaiden mukanaan kantamaa teknologiaa hyödyntää <a href="#opettaminen">opetuksessa</a>.
+  Mikäli teknologian opetuskäyttöön halutaan pysyviä muutoksia kannattaa huomio siirtää ennen kaikkea koulukulttuurin muutokseen. Yhteisöllisen oppimisen arviointiin ei myöskään voi soveltaa samoja arviointikeinoja kuin perinteisen oppimisen kohdalla, joten uusia arviointikeinoja tulisi kehittää. Opettajajohtoisessa, tiukkaan oppiainejakoon perustuvassa järjestelmässä teknologia ei tuota sen parempia tuloksia kuin perinteinen opetuskaan. Parhaiten sitä voidaan hyödyntää uuden oppimiskäsityksen mukaisilla työtavoilla. Täysin uusia ulottuvuuksia TVT:n käyttöön saadaan projektimuotoisella opetuksella, joka on oppiaineita integroivaa, oppilaiden keskinäiseen vuorovaikutukseen ja ongelmanratkaisuun perustuva työtapa. Täten teknologiasta tulee luonnollinen työväline niin tiedon etsintään, muokkaamiseen, prosessointiin ja oppilaiden väliseen vuorovaikutukseen.</p>
+
+  <h2 id="O1.3">1.3 Tieto- ja viestintäteknologian suhde opetukseen voidaan jakaa seuraavalla tavalla: kenen mukaan?</h2>
+
+  <ul>
+    <li>TVT opetuksen kohteena</li>
+    <li>TVT oppimisen välineenä (esimerkiksi esitykset ja tiedonhaku)</li>
+    <li>TVT opetuksen järjestämisen työkaluna</li>
+    <li>TVT tarjoaa vaihtoehtoisen tavan perinteisen opetuksen rinnalle</li>
+    <li>TVT lisää oppilaiden itseohjautuvuutta</li>
+  </ul>
+
+  <p class="kuva"><img src="Kaavio.png" alt="Tässä pitäisi olla kuva kaaviosta"/></p>
+
+  <h1 id="O2">2 Yhteisöllisent teknologiat</h1>
+
+  <p class="text">Opetuksen ja oppimisen tukena käytettävät yhteisölliset teknologiat, kuten sähköposti, verkko-oppimisympäristöt, verkossa jaetut dokumentit ja työryhmäohjelmistot, ovat yleistyneet voimakkaasti 2000-luvun puolella. Yhteisöllisten teknologioiden kehittämisen ja käyttöönoton hankaluutena on kuitenkin se, että niitä yritetään omaksua irrallisina ja riippumattomina järjestelminä jo olemassa oleviin käytäntöihin ja välineisiin nähden. Monesti unohdetaan tarkastella eri tekijöiden välisiä suhteita ja niiden kehittymistä. Tällä hetkellä ei ole olemassa vakiintunutta tapaa luokitella yhteisöllisiä teknologioita. Tässä yhteydessä niillä kuitenkin tarkoitetaan sovelluksia, jotka mahdollistavat usean ihmisen eriaikaisen (asynkronisen) tai samanaikaisen (synkronisen) työskentelyn. 
+Nykyisin eräs koulutuksen suurin haaste on tukea oppilaita sellaisten tietojen ja taitojen saavuttamisessa, joita tarvitaan nykyisessä sosiaalisen ja taloudellisen kehityksen ohjaamassa tietoyhteiskunnassa. Kyetäkseen vastaamaan haasteeseen on koululaitoksen tämän takia <a href="#löytäminen">löydettävä</a> uusia pedagogisia menetelmiä. Muun muassa tietokoneavusteinen yhteisöllinen (Computer Supported Collaborative Learning; CSCL) on lupaava menetelmä oppimisen ja opettamisen kehittämisessä TVT:n avulla. 
+Yhteisöllisestä oppimisesta puhuttaessa on mielekästä erottaa toisistaan käsitteet yhteistoiminta (cooperation) ja yhteisöllisyys (collaboration). Eroavuudet koskevat yksittäisen jäsenen roolia ja osallistumista oppimisyhteisössä. Yhteistoiminnallisessa ryhmässä tehtävät jaetaan osallistujien kesken ja jokainen jäsen on vastuussa ongelmanratkaisuprosessissa ainoastaan omasta osuudestaan. Yhteisöllisyyden käsitettä taas vastaa ryhmän yhteinen pyrkimys ratkaista ongelma, jolloin jokaisen osallistujan vastavuoroinen panostus on tärkeää. 
+  Kognitiivisten periaatteiden mukaan suunniteltu yhteisöllisen oppimisen ympäristö voi tukea koko oppivan yhteisön tiedon tason kehittymistä sekä yksittäisen oppijan ymmärryksen syvenemistä sosiaalisesti jaetussa päättelyketjussa. Osallistujien kesken on siis mahdollista jakaa kaikki tutkivan työskentelyn osa-alueet, kuten esimerkiksi tavoitteiden asettaminen, kysymysten määrittäminen, selitysten tuottaminen ja tieteellisen tiedon etsiminen. Sosiaalisesti jaettu prosessi tukee siis vahvasti yksilöiden metakognitiivisten taitojen kehittymistä. </p>
+
+  <h2 id="O2.1">2.1 Teknologia ja oppimisvaikeudet</h2>
+
+  <p class="text">Tieto- ja viestintätekniikan opetuskäytöllä on huomattu olevan vaikutusta oppimisvaikeuksiin. (lähde?) TVT saattaa ehkäistä erityistä tukea tarvitsevien oppilaiden syrjäytymistä koulutuspolulta. Oppimisympäristö voi sisältää tehtäviä, joissa on paljon toistoja ja erilaisia harjoituksia. Lisäksi motivaatio ja emotionaalinen tuki merkittävyyden ymmärtämiseen lisääntyvät. TVT voi olla apukeinona synnyttämässä pitkäaikaista kiinnostusta ja myönteistä sitoutumista. Tieto- ja viestintäteknologian opetuskäytöllä voi olla erittäin myönteisiä vaikutuksia esimerkiksi vuorovaikutusongelmista kärsiville. "Kasvottoman" viestinnän kautta voi olla helpompi kommunikoida toisten kanssa. Lisäksi verkkotekniikka antaa aikaa pohtia omia ajatuksia ilman välitöntä suorituspainetta ja häpeän tunnetta. Kuitenkin vastaukset on muotoiltava huolellisemmin, sillä apuna ei voi käyttää fyysistä elekieltä. (lähde?)
+TVT opetuskäytössä saattaa myös luoda aivan uudenlaisia oppimisvaikeuksia sekä syrjäytymistä. Esimerkiksi sopeutumisongelmat uudenlaiseen oppimisympäristöön voivat moninkertaistaa vaikeudet. Uudenlaisen toiminnan ja ajattelun joustavuus voi olla joillekin ylivoimaista. kenen mukaan?
+  Oppimisvaikeuksista kärsivien oppilaiden auttamiseksi olisi räätälöitävä oppimisympäristöjä entistä mukautuvammiksi. Tällöin oppimisympäristö tunnistaisi mm. oppilaiden itseohjautuvuuden ja itsesäätelytaitojen eritasoisuuden sekä vastaisi "tarkoituksenmukaisesti kunkin yksilön kehitystarpeisiin". Lisäksi on erittäin tärkeää, että oppijat tutustutetaan kunnolla ohjelmistojen käyttöön, sillä harvoin oppijoilla on yhdenvertaisia mahdollisuuksia hankkia teknologiasta ja sen käytöstä kokemuksia lähiympäristöstään. Oppimisympäristön tulisi edistää toimimista "arvojensa, tavoitteidensa ja kiinnostustensa mukaan oppimistilanteessa".</p>
+
+  <h2 id="O2.2">2.2 Teknologia ja opettajan ammattitaito</h2>
+
+  <p class="text">Tekniikan osallisuus opetustilanteissa on tuonut opettajan työnkuvaan paljon uusia osa-alueita. Opettajien työssä on korostunut ohjaajan rooli, ja oppituntien suunnitteluun ja valmistumiseen liittyvät tehtävät ovat lisääntyneet. Opettajalla on oltava valmiina myös varasuunnitelma, mikäli tekniikka ei toimikaan. Teknologiaa hyödyntävien opettajien tulee olla valmiita ottamaan riskejä ja joustamaan tilanteen mukaan.
+  Lisääntyneiden konkreettisten tehtävien ohella teknologia muuttaa opettajan roolia suhteessa oppilaisiin. Vaikka kuva tietoteknologiasta opettajan korvaajana on käytännössä epärealistinen, voivat opettajat silti kokea teknologian lisääntymisen uhkana omalle asemalleen. Opettaja on perinteisesti ollut luokassa asiantuntija, joka tietää asioista oppilaita enemmän, mutta teknologiaa koskevissa kysymyksissä oppilaat ovat usein opettajaa valveutuneempia. Teknologia mahdollistaa oppilaille pääsyn sellaiseen ulkopuoliseen tietoon, jota opettaja ei hallitse.</p>
+
+  <p class="kuva"><img src="kuva_svg.png" alt="Tässä pitäisi olla kuva noidasta"/></p>
+
+  <h2 id="O2.3">2.3 Opetuskäytön ongelmia</h2>
+
+  <p class="text">Suurimpia TVT:n opetuskäytön ongelmia on koulujen välinen eriarvoisuus. Teknologisen struktuurin hankkiminen ja ylläpito vaatiivat kunnilta ja kouluilta suuria investointeja. Niihin sijoittaminen kuuluu poliittisen päätöksenteon piiriin ja käytäntö vaihtelee hyvin paljon paikkakunnittain. Vaikka koulut olisivat kuntien sisällä tasa-arvoisia, voi eri kuntien välille syntyä suuria eroja. Suuret kaupungit ovat valmiita investoimaan teknologiseen infrastruktuuriin, kun taas pienissä kunnissa tilanne on usein haastavampi.
+Opettajat eivät aina pysty hyödyntämään opetuksensa tarpeiden mukaan atk-tiloja tai -laitteistoja kyllin joustavasti. Toisaalta laitteistojen toiminta saatetaan kokea hitaaksi tai epävarmaksi, jolloin niiden opetuskäyttö ei ole mielekästä. Älypuhelinten yleistyminen on avannut oppimistilanteisiin oppilaiden omien laitteiden käyttömahdollisuuden (Bring your own device, BYOD). Oma laite on toiminnoiltaan oppilaalle tuttu, joten aikaa ei mene laitteen käytön opetteluun yhtä paljon kuin ennen. Vaivattomimmin omien laitteiden käyttö onnistuu, jos koulussa on WLAN-verkko, josta esimerkiksi päästään pilvipalveluihin.
+Ongelmia tuottavat myös opettajien riittämätön täydennyskoulutus ja koulutuksen toteuttamismuodot. Tieto- ja viestintätekniikan hyödyntäminen edellyttää riittävää teknistä ja pedagogista tukea. Teknisen käytön lisäksi tulee kiinnittää huomiota tekijänoikeuskysymyksiin sekä lähdekritiikkiin.
+Vaikka TVT:n opetuskäytössä on nykyisen tutkimustiedon mukaan edelleen monia kriittisiä seikkoja, ovat tulevaisuuden opetuskäytön teknologiset ratkaisut kehittyneempiä sekä oppimisprosessien että teknologian käytön sujuvuuden ja soveltuvuuden kannalta. Teknisten mahdollisuuksien kehittyminen avaa uusia mahdollisuuksia ihmisen ja koneen vuorovaikutukselle. Osa näistä tekniikan avaamista uusista mahdollisuuksista voi johtaa kokonaan uudenlaisiin tapoihin käyttää tekniikkaa yksilön ja yhteisön oppimisen apuna. Tietoverkoissa on nopeasti leviämässä uusia välineitä, jotka ovat synnyttäneet yllättäviäkin käytäntöjä. Esimerkiksi blogit ja wikit ovat synnyttäneet omia spontaaneja kulttuurisia käytäntöjä, jotka voivat tuoda merkittävänkin lisän oppimista tukeviin ympäristöihin.
+  On kuitenkin tärkeää ymmärtää, että perinteistä opiskelua ei olla muuttamassa moderniin ympäristöön, vaan opiskelua tuetaan uusilla toimilla siten, että se johtaisi ymmärtävään ja syvälliseen oppimiseen. Teknologian hyödyntäminen ei itsessään tee oppimisesta tehokkaampaa tai parempaa, vaan tärkeää on nähdä ne oppimisen älylliset ja sosiaaliset toiminnot, joihin opiskelijat osallistuvat teknologian avulla. Tämän ymmärtämiseen tarvitaan tutkijoiden lisäksi opettajia, oman alansa asiantuntijoita, jotka kehittävät opetustaan innovatiivisesti ja ovat kiinnostuneita omien oppilaittensa oppimisesta.</p>
+
+  <p class="kuva"><img src="P1090719-Aamutaivas.JPG" alt="latua pitäisi olla tässä kuvassa."/></p>
+
+  <p class="text"><span id="luokkahuonekäytäntöjä">Luokkahuonekäytäntö</span> kuvaa luokan sisäistä toimintaa liittyen johonkin asiaan. Esimerkiksi jälki istunto on huonosti käyttäytyviä  oppilaita motivoiva luokkahuonekäytäntö.</p>
+  
+  <p class="text"><span id="löytäminen">Löytäminen</span> Täysin luonnollinen ilmiö jota tapahtuu hukassa olevien asioiden yhteydessä.</p>
+  
+  <p class="text"><span id="opettaminen">Opettaminen</span> Tapahtuma jossa olento pyrkii siirtämään osan omien  rekistereidensä sisällöstä ulkoiseen tallennustilaan, erityisesti toisen olennon käyttö muistiin. Tällainen siirto on hyvin virhe altista ja yksittäisessä käsittelyssä noin 80% datasta menetetään siirron aikana.</p>
+
+  
+  <p class="kuva"><img src="Form.png" alt="Kuva (form) TietokantaTyötä varten"/></p>
+  
+  <p class="kuva"><img src="Raportti.PNG" alt="Kuva (raportti) TietokantaTyötä varten"/></p>
+
+  <p class="kuva"><img src="RelationSipsi.PNG" alt="Kuva (relaatiot) TietokantaTyötä varten"/></p>
+
+</body>
+
+
+  
+</html>
