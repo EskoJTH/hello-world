@@ -37,6 +37,8 @@ import Data.Text (Text)
 import qualified Data.Text.IO as TIO
 import Data.Void
 
+
+--En keksi miten ihmeessä tämän vekottimen saa kääntymään niin että täältä tulee ulos jotalkin jossa on jotain järkeä. Miten ihmeessä miä saan tuonne stdinniin oikeanmallista inputtia? Ottaako stack ghci stdinputtiin tavaraa kun se antaa kisrjoittaa. Miten minä oikein lopetan tämän inputin lukemisen? CTRL-c ilmeisesti kaataa kivasti kaiken.
 main = do
         input <- TIO.getContents
         case runParser (expr<*optional eol<*eof) "stdin" input of

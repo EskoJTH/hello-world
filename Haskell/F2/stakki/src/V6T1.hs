@@ -71,7 +71,7 @@ sequenceAT (x:xs) =Identity $ runIdentity x : (runIdentity $ sequenceAT xs)
 -- to change the last element if it exists
 
 tmodify :: Traversable t => (a -> a) -> t a -> t a
-tmodify f list = _1 traverse _2 list where
+tmodify f list = _1 traverse State(Bool) list where
 h x = _
 
 {-

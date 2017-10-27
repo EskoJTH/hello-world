@@ -1,3 +1,5 @@
+module Testi where
+
 jotain :: String -> Either String Int
 jotain x = if length x>2 then Left "kissa" else Right 2
 
@@ -17,3 +19,9 @@ relation text =
     (_,_) -> (realToFrac sndMult) / (realToFrac fstMult)
 
 fstCountry a = (a,1)
+
+
+null a m = let ratio = a/m in 
+  if m<0.2 || ratio < 0.1 
+  then "Object too thin" 
+  else "Ok"
