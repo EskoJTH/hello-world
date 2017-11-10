@@ -80,9 +80,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\floatingText\floatingText.csproj">
+    <ProjectReference Include="..\floatingText\Scroller.csproj">
       <Project>{A2F36935-7878-47DA-AE44-464B4D16459A}</Project>
-      <Name>floatingText</Name>
+      <Name>Scroller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HorizontalBar\HorizontalBar.csproj">
+      <Project>{DCD546F4-2DEC-4F8A-9732-24C767CAC4BB}</Project>
+      <Name>HorizontalBar</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

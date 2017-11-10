@@ -1,4 +1,4 @@
-
+module V6T5 where
 {-Consider the following programming language kernel.
 
 data Value = B Bool | I Int
@@ -13,7 +13,9 @@ data Expr =
   Div Expr Expr |
   Lambda String Expr |
   IfElse Expr Expr Expr
-  deriving (Eq, Show)
+  der
+
+iving (Eq, Show)
 
 Express this type as fixed point of a functor just like you did in E3 and provide pattern synonyms to retain compatability with the original (you will need the PatternSynonyms extension for this).
 
@@ -31,7 +33,6 @@ If you want, you can use the provided skeleton program to get started.-}
 {-#LANGUAGE OverloadedStrings#-}
 {-#LANGUAGE DeriveFunctor#-}
 {-#LANGUAGE DeriveTraversable#-}
-
 import Text.Megaparsec.Expr
 import Text.Megaparsec
 import Text.Megaparsec.Char
@@ -42,9 +43,9 @@ import Data.Void
 import Data.Fix
 
 
---Toimii windowssilla n‰in:
+--Toimii winkulla n√§in:
 --komento.txt < "\x -> if(y) then x+15 else x"
---poista teksti tiedostosta sinne j‰‰nee ""
+--poista teksti tiedostosta sinne j√§√§nee ""
 --stack exec stakki < komento.txt
 --testattu: 5-5+2, \x -> if(y) then x+15 else x
 main = do
@@ -53,7 +54,11 @@ main = do
             Left err -> putStrLn (parseErrorPretty err)
             Right v  -> print (calculate v)
 
-calculate = id
+calculate v = getVariables v
+
+getVariables (Fix a) = case a of
+  Var' c -> [c]
+  other -> foldMap getVariables other
 
 expr :: Parsec Dec Text Expression
 expr = makeExprParser term table <?> "expression"

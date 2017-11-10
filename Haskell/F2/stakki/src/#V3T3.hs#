@@ -1,22 +1,22 @@
 module V3T3 where
 
-{-# LANGUAGE InstanceSigs #-}
+{-#LANGUAGE InstanceSigs#-}
 {-# LANGUAGE DeriveFunctor, DeriveFoldable, DeriveTraversable #-}
 --1.Produce n random numbers, where n is taken as an argument
---Onnistuu applicativell‰ koska tied‰mme montako randomia haluamme etuk‰teen.
+--Onnistuu applicativell√§ koska tied√§mme montako randomia haluamme etuk√§teen.
 
 import Data.Char
 import Data.Bool
 import Control.Applicative
 --import System.Random
-import Data.Map.Lazy as M
+import Data.Map.Lazy
 
 next' :: Int -> (Int, Int)
 next' i = let
   (x,y) = (theList i,0) in --next (mkStdGen i) in
   (x,x)
 
-theList i = theList' i list --Tuottaa huonon v‰h‰n randomin jos system.Random:ia ei voida k‰ytt‰‰. K‰yt‰n t‰t‰ koska kotikoneellani on jostain syyst‰ vaikeuksia lˆyt‰‰ System.Random.
+theList i = theList' i list --Tuottaa huonon v√§h√§n randomin jos system.Random:ia ei voida k√§ytt√§√§. K√§yt√§n t√§t√§ koska kotikoneellani on jostain syyst√§ vaikeuksia l√∂yt√§√§ System.Random.
 theList' 0 (s:ss) = s
 theList' i (s:ss) = theList' (i-1) ss
 
@@ -62,10 +62,10 @@ untilSix = do
     out2 <- untilSix
     pure (rOut : out2)
 
-sixRan i = runR (untilSix) i --palauttaa listan numeroista jotka k‰ytiin l‰pi ja johdan jossa 2 kuutosta tuli per‰kk‰in.
+sixRan i = runR (untilSix) i --palauttaa listan numeroista jotka k√§ytiin l√§pi ja johdan jossa 2 kuutosta tuli per√§kk√§in.
 
 --3.Parse a comma-separated list of natural numbers (such as the familiar "0,1,1,3,5,8,13,21,34")
---Applikatiivi riitt‰‰ koska vastauksien tulos ei vaikuta seuraavien operaatioden m‰‰r‰‰n.
+--Applikatiivi riitt√§√§ koska vastauksien tulos ei vaikuta seuraavien operaatioden m√§√§r√§√§n.
 
 newtype Parser a = Parser {skaViJobba :: String -> (String, Maybe a)}
 
@@ -107,8 +107,8 @@ strinki = "1,12,3,4,45,6,7"
 -- [1,12,3,4,45,6,7]
 
 --4.Look up two given words from a dictionary (of type Map String String) and return a result if both are found. Easy! Maybe?
---Onnistuu Monadilla k‰tev‰sti.
---Onnistuu varmaan applikatiivilla k‰tev‰mmin.
+--Onnistuu Monadilla k√§tev√§sti.
+--Onnistuu varmaan applikatiivilla k√§tev√§mmin.
 
 dictionary :: Map String String 
 dictionary = insert "canary berd" "Some sort of berd I guess.." $
@@ -139,7 +139,7 @@ instance Alternative TuplaMap where
 onkoYksi = TuplaMap eka <*> TuplaMap toka -- <|> Control.Applicative.empty
 
 
---(!?) m k= M.lookup k m --Jostain syyst‰ emacs ei lˆyt‰nyt (!?) operaatiota. Pit‰‰ tehd‰ t‰lle jotakin joskus kun kerke‰n.
+--(!?) m k= M.lookup k m --Jostain syyst√§ emacs ei l√∂yt√§nyt (!?) operaatiota. Pit√§√§ tehd√§ t√§lle jotakin joskus kun kerke√§n.
 
 eka :: (String,String) -> Maybe (String->String)
 eka s = case dictionary M.!? fst s of
@@ -150,7 +150,7 @@ eka s = case dictionary M.!? fst s of
                     --if x==(Just t) then Just (t,x) else Nothing)
   
 toka :: (String,String) -> Maybe String
-toka s = dictionary M.!? snd s
+toka s = dictionary M.!?  snd s
 
 etsiTietokirjasta s1 s2 = case (lueTupla onkoYksi) (s1,s2) of
   Just a -> a

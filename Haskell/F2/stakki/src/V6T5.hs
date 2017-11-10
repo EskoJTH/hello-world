@@ -29,6 +29,8 @@ If you want, you can use the provided skeleton program to get started.-}
 {-#LANGUAGE PatternSynonyms#-}
 {-#LANGUAGE TypeFamilies#-}
 {-#LANGUAGE OverloadedStrings#-}
+{-#LANGUAGE DeriveFunctor#-}
+{-#LANGUAGE DeriveTraversable#-}
 import Text.Megaparsec.Expr
 import Text.Megaparsec
 import Text.Megaparsec.Char
@@ -36,16 +38,25 @@ import qualified Text.Megaparsec.Lexer as L
 import Data.Text (Text)
 import qualified Data.Text.IO as TIO
 import Data.Void
+import Data.Fix
 
 
---En keksi miten ihmeessä tämän vekottimen saa kääntymään niin että täältä tulee ulos jotalkin jossa on jotain järkeä. Miten ihmeessä miä saan tuonne stdinniin oikeanmallista inputtia? Ottaako stack ghci stdinputtiin tavaraa kun se antaa kisrjoittaa. Miten minä oikein lopetan tämän inputin lukemisen? CTRL-c ilmeisesti kaataa kivasti kaiken.
+--Toimii winkulla n�in:
+--komento.txt < "\x -> if(y) then x+15 else x"
+--poista teksti tiedostosta sinne j��nee ""
+--stack exec stakki < komento.txt
+--testattu: 5-5+2, \x -> if(y) then x+15 else x
 main = do
         input <- TIO.getContents
         case runParser (expr<*optional eol<*eof) "stdin" input of
             Left err -> putStrLn (parseErrorPretty err)
             Right v  -> print (calculate v)
 
-calculate = id -- COMPLETE THIS
+calculate v = getVariables v
+
+getVariables (Fix a) = case a of
+  Var' c -> [c]
+  other -> foldMap getVariables other
 
 expr :: Parsec Dec Text Expression
 expr = makeExprParser term table <?> "expression"
@@ -79,7 +90,33 @@ lambda = do
 boolLit = (B True <$ sym "True") 
           <|> (B False <$ sym "False")
 
+type Expression = Fix Expression'
+
+data Expression' r = Lit' Val
+                | Var' Char
+                | Negate' r
+                | Add' r r
+                | Sub' r r
+                | Mul' r r
+                | Div' r r
+                | Lam' Char r
+                | Ite' r r r
+                deriving (Eq,Show,Ord,Functor,Foldable,Traversable)
+
+pattern Lit v = Fix (Lit' v)
+pattern Var c = Fix (Var' c)
+pattern Negate r = Fix (Negate' r)
+pattern Add r r' = Fix (Add' r r')
+pattern Sub r r' = Fix (Sub' r r')
+pattern Mul r r' = Fix (Mul' r r')
+pattern Div r r' = Fix (Div' r r')
+pattern Lam c r = Fix (Lam' c r)
+pattern Ite r r' r'' = Fix (Ite' r r' r'')
+
+
 data Val = B Bool | I Integer deriving (Eq,Show,Ord)
+
+{-
 data Expression = Lit Val
                 | Var Char
                 | Negate Expression 
@@ -90,7 +127,7 @@ data Expression = Lit Val
                 | Lam Char Expression
                 | Ite Expression Expression Expression
                 deriving (Eq,Show,Ord)
-
+-}
 
 table = [ [ prefix  "-"  Negate
           , prefix  "+"  id ]

@@ -33,26 +33,27 @@
             // 
             // texti1
             // 
-            this.texti1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.texti1.AutoSize = true;
+            this.texti1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.texti1.BackColor = System.Drawing.Color.Black;
-            this.texti1.Location = new System.Drawing.Point(-7, 216);
+            this.texti1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.texti1.fontSize = 10;
+            this.texti1.Location = new System.Drawing.Point(0, 507);
             this.texti1.Margin = new System.Windows.Forms.Padding(0);
             this.texti1.Name = "texti1";
-            this.texti1.Size = new System.Drawing.Size(398, 54);
+            this.texti1.Size = new System.Drawing.Size(624, 50);
+            this.texti1.speed = 1F;
             this.texti1.TabIndex = 0;
+            this.texti1.text = "undefined";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 262);
+            this.ClientSize = new System.Drawing.Size(624, 557);
             this.Controls.Add(this.texti1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
