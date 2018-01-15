@@ -1,0 +1,35 @@
+﻿<Window x:Class="Mylly.ColorPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mylly"
+        mc:Ignorable="d"
+        Title="ColorPicker" Height="372.107" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
+            <Button Name="okButton" Click="okButton_Click" IsDefault="True">OK</Button>
+            <Button Name="cancelButton" IsCancel="True">Cancel</Button>
+        </StackPanel>
+        <Slider Name="redSlider" ValueChanged="UpdateBall" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="221"/>
+        <Slider Name="greenSlider" ValueChanged="UpdateBall" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="221"/>
+        <Slider Name="blueSlider" ValueChanged="UpdateBall" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="221"/>
+        <Ellipse Name = "ball" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Margin="10,79,0,0" Stroke="Black" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.366,0.488"/>
+        <Label Content="Pick a Color for the game pieces" HorizontalAlignment="Left" Margin="52,79,0,0" VerticalAlignment="Top" Width="230"/>
+        <Label Content="B" HorizontalAlignment="Left" Margin="231,53,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label Content="G" HorizontalAlignment="Left" Margin="231,28,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label Content="R" HorizontalAlignment="Left" Margin="231,2,0,0" VerticalAlignment="Top" Width="51"/>
+        <Slider x:Name="r_background" ValueChanged="UpdateBall" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Width="221"/>
+        <Slider x:Name="g_background" ValueChanged="UpdateBall" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,187,0,0" VerticalAlignment="Top" Width="221"/>
+        <Slider x:Name="b_background" ValueChanged="UpdateBall" Minimum="0" Maximum="255" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Width="221"/>
+        <Rectangle Name="square" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Margin="15,238,0,0" Stroke="Black" VerticalAlignment="Top" Width="37" RenderTransformOrigin="0.366,0.488"/>
+        <Label Content="B" HorizontalAlignment="Left" Margin="231,207,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label Content="G" HorizontalAlignment="Left" Margin="231,182,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label Content="R" HorizontalAlignment="Left" Margin="231,156,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label Content="Pick a Color for the back ground" HorizontalAlignment="Left" Margin="52,238,0,0" VerticalAlignment="Top" Width="230" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

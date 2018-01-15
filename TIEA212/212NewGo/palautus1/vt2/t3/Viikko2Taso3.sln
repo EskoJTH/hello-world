@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Viikko2Taso3", "Viikko2Taso3\Viikko2Taso3.csproj", "{3AB5C0AE-E51D-4E54-BB8A-43C233E50DC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTextBoxClass", "TimeTextBox\TimeTextBoxClass.csproj", "{5CC974EA-66D2-41E0-A48A-14E698C3D503}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberTextBoxClass", "NumberTextBox\NumberTextBoxClass.csproj", "{9B2719FA-C038-4A46-A764-3E0FDA408108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaceLabelClass", "PaceLabel\PaceLabelClass.csproj", "{47104439-1531-4E19-931A-1C3827BB3D0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AB5C0AE-E51D-4E54-BB8A-43C233E50DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AB5C0AE-E51D-4E54-BB8A-43C233E50DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AB5C0AE-E51D-4E54-BB8A-43C233E50DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AB5C0AE-E51D-4E54-BB8A-43C233E50DC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC974EA-66D2-41E0-A48A-14E698C3D503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC974EA-66D2-41E0-A48A-14E698C3D503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC974EA-66D2-41E0-A48A-14E698C3D503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC974EA-66D2-41E0-A48A-14E698C3D503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2719FA-C038-4A46-A764-3E0FDA408108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2719FA-C038-4A46-A764-3E0FDA408108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2719FA-C038-4A46-A764-3E0FDA408108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2719FA-C038-4A46-A764-3E0FDA408108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47104439-1531-4E19-931A-1C3827BB3D0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47104439-1531-4E19-931A-1C3827BB3D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47104439-1531-4E19-931A-1C3827BB3D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47104439-1531-4E19-931A-1C3827BB3D0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

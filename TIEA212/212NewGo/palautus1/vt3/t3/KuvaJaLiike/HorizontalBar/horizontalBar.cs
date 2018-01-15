@@ -15,8 +15,12 @@ namespace HorizontalBar
     {
         LinearGradientBrush gradient;
         ColorBlend blend = new ColorBlend();
-        public float locationForSin { get; set; }
 
+        public float locationForSin { get; set; } //can be used to track how much the bar should move.
+
+        /// <summary>
+        /// makes a bar that has a specific color
+        /// </summary>
         public horizontalBar()
         {
             InitializeComponent();

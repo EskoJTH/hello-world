@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mylly"
+        xmlns:GameBoardComponent="clr-namespace:GameBoardComponent;assembly=GameBoardComponent" x:Class="Mylly.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" MinWidth="200" MinHeight="200">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New" Executed="NewCommandExecuted" CanExecute="NewCommandCanExecute" />
+        <CommandBinding Command="ApplicationCommands.Delete" Executed="DeleteCommandExecuted" CanExecute="DeleteCommandCanExecute" />
+        <CommandBinding Command="ApplicationCommands.Replace" Executed="MoveCommandExecuted" CanExecute="MoveCommandCanExecute" />
+    </Window.CommandBindings> 
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Game">
+                <MenuItem Header="_Insert Piece" Command="ApplicationCommands.New"/>
+                <MenuItem Header="_Delete" Command="ApplicationCommands.Delete"/>
+                <MenuItem Header="_Move" Command="ApplicationCommands.Replace"/>
+            </MenuItem>
+            <MenuItem Header="_File">
+                <MenuItem Header="_New Game" Click="MyNewGame"/>
+                <MenuItem Header="_Print" Click="MyPrint"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Settings" Click="MySettings"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Click="MyAbout"/>
+                <MenuItem Header="_Help" Click="MyHelp"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <GameBoardComponent:UserControl1 Grid.Column="0" Name="Board"/>
+            <StackPanel  Grid.Column="1" >
+                <Button Name="Insert" Content="Insert Piece" Command="ApplicationCommands.New" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button Name="Delete" Content="Delete Piece" Command="ApplicationCommands.Delete" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button Name="Move" Content="Move Piece" Command="ApplicationCommands.Replace" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            </StackPanel>
+
+        </Grid>
+
+    </DockPanel>
+</Window>

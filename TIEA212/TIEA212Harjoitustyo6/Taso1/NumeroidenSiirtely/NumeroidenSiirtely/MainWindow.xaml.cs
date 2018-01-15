@@ -37,7 +37,7 @@ namespace NumeroidenSiirtely
                 Label label = (Label)sender;
                 StackPanel panel = (StackPanel)label.Parent;
                 data.SetData("Label", sender);
-                panel.Children.Remove(label);
+
                 DragDrop.DoDragDrop(label, data, DragDropEffects.Copy | DragDropEffects.Move);
                 
             }

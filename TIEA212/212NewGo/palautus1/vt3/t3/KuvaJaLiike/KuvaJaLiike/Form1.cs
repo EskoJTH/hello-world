@@ -39,18 +39,14 @@ namespace KuvaJaLiike
             Invalidate();
         }
 
-        private void BuildBars(int count)
-        {
-
-        }
-
         private void UpdateImage(object sender, EventArgs e)
         {
+            //moves the rabbit
             location = Convert.ToSingle(((Math.Sin(x) + 1) / 2 * (this.Width - bunny.Width)));
             x += 0.01f;
-            UpdateBars();
             Invalidate();
 
+            //moves the horizontal bars
             foreach (horizontalBar bar in bars)
             {
                 bar.Width = this.Width;
@@ -58,6 +54,7 @@ namespace KuvaJaLiike
                 bar.locationForSin += 0.01f;
             }
 
+            // Adding new bars with a delay as long as more are required based on howManyBars
             if (howManyBars < 1) return;
             switch (delayCurrent)
             {
@@ -84,19 +81,14 @@ namespace KuvaJaLiike
 
         }
 
-        private void UpdateBars()
-        {
-            for (int i = 0; i < bars.Count; i++)
-            {
-
-            }
-        }
-
+        /// <summary>
+        /// does the actual drawing of the rabbit
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
             canvas.DrawImage(bunny, location, 0);
-            //this.
         }
     }
 }

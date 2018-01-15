@@ -68,8 +68,8 @@
         <CheckBox x:Name="checkBox1" Content="2" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
         <CheckBox x:Name="checkBox2" Content="3" Grid.Column="2" Grid.Row="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
         <CheckBox x:Name="checkBox3" Content="4" Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
-        <CheckBox x:Name="checkBox4" Content="5" Grid.Column="1"  Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
-        <CheckBox x:Name="checkBox5" Content="6" Grid.Column="2"  Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
+        <CheckBox x:Name="checkBox4" Content="5" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
+        <CheckBox x:Name="checkBox5" Content="6" Grid.Column="2" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
         <CheckBox x:Name="checkBox6" Content="7" Grid.Column="0" Grid.Row="2" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
         <CheckBox x:Name="checkBox7" Content="8" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />
         <CheckBox x:Name="checkBox8" Content="9" Grid.Column="2" Grid.Row="2" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" />

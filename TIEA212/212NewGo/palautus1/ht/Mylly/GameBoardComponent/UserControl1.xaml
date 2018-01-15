@@ -1,0 +1,65 @@
+﻿<UserControl xmlns:GamePiece="clr-namespace:GamePiece;assembly=GamePiece"  x:Class="GameBoardComponent.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GameBoardComponent"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="SmallBall" TargetType="Ellipse">
+            <Setter Property="Width" Value="2"/>
+            <Setter Property="Height" Value="2"/>
+            <Setter Property="Fill" Value="Black"/>
+            <Setter Property="Stroke" Value="Black"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid  Background="White">
+        <Viewbox>
+            <Canvas Name="canvas" Width="80" Height="80">
+                <!--I could autogenerate these straight from the code but this already happened.-->
+                <Line Stroke="Black" StrokeThickness="1" X1="10" Y1="10" X2="70" Y2="10"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="10" Y1="10" X2="10" Y2="70"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="70" Y1="10" X2="70" Y2="70"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="10" Y1="70" X2="70" Y2="70"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="20" Y1="20" X2="60" Y2="20"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="60" Y1="60" X2="60" Y2="20"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="20" Y1="60" X2="60" Y2="60"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="20" Y1="20" X2="20" Y2="60"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="30" Y1="30" X2="50" Y2="30"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="30" Y1="50" X2="50" Y2="50"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="50" Y1="50" X2="50" Y2="30"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="30" Y1="30" X2="30" Y2="50"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="10" Y1="40" X2="30" Y2="40"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="70" Y1="40" X2="50" Y2="40"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="40" Y1="10" X2="40" Y2="30"></Line>
+                <Line Stroke="Black" StrokeThickness="1" X1="40" Y1="50" X2="40" Y2="70"></Line>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="9" Canvas.Left="9"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="9" Canvas.Left="39"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="9" Canvas.Left="69"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="19" Canvas.Left="39"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="19" Canvas.Left="19"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="19" Canvas.Left="59"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="29" Canvas.Left="39"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="29" Canvas.Left="49"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="29" Canvas.Left="29"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="39" Canvas.Left="29"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="39" Canvas.Left="49"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="39" Canvas.Left="59"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="39" Canvas.Left="69"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="39" Canvas.Left="19"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="39" Canvas.Left="9"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="49" Canvas.Left="29"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="49" Canvas.Left="39"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="49" Canvas.Left="49"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="59" Canvas.Left="59"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="59" Canvas.Left="19"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="59" Canvas.Left="39"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="69" Canvas.Left="39"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="69" Canvas.Left="9"></Ellipse>
+                <Ellipse Style="{StaticResource SmallBall}" Canvas.Top="69" Canvas.Left="69"></Ellipse>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+
+</UserControl>

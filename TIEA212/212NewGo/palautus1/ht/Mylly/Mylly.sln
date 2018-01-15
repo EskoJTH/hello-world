@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mylly", "Mylly\Mylly.csproj", "{909DA051-4C73-42B4-94D6-84A7224DA149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBoardComponent", "GameBoardComponent\GameBoardComponent.csproj", "{EBB0D201-160D-4D5A-9236-42220BE4C6E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamePiece", "GamePiece\GamePiece.csproj", "{3609D70A-B21F-4D58-A9A1-E1939B0D0997}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{909DA051-4C73-42B4-94D6-84A7224DA149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909DA051-4C73-42B4-94D6-84A7224DA149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909DA051-4C73-42B4-94D6-84A7224DA149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909DA051-4C73-42B4-94D6-84A7224DA149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB0D201-160D-4D5A-9236-42220BE4C6E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB0D201-160D-4D5A-9236-42220BE4C6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB0D201-160D-4D5A-9236-42220BE4C6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB0D201-160D-4D5A-9236-42220BE4C6E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3609D70A-B21F-4D58-A9A1-E1939B0D0997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3609D70A-B21F-4D58-A9A1-E1939B0D0997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3609D70A-B21F-4D58-A9A1-E1939B0D0997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3609D70A-B21F-4D58-A9A1-E1939B0D0997}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

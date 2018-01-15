@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="GamePiece.UserControl2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GamePiece"
+             mc:Ignorable="d" 
+             d:DesignHeight="6" d:DesignWidth="6" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center">
+    <UserControl.Resources>
+        <Style TargetType="Ellipse">
+            <Setter Property="Width" Value="6"></Setter>
+            <Setter Property="Height" Value="6"></Setter>
+            <Setter Property="Fill" Value="Transparent"></Setter>
+            <Setter Property="Stroke" Value="Black"></Setter>
+            <EventSetter Event="MouseDown" Handler="BigDotMouseDown"></EventSetter>
+            <EventSetter Event="MouseLeave" Handler="BigDotMouseOut"></EventSetter>
+            <EventSetter Event="MouseMove" Handler="BigDotMouseOver"></EventSetter>
+        </Style>
+    </UserControl.Resources>
+    <Ellipse Name="ellipse">
+    </Ellipse>
+</UserControl>

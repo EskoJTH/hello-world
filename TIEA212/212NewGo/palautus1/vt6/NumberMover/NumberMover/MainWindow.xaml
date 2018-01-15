@@ -1,0 +1,44 @@
+﻿<Window x:Class="NumberMover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumberMover"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="DragLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <EventSetter Event="MouseMove" Handler="DragLabel"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="NumberLabel" Grid.Column="0">
+            </Label>
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2">
+                <StackPanel Name="DropPanel" Background="White" Orientation="Horizontal" Drop="AddNumbers" AllowDrop="true"></StackPanel>
+            </Border>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Label Style="{StaticResource DragLabel}" Content="1" />
+            <Label Style="{StaticResource DragLabel}" Content="2" />
+            <Label Style="{StaticResource DragLabel}" Content="3" />
+            <Label Style="{StaticResource DragLabel}" Content="4" />
+            <Label Style="{StaticResource DragLabel}" Content="5" />
+            <Label Style="{StaticResource DragLabel}" Content="6" />
+            <Label Style="{StaticResource DragLabel}" Content="7" />
+            <Label Style="{StaticResource DragLabel}" Content="8" />
+            <Label Style="{StaticResource DragLabel}" Content="9" />
+            <Label Style="{StaticResource DragLabel}" Content="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

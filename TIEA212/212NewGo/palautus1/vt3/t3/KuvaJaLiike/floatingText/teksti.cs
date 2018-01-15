@@ -13,9 +13,21 @@ namespace floatingText
 {
     public partial class texti : UserControl
     {
-        public string text { get; set; }
+        /// <summary>
+        /// text that the scroller displays
+        /// </summary>
+        public string text { get; set; } 
+
+        /// <summary>
+        /// size of the font
+        /// </summary>
         public int fontSize {get; set;}
+
+        /// <summary>
+        /// speed the text moves in the x-axis
+        /// </summary>
         public float speed { get; set; }
+
         private float[] position = { 0 , 0 };
         private Label label = new Label();
         private double x = 0;
@@ -25,13 +37,16 @@ namespace floatingText
         private System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
         private System.Drawing.Font drawFont;
 
+        /// <summary>
+        /// creates a black bar that has a text floating inside it
+        /// </summary>
         public texti()
         {
-            //<defaults>
+            //<default settings>
             speed = 1;
             fontSize = 10;
             text = "undefined";
-            //<\defaults>
+            //<\defaults settings>
 
             this.DoubleBuffered = true;
             position[0] = this.Width;
@@ -42,12 +57,12 @@ namespace floatingText
             Timer clock = new Timer();
             clock.Interval = 1000/120;
             clock.Enabled = true;
-            clock.Tick += clock_Cycle;
+            clock.Tick += Clock_Cycle;
             drawFont = new System.Drawing.Font("Arial", fontSize);
             Invalidate();
         }
 
-        private void clock_Cycle(object sender, EventArgs e)
+        private void Clock_Cycle(object sender, EventArgs e)
         {
 
 
